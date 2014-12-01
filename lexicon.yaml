@@ -994,7 +994,7 @@
     code: 4
     P: δεικνῡ
     I: ἐδεικνῡ
-    F: unknown
+    F: δειξ
     FP: unknown
 δειπνέω:
     code: 2
@@ -1252,8 +1252,8 @@
     code: 4
     P: διδο
     I: ἐδιδο
-    F: unknown
-    FP: unknown
+    F: δωσ
+    FP: δοθησ
 διεγείρω:
     code: 1
     P: διεγειρ
@@ -4771,7 +4771,7 @@
     code: 4
     P: τιθε
     I: ἐτιθε
-    F: unknown
+    F: θησ
     FP: unknown
 τίκτω:
     code: 1
@@ -5241,3 +5241,232 @@
     I: unknown
     F: ὠφελησ
     FP: ὠφεληθησ
+ἀμφιέννυμι:
+    code: 4
+    P: ἀμφιεννυ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀνθίστημι:
+    code: 4
+    P: ἀνθιστα
+    I: ἀνθιστα
+    F: unknown
+    FP: unknown
+ἀνίστημι:
+    code: 4
+    P: ἀνιστα
+    I: unknown
+    F: ἀναστησ
+    FP: unknown
+ἀνταποδίδωμι:
+    code: 4
+    P: unknown
+    I: unknown
+    F: ἀνταποδωσ
+    FP: ἀνταποδοθησ
+ἄπειμι:
+    code: 4
+    P: ἀπει
+    I: ἀπῃε
+    F: unknown
+    FP: unknown
+ἀποδίδωμι:
+    code: 4
+    P: ἀποδιδο
+    I: ἀπεδιδο
+    F: ἀποδωσ
+    FP: unknown
+ἀποκαθίστημι:
+    code: 1
+    P: ἀποκαθισταν
+    I: unknown
+    F: ἀποκαταστησ
+    FP: unknown
+    notes: "despite athematic lemma, present test acts like thematic"
+ἀπόλλυμι:
+    code: 4
+    P: ἀπολλυ
+    I: ἀπωλλυ
+    F: ἀπολ#
+    FP: unknown
+ἀφίημι:
+    code: 4
+    P: ἀφιε
+    I: unknown
+    F: ἀφησ
+    FP: ἀφεθησ
+διαδίδωμι:
+    code: 4
+    P: διαδιδο
+    I: διεδιδο
+    F: unknown
+    FP: unknown
+διαρρήγνυμι:
+    code: 4
+    P: unknown
+    I: διερρησσε
+    F: unknown
+    FP: unknown
+ἐκδίδωμι:
+    code: 4
+    P: unknown
+    I: unknown
+    F: ἐκδωσ
+    FP: unknown
+ἐκτίθημι:
+    code: 4
+    P: unknown
+    I: ἐξετιθε
+    F: unknown
+    FP: unknown
+ἐνδείκνυμι:
+    code: 4
+    P: ἐνδεικνυ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐνίστημι:
+    code: 4
+    P: unknown
+    I: unknown
+    F: ἐνστησ
+    FP: unknown
+ἐξίστημι:
+    code: 4
+    P: unknown
+    I: ἐξιστα
+    F: unknown
+    FP: unknown
+ἐπιδίδωμι:
+    code: 4
+    P: unknown
+    I: ἐπεδιδο
+    F: ἐπιδωσ
+    FP: unknown
+ἐπιτίθημι:
+    code: 4
+    P: ἐπιτιθε
+    I: ἐπετιθε
+    F: ἐπιθησ
+    FP: unknown
+ἐφίστημι:
+    code: 4
+    P: ἐφιστα
+    I: unknown
+    F: unknown
+    FP: unknown
+ζώννυμι:
+    code: 4
+    P: unknown
+    I: ἐζωννυε
+    F: ζωσ
+    FP: unknown
+καθίστημι:
+    code: 4
+    P: καθιστα
+    I: unknown
+    F: καταστησ
+    FP: κατασταθησ
+κατάγνυμι:
+    code: 4
+    P: unknown
+    I: unknown
+    F: κατεαξ
+    FP: unknown
+κρεμάννυμι:
+    code: 4
+    P: κρεμα
+    I: unknown
+    F: unknown
+    FP: unknown
+μετατίθημι:
+    code: 4
+    P: μετατιθε
+    I: unknown
+    F: unknown
+    FP: unknown
+παραδίδωμι:
+    code: 4
+    P: παραδιδο
+    I: παρεδιδο
+    F: παραδωσ
+    FP: παραδοθησ
+παρατίθημι:
+    code: 4
+    P: παρατιθε
+    I: unknown
+    F: παραθησ
+    FP: unknown
+παρίστημι:
+    code: 4
+    P: unknown
+    I: unknown
+    F: παραστησ
+    FP: unknown
+περιζώννυμι:
+    code: 4
+    P: unknown
+    I: unknown
+    F: περιζωσ
+    FP: unknown
+περιτίθημι:
+    code: 4
+    P: περιτιθε
+    I: unknown
+    F: unknown
+    FP: unknown
+πίμπλημι:
+    code: 4
+    P: unknown
+    I: unknown
+    F: unknown
+    FP: πλησθησ
+προστίθημι:
+    code: 4
+    P: unknown
+    I: προσετιθε
+    F: unknown
+    FP: προστεθησ
+ῥήγνυμι:
+    code: 4
+    P: ῥηγνυ
+    I: unknown
+    F: ῥηξ
+    FP: unknown
+σβέννυμι:
+    code: 4
+    P: σβεννυ
+    I: unknown
+    F: σβεσ
+    FP: unknown
+στρώννυμι:
+    code: 1
+    P: unknown
+    I: ἐστρωννυ
+    F: unknown
+    FP: unknown
+σύμφημι:
+    code: 4
+    P: συμφε
+    I: unknown
+    F: unknown
+    FP: unknown
+συνίημι:
+    code: 1
+    P: unknown
+    I: unknown
+    F: συνησ
+    FP: unknown
+συνίστημι:
+    code: 4
+    P: συνιστα
+    I: unknown
+    F: unknown
+    FP: unknown
+ὑποδείκνυμι:
+    code: 4
+    P: unknown
+    I: unknown
+    F: ὑποδειξ
+    FP: unknown
