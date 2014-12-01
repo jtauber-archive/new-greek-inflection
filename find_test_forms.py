@@ -2,7 +2,7 @@
 
 from pysblgnt import morphgnt_rows
 
-from utils import remove
+# from utils import remove
 
 for book_num in range(1, 28):
     for row in morphgnt_rows(book_num):
@@ -14,5 +14,4 @@ for book_num in range(1, 28):
                 tvm = "IMI"
             if tvm in ["PAI", "PMI", "IAI", "IMI", "FAI", "FMI", "FPI"]:
                 pn = row["ccat-parse"][0] + row["ccat-parse"][5]
-                if remove(row["lemma"]).endswith("μαι") and not remove(row["lemma"]).endswith("ομαι"):
-                    print(row["lemma"], tvm + "." + pn, row["norm"])
+                print(row["lemma"], tvm + "." + pn, row["norm"])

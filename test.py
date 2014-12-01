@@ -8,7 +8,7 @@ from verbs import calculate_form, calculate_part
 passed = 0
 fails = []
 
-for test_name in ["test.txt", "test2.txt", "test3.txt", "test4.txt", "test5.txt"]:
+for test_name in ["test.txt", "test2.txt", "test3.txt", "test4.txt", "test5.txt", "test6.txt"]:
     with open(test_name) as f:
         for line in f:
             record = line.strip().split("#")[0]

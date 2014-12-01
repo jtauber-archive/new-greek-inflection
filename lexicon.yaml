@@ -5470,3 +5470,105 @@
     I: unknown
     F: ὑποδειξ
     FP: unknown
+ἀνάκειμαι:
+    code: 5
+    P: unknown
+    I: ἀνεκει
+    F: unknown
+    FP: unknown
+ἀντίκειμαι:
+    code: 5
+    P: ἀντικει
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀπόκειμαι:
+    code: 5
+    P: ἀποκει
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀφίσταμαι:
+    code: 5
+    P: ἀφιστα
+    I: ἀφιστα
+    F: ἀποστησ
+    FP: unknown
+διατίθεμαι:
+    code: 5
+    P: διατιθε
+    I: unknown
+    F: διαθησ
+    FP: unknown
+δύναμαι:
+    code: 5
+    P: δυνα
+    I: ἐδυνα
+    F: δυνησ
+    FP: unknown
+ἐπανίσταμαι:
+    code: 5
+    P: unknown
+    I: unknown
+    F: ἐπαναστησ
+    FP: unknown
+ἐπίκειμαι:
+    code: 5
+    P: ἐπικει
+    I: ἐπεκει
+    F: unknown
+    FP: unknown
+ἐπίσταμαι:
+    code: 5
+    P: ἐπιστα
+    I: unknown
+    F: unknown
+    FP: unknown
+κάθημαι:
+    code: 5
+    P: καθη
+    I: ἐκαθη
+    F: καθησ
+    FP: unknown
+κατάκειμαι:
+    code: 5
+    P: κατακει
+    I: κατεκει
+    F: unknown
+    FP: unknown
+κεῖμαι:
+    code: 5
+    P: κει
+    I: ἐκει
+    F: unknown
+    FP: unknown
+οἶμαι:
+    code: 5
+    P: οἰ
+    I: unknown
+    F: unknown
+    FP: unknown
+παράκειμαι:
+    code: 5
+    P: παρακει
+    I: unknown
+    F: unknown
+    FP: unknown
+περίκειμαι:
+    code: 5
+    P: περικει
+    I: unknown
+    F: unknown
+    FP: unknown
+πρόκειμαι:
+    code: 5
+    P: προκει
+    I: unknown
+    F: unknown
+    FP: unknown
+συνανάκειμαι:
+    code: 5
+    P: unknown
+    I: συνανεκει
+    F: unknown
+    FP: unknown
