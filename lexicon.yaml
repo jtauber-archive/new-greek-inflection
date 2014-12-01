@@ -990,6 +990,12 @@
     I: unknown
     F: δαπανησ
     FP: unknown
+δείκνυμι:
+    code: 4
+    P: δεικνῡ
+    I: ἐδεικνῡ
+    F: unknown
+    FP: unknown
 δειπνέω:
     code: 2
     P: δειπνε
@@ -1241,6 +1247,12 @@
     P: διδασκ
     I: ἐδιδασκ
     F: διδαξ
+    FP: unknown
+δίδωμι:
+    code: 4
+    P: διδο
+    I: ἐδιδο
+    F: unknown
     FP: unknown
 διεγείρω:
     code: 1
@@ -2474,6 +2486,18 @@
     I: unknown
     F: unknown
     FP: unknown
+ἵημι:
+    code: 4
+    P: ἱε
+    I: ἱε
+    F: unknown
+    FP: unknown
+ἵστημι:
+    code: 4
+    P: ἱστα
+    I: ἱστα
+    F: στησ
+    FP: σταθησ
 ἰσχύω:
     code: 1
     P: ἰσχυ
@@ -4742,6 +4766,12 @@
     P: τηρε
     I: ἐτηρε
     F: τηρησ
+    FP: unknown
+τίθημι:
+    code: 4
+    P: τιθε
+    I: ἐτιθε
+    F: unknown
     FP: unknown
 τίκτω:
     code: 1

@@ -14,5 +14,5 @@ for book_num in range(1, 28):
                 tvm = "IMI"
             if tvm in ["PAI", "PMI", "IAI", "IMI", "FAI", "FMI", "FPI"]:
                 pn = row["ccat-parse"][0] + row["ccat-parse"][5]
-                if remove(row["lemma"]).endswith("ομαι"):
+                if remove(row["lemma"]).endswith("μαι") and not remove(row["lemma"]).endswith("ομαι"):
                     print(row["lemma"], tvm + "." + pn, row["norm"])
