@@ -1,36 +1,28 @@
 from accentuation import recessive
-from endings import PRIMARY_ACTIVE, PRIMARY_ACTIVE_ALPHA, PRIMARY_ACTIVE_EPSILON, PRIMARY_ACTIVE_OMICRON
-from endings import PRIMARY_MIDDLE, PRIMARY_MIDDLE_ALPHA, PRIMARY_MIDDLE_EPSILON, PRIMARY_MIDDLE_OMICRON
-from endings import SECONDARY_ACTIVE, SECONDARY_ACTIVE_ALPHA, SECONDARY_ACTIVE_EPSILON, SECONDARY_ACTIVE_OMICRON
-from endings import SECONDARY_MIDDLE, SECONDARY_MIDDLE_ALPHA, SECONDARY_MIDDLE_EPSILON, SECONDARY_MIDDLE_OMICRON
+from endings import PRIMARY_ACTIVE, PRIMARY_MIDDLE, SECONDARY_ACTIVE, SECONDARY_MIDDLE
 from utils import remove, has_accent, remove_length
 
 
-def ENDINGS(default, alpha, epsilon, omicron):
+def ENDINGS(paradigm):
 
-    def forward(stem):
+    def forward(stem, pn):
         if stem is None:
-            return None
+            return []
 
-        stem2, paradigm = {
-            "α": (stem[:-1], alpha),
-            "ε": (stem[:-1], epsilon),
-            "ο": (stem[:-1], omicron),
-        }.get(stem[-1], (stem, default))
-
-        return {
-            pn: [stem2 + ending for ending, stem_ending in (endings if isinstance(endings, list) else [endings])]
-            for pn, endings in paradigm.items()
-        }
+        forms = []
+        for ending, stem_ending in paradigm[pn]:
+            stem2, stem_ending = (stem[:-len(stem_ending)], remove(stem_ending)) if stem_ending else (stem, "")
+            if stem.endswith(stem_ending):
+                forms.append(stem2 + ending)
+        return forms
 
     def reverse(form, pn):
         stems = []
-        for paradigm in [default, alpha, epsilon, omicron]:
-            if pn in paradigm:
-                endings = paradigm[pn]
-                for ending, stem_ending in (endings if isinstance(endings, list) else [endings]):
-                    if form.endswith(remove_length(ending)):
-                        stems.append(form[:-len(ending)] + (stem_ending if stem_ending else ""))
+        if pn in paradigm:
+            endings = paradigm[pn]
+            for ending, stem_ending in endings:
+                if form.endswith(remove_length(ending)):
+                    stems.append(form[:-len(ending)] + (stem_ending if stem_ending else ""))
 
         if stems:
             return stems
@@ -40,10 +32,10 @@ def ENDINGS(default, alpha, epsilon, omicron):
     return forward, reverse
 
 
-primary_active, rev_primary_active = ENDINGS(PRIMARY_ACTIVE, PRIMARY_ACTIVE_ALPHA, PRIMARY_ACTIVE_EPSILON, PRIMARY_ACTIVE_OMICRON)
-primary_middle, rev_primary_middle = ENDINGS(PRIMARY_MIDDLE, PRIMARY_MIDDLE_ALPHA, PRIMARY_MIDDLE_EPSILON, PRIMARY_MIDDLE_OMICRON)
-secondary_active, rev_secondary_active = ENDINGS(SECONDARY_ACTIVE, SECONDARY_ACTIVE_ALPHA, SECONDARY_ACTIVE_EPSILON, SECONDARY_ACTIVE_OMICRON)
-secondary_middle, rev_secondary_middle = ENDINGS(SECONDARY_MIDDLE, SECONDARY_MIDDLE_ALPHA, SECONDARY_MIDDLE_EPSILON, SECONDARY_MIDDLE_OMICRON)
+primary_active, rev_primary_active = ENDINGS(PRIMARY_ACTIVE)
+primary_middle, rev_primary_middle = ENDINGS(PRIMARY_MIDDLE)
+secondary_active, rev_secondary_active = ENDINGS(SECONDARY_ACTIVE)
+secondary_middle, rev_secondary_middle = ENDINGS(SECONDARY_MIDDLE)
 
 
 def PART(stem_key):
@@ -72,13 +64,13 @@ class Verb1:
     def __init__(self, lexeme):
         self.lexeme = lexeme
 
-    def PAI(self): return primary_active(present(self))
-    def PMI(self): return primary_middle(present(self))
-    def IAI(self): return secondary_active(imperfect(self))
-    def IMI(self): return secondary_middle(imperfect(self))
-    def FAI(self): return primary_active(future(self))
-    def FMI(self): return primary_middle(future(self))
-    def FPI(self): return primary_middle(future_passive(self))
+    def PAI(self, pn): return primary_active(present(self), pn)
+    def PMI(self, pn): return primary_middle(present(self), pn)
+    def IAI(self, pn): return secondary_active(imperfect(self), pn)
+    def IMI(self, pn): return secondary_middle(imperfect(self), pn)
+    def FAI(self, pn): return primary_active(future(self), pn)
+    def FMI(self, pn): return primary_middle(future(self), pn)
+    def FPI(self, pn): return primary_middle(future_passive(self), pn)
 
     def rev_PAI(self, form, pn): return rev_present(rev_primary_active(form, pn))
     def rev_PMI(self, form, pn): return rev_present(rev_primary_middle(form, pn))
@@ -101,11 +93,7 @@ def conditional_recessive(word):
 
 def calculate_form(lexeme, parse):
     tvm, pn = parse.split(".")
-    paradigm = getattr(lexeme, tvm)()
-    if paradigm is None:
-        return []
-    else:
-        result = paradigm[pn]
+    result = getattr(lexeme, tvm)(pn)
 
     if isinstance(result, list):
         result = [conditional_recessive(x) for x in result]
