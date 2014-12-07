@@ -994,9 +994,8 @@
     F: δαπανησ
     FP: unknown
 δείκνυμι:
-    code: 4
-    P: δεικνῡ
-    I: ἐδεικνῡ
+    P: δεικνῡ/δεικνῡ!
+    I: ἐδεικνῡ!
     F: δειξ
     FP: unknown
 δειπνέω:
@@ -1252,9 +1251,8 @@
     F: διδαξ
     FP: unknown
 δίδωμι:
-    code: 4
-    P: διδο
-    I: ἐδιδο
+    P: διδο!
+    I: ἐδιδο/ἐδιδο!
     F: δωσ
     FP: δοθησ
 διεγείρω:
@@ -1439,8 +1437,8 @@
     FP: unknown
 εἰμί:
     P: unknown
-    I: ἠ
-    F: ἐσ
+    I: ἠ!
+    F: ἐσ/ἐσ!
     FP: unknown
 εἰσακούω:
     code: 1
@@ -1455,7 +1453,7 @@
     F: εἰσδεξ
     FP: unknown
 εἴσειμι:
-    P: εἰσι  # @@@
+    P: εἰσι!  # @@@
     I: εἰσῃε  # @@@
     F: unknown
     FP: unknown
@@ -1871,7 +1869,7 @@
     FP: unknown
 ἔξειμι:
     P: unknown
-    I: ἐξῃε
+    I: ἐξῃε!
     F: unknown
     FP: unknown
 ἐξέρχομαι:
@@ -2341,7 +2339,7 @@
 ζάω:
     code: 2
     P: ζα/ζη
-    I: ἐζα/ἐζῆ
+    I: ἐζα/ἐζη
     F: ζησ
     FP: unknown
 ζηλόω:
@@ -2507,15 +2505,13 @@
     F: unknown
     FP: unknown
 ἵημι:
-    code: 4
-    P: ἱε
-    I: ἱε
+    P: ἱε!
+    I: ἱε!
     F: unknown
     FP: unknown
 ἵστημι:
-    code: 4
-    P: ἱστα/ἱσταν
-    I: ἱστα/ἐστηκ
+    P: ἱστα!/ἱσταν
+    I: ἱστα!/ἐστηκ
     F: στησ
     FP: σταθησ
 ἰσχύω:
@@ -3670,10 +3666,9 @@
     F: παραχειμασ
     FP: unknown
 πάρειμι:
-    code: 4
-    P: παρεσ
-    I: παρῆ
-    F: παρέσ
+    P: παρεσ!
+    I: παρῆ!
+    F: παρέσ!
     FP: unknown
 παρεισάγω:
     code: 1
@@ -4622,9 +4617,8 @@
     F: unknown
     FP: unknown
 σύνειμι:
-    code: 4
     P: unknown
-    I: συνῆ
+    I: συνῆ!
     F: unknown
     FP: unknown
 συνέπομαι:
@@ -4809,9 +4803,8 @@
     F: τηρησ
     FP: unknown
 τίθημι:
-    code: 4
-    P: τιθε
-    I: ἐτιθε
+    P: τιθε!
+    I: ἐτιθε/ἐτιθε!
     F: θησ
     FP: unknown
 τίκτω:
@@ -5051,9 +5044,8 @@
     F: φευξ
     FP: unknown
 φημί:
-    code: 4
-    P: φα
-    I: ἐφα
+    P: φα!
+    I: ἐφα!
     F: unknown
     FP: unknown
 φθείρω:
@@ -5291,201 +5283,167 @@
     F: ὠφελησ
     FP: ὠφεληθησ
 ἀμφιέννυμι:
-    code: 4
-    P: ἀμφιεννυ
+    P: ἀμφιεννυ!
     I: unknown
     F: unknown
     FP: unknown
 ἀνθίστημι:
-    code: 4
-    P: ἀνθιστα
-    I: ἀνθιστα
+    P: ἀνθιστα!
+    I: ἀνθιστα!
     F: unknown
     FP: unknown
 ἀνίστημι:
-    code: 4
-    P: ἀνιστα
+    P: ἀνιστα!
     I: unknown
     F: ἀναστησ
     FP: unknown
 ἀνταποδίδωμι:
-    code: 4
     P: unknown
     I: unknown
     F: ἀνταποδωσ
     FP: ἀνταποδοθησ
 ἄπειμι:
-    code: 4
-    P: ἀπει
-    I: ἀπῃε
+    P: ἀπει!
+    I: ἀπῃε!
     F: unknown
     FP: unknown
 ἀποδίδωμι:
-    code: 4
-    P: ἀποδιδο
+    P: ἀποδιδο!
     I: ἀπεδιδο
     F: ἀποδωσ
     FP: unknown
 ἀποκαθίστημι:
-    code: 1
     P: ἀποκαθισταν
     I: unknown
     F: ἀποκαταστησ
     FP: unknown
-    notes: "despite athematic lemma, present test acts like thematic"
 ἀπόλλυμι:
-    code: 4
-    P: ἀπολλυ
-    I: ἀπωλλυ
+    P: ἀπολλυ/ἀπολλυ!
+    I: ἀπωλλυ!
     F: ἀπολ#/ἀπολεσ
     FP: unknown
 ἀφίημι:
-    code: 4
-    P: ἀφε/ἀφι/ἀφιε  # @@@
+    P: ἀφε/ἀφι/ἀφιε!
     I: ἠφι
     F: ἀφησ
     FP: ἀφεθησ
 διαδίδωμι:
-    code: 4
-    P: διαδιδο
+    P: διαδιδο!
     I: διεδιδο/διεδιδ
     F: unknown
     FP: unknown
 διαρρήγνυμι:
-    code: 4
     P: unknown
-    I: διερρησσε
+    I: διερρησσ
     F: unknown
     FP: unknown
 ἐκδίδωμι:
-    code: 4
     P: unknown
     I: unknown
     F: ἐκδωσ
     FP: unknown
 ἐκτίθημι:
-    code: 4
     P: unknown
-    I: ἐξετιθε
+    I: ἐξετιθε!
     F: unknown
     FP: unknown
 ἐνδείκνυμι:
-    code: 4
-    P: ἐνδεικνυ
+    P: ἐνδεικνυ!
     I: unknown
     F: unknown
     FP: unknown
 ἐνίστημι:
-    code: 4
     P: unknown
     I: unknown
     F: ἐνστησ
     FP: unknown
 ἐξίστημι:
-    code: 4
     P: unknown
-    I: ἐξιστα
+    I: ἐξιστα!
     F: unknown
     FP: unknown
 ἐπιδίδωμι:
-    code: 4
     P: unknown
-    I: ἐπεδιδο
+    I: ἐπεδιδο!
     F: ἐπιδωσ
     FP: unknown
 ἐπιτίθημι:
-    code: 4
-    P: ἐπιτιθε
-    I: ἐπετιθε
+    P: ἐπιτιθε!
+    I: ἐπετιθε!
     F: ἐπιθησ
     FP: unknown
 ἐφίστημι:
-    code: 4
-    P: ἐφιστα
+    P: ἐφιστα!
     I: unknown
     F: unknown
     FP: unknown
 ζώννυμι:
-    code: 4
     P: unknown
-    I: ἐζωννυε
+    I: ἐζωννυε!
     F: ζωσ
     FP: unknown
 καθίστημι:
-    code: 4
-    P: καθιστα
+    P: καθιστα!
     I: unknown
     F: καταστησ
     FP: κατασταθησ
 κατάγνυμι:
-    code: 4
     P: unknown
     I: unknown
     F: κατεαξ
     FP: unknown
 κρεμάννυμι:
-    code: 4
-    P: κρεμα
+    P: κρεμα!
     I: unknown
     F: unknown
     FP: unknown
 μετατίθημι:
-    code: 4
-    P: μετατιθε
+    P: μετατιθε!
     I: unknown
     F: unknown
     FP: unknown
 παραδίδωμι:
-    code: 4
-    P: παραδιδο
-    I: παρεδιδο/παρεδιδ
+    P: παραδιδο!
+    I: παρεδιδο!/παρεδιδο/παρεδιδ
     F: παραδωσ
     FP: παραδοθησ
 παρατίθημι:
-    code: 4
-    P: παρατιθε
+    P: παρατιθε!
     I: unknown
     F: παραθησ
     FP: unknown
 παρίστημι:
-    code: 4
     P: παρισταν
     I: unknown
     F: παραστησ
     FP: unknown
 περιζώννυμι:
-    code: 4
     P: unknown
     I: unknown
     F: περιζωσ
     FP: unknown
 περιτίθημι:
-    code: 4
-    P: περιτιθε
+    P: περιτιθε!
     I: unknown
     F: unknown
     FP: unknown
 πίμπλημι:
-    code: 4
     P: unknown
     I: unknown
     F: unknown
     FP: πλησθησ
 προστίθημι:
-    code: 4
     P: unknown
-    I: προσετιθε
+    I: προσετιθε!
     F: unknown
     FP: προστεθησ
 ῥήγνυμι:
-    code: 4
-    P: ῥηγνυ/ῥησσ
+    P: ῥηγνυ!/ῥησσ
     I: unknown
     F: ῥηξ
     FP: unknown
 σβέννυμι:
-    code: 4
-    P: σβεννυ
+    P: σβεννυ!
     I: unknown
     F: σβεσ
     FP: unknown
@@ -5496,128 +5454,107 @@
     F: unknown
     FP: unknown
 σύμφημι:
-    code: 4
-    P: συμφε
+    P: συμφε!
     I: unknown
     F: unknown
     FP: unknown
 συνίημι:
-    code: 4
-    P: συνι/συνια
+    P: συνι/συνια!
     I: unknown
     F: συνησ
     FP: unknown
 συνίστημι:
-    code: 4
-    P: συνιστα/συνισταν
+    P: συνιστα!/συνισταν
     I: unknown
     F: unknown
     FP: unknown
 ὑποδείκνυμι:
-    code: 4
     P: unknown
     I: unknown
     F: ὑποδειξ
     FP: unknown
 ἀνάκειμαι:
-    code: 5
     P: unknown
-    I: ἀνεκει
+    I: ἀνεκει!
     F: unknown
     FP: unknown
 ἀντίκειμαι:
-    code: 5
-    P: ἀντικει
+    P: ἀντικει!
     I: unknown
     F: unknown
     FP: unknown
 ἀπόκειμαι:
-    code: 5
-    P: ἀποκει
+    P: ἀποκει!
     I: unknown
     F: unknown
     FP: unknown
 ἀφίσταμαι:
-    code: 5
-    P: ἀφιστα
-    I: ἀφιστα
+    P: ἀφιστα!
+    I: ἀφιστα!
     F: ἀποστησ
     FP: unknown
 διατίθεμαι:
-    code: 5
-    P: διατιθε
+    P: διατιθε!
     I: unknown
     F: διαθησ
     FP: unknown
 δύναμαι:
-    code: 5
-    P: δυνα
-    I: ἐδυνα/ἠδυνα
+    P: δυνα!
+    I: ἐδυνα!/ἠδυνα!
     F: δυνησ
     FP: unknown
 ἐπανίσταμαι:
-    code: 5
     P: unknown
     I: unknown
     F: ἐπαναστησ
     FP: unknown
 ἐπίκειμαι:
-    code: 5
-    P: ἐπικει
-    I: ἐπεκει
+    P: ἐπικει!
+    I: ἐπεκει!
     F: unknown
     FP: unknown
 ἐπίσταμαι:
-    code: 5
-    P: ἐπιστα
+    P: ἐπιστα!
     I: unknown
     F: unknown
     FP: unknown
 κάθημαι:
-    code: 5
-    P: καθη
-    I: ἐκαθη
+    P: καθη!
+    I: ἐκαθη!
     F: καθησ
     FP: unknown
 κατάκειμαι:
-    code: 5
-    P: κατακει
-    I: κατεκει
+    P: κατακει!
+    I: κατεκει!
     F: unknown
     FP: unknown
 κεῖμαι:
-    code: 5
-    P: κει
-    I: ἐκει
+    P: κει!
+    I: ἐκει!
     F: unknown
     FP: unknown
 οἶμαι:
-    code: 5
-    P: οἰ
+    P: οἰ!
     I: unknown
     F: unknown
     FP: unknown
 παράκειμαι:
-    code: 5
-    P: παρακει
+    P: παρακει!
     I: unknown
     F: unknown
     FP: unknown
 περίκειμαι:
-    code: 5
-    P: περικει
+    P: περικει!
     I: unknown
     F: unknown
     FP: unknown
 πρόκειμαι:
-    code: 5
-    P: προκει
+    P: προκει!
     I: unknown
     F: unknown
     FP: unknown
 συνανάκειμαι:
-    code: 5
     P: unknown
-    I: συνανεκει
+    I: συνανεκει!
     F: unknown
     FP: unknown
