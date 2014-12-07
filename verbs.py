@@ -1,27 +1,28 @@
 from accentuation import recessive
 from endings import PRIMARY_ACTIVE, PRIMARY_MIDDLE, SECONDARY_ACTIVE, SECONDARY_MIDDLE
-from endings import PRIMARY_ACTIVE_MI, PRIMARY_MIDDLE_MI, SECONDARY_ACTIVE_MI, SECONDARY_MIDDLE_MI
 from utils import remove, has_accent, remove_length
 
 
 def ENDINGS(paradigm):
 
-    def forward(stem, pn):
-        if stem is None:
-            return []
-
+    def forward(stems, pn):
         forms = []
-        for ending, stem_ending in paradigm[pn]:
-            stem2, stem_ending = (stem[:-len(stem_ending)], remove(stem_ending)) if stem_ending else (stem, "")
-            if stem.endswith(stem_ending):
-                forms.append(stem2 + ending)
+
+        for stem in stems:
+            for ending, stem_ending in paradigm[pn]:
+                stem2, stem_ending = (stem[:-len(stem_ending)], remove(stem_ending)) if stem_ending else (stem, "")
+                if stem.endswith(stem_ending):
+                    forms.append(stem2 + ending)
+
         return forms
 
     def reverse(form, pn):
+        # print("@1", form, pn)
         stems = []
         if pn in paradigm:
             endings = paradigm[pn]
             for ending, stem_ending in endings:
+                # print("@2", ending, stem_ending)
                 if form.endswith(remove_length(ending)):
                     stems.append(form[:-len(ending)] + (stem_ending if stem_ending else ""))
 
@@ -38,20 +39,15 @@ primary_middle, rev_primary_middle = ENDINGS(PRIMARY_MIDDLE)
 secondary_active, rev_secondary_active = ENDINGS(SECONDARY_ACTIVE)
 secondary_middle, rev_secondary_middle = ENDINGS(SECONDARY_MIDDLE)
 
-primary_active_mi, rev_primary_active_mi = ENDINGS(PRIMARY_ACTIVE_MI)
-primary_middle_mi, rev_primary_middle_mi = ENDINGS(PRIMARY_MIDDLE_MI)
-secondary_active_mi, rev_secondary_active_mi = ENDINGS(SECONDARY_ACTIVE_MI)
-secondary_middle_mi, rev_secondary_middle_mi = ENDINGS(SECONDARY_MIDDLE_MI)
-
 
 def PART(stem_key):
 
     def forward(verb):
-        stem = verb.lexeme[stem_key]
-        if stem != "unknown":
-            return stem
+        stems = verb.lexeme[stem_key]
+        if stems != "unknown":
+            return stems.split("/")
         else:
-            return None
+            return []
 
     def reverse(stem):
         return stem_key, stem
@@ -65,7 +61,7 @@ future, rev_future = PART("F")
 future_passive, rev_future_passive = PART("FP")
 
 
-class Verb1:
+class Verb:
 
     def __init__(self, lexeme):
         self.lexeme = lexeme
@@ -85,19 +81,6 @@ class Verb1:
     def rev_FAI(self, form, pn): return rev_future(rev_primary_active(form, pn))
     def rev_FMI(self, form, pn): return rev_future(rev_primary_middle(form, pn))
     def rev_FPI(self, form, pn): return rev_future_passive(rev_primary_middle(form, pn))
-
-
-class Verb2(Verb1):
-
-    def PAI(self, pn): return primary_active_mi(present(self), pn)
-    def PMI(self, pn): return primary_middle_mi(present(self), pn)
-    def IAI(self, pn): return secondary_active_mi(imperfect(self), pn)
-    def IMI(self, pn): return secondary_middle_mi(imperfect(self), pn)
-
-    def rev_PAI(self, form, pn): return rev_present(rev_primary_active_mi(form, pn))
-    def rev_PMI(self, form, pn): return rev_present(rev_primary_middle_mi(form, pn))
-    def rev_IAI(self, form, pn): return rev_imperfect(rev_secondary_active_mi(form, pn))
-    def rev_IMI(self, form, pn): return rev_imperfect(rev_secondary_middle_mi(form, pn))
 
 
 def conditional_recessive(word):

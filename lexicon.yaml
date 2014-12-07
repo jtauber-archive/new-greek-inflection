@@ -162,7 +162,7 @@
     FP: unknown
 ἀμφιάζω:
     code: 1
-    P: ἀμφιαζ
+    P: ἀμφιαζ/ἀμφιεζ
     I: unknown
     F: unknown
     FP: unknown
@@ -316,9 +316,10 @@
     F: ἀνεξ
     FP: unknown
 ἀνήκω:
+    components: ἀνα+ἡκω
     code: 1
     P: ἀνηκ
-    I: unknown
+    I: ἀνῆκ
     F: unknown
     FP: unknown
 ἀνθομολογέομαι:
@@ -449,8 +450,9 @@
     FP: unknown
 ἀπέχω:
     code: 1
+    components: ἀπό+ἔχω
     P: ἀπεχ
-    I: unknown
+    I: ἀπεῖχ
     F: unknown
     FP: unknown
 ἀπιστέω:
@@ -517,13 +519,13 @@
     FP: ἀποκριθησ
 ἀποκτείνω:
     code: 1
-    P: ἀποκτειν
+    P: ἀποκτειν/ἀποκτενν
     I: unknown
     F: ἀποκτεν#
     FP: unknown
 ἀποκυέω:
     code: 2
-    P: ἀποκυε
+    P: ἀποκυ/ἀποκυε
     I: unknown
     F: unknown
     FP: unknown
@@ -758,9 +760,10 @@
     FP: unknown
 ἀφορίζω:
     code: 1
+    components: ἀπό+ὁρίζω
     P: ἀφοριζ
     I: ἀφωριζ
-    F: unknown
+    F: ἀφορισ/ἀφορι#
     FP: unknown
 ἀφρίζω:
     code: 1
@@ -796,7 +799,7 @@
     code: 1
     P: βασιλευ
     I: unknown
-    F: unknown
+    F: βασιλευσ
     FP: unknown
 βαστάζω:
     code: 1
@@ -1434,6 +1437,11 @@
     I: unknown
     F: ἐδαφι#
     FP: unknown
+εἰμί:
+    P: unknown
+    I: ἠ
+    F: ἐσ
+    FP: unknown
 εἰσακούω:
     code: 1
     P: εἰσακου
@@ -1445,6 +1453,11 @@
     P: εἰσδεχ
     I: unknown
     F: εἰσδεξ
+    FP: unknown
+εἴσειμι:
+    P: εἰσι  # @@@
+    I: εἰσῃε  # @@@
+    F: unknown
     FP: unknown
 εἰσέρχομαι:
     code: 3
@@ -1624,7 +1637,7 @@
     code: 2
     P: ἐκχε
     I: ἐξεχυνν
-    F: unknown
+    F: ἐκχε#
     FP: ἐκχυθησ
 ἐλαύνω:
     code: 1
@@ -1634,7 +1647,7 @@
     FP: unknown
 ἐλεάω:
     code: 2
-    P: ἐλεα
+    P: ἐλεα/ἐλε#  # @@@
     I: unknown
     F: ἐλεησ
     FP: ἐλεηθησ
@@ -1766,8 +1779,9 @@
     FP: ἐνευλογηθησ
 ἐνέχω:
     code: 1
+    components: ἐν+ἔχω
     P: ἐνεχ
-    I: unknown
+    I: ἐνεῖχ
     F: unknown
     FP: unknown
 ἐνθυμέομαι:
@@ -1854,6 +1868,11 @@
     P: ἐξεγειρ
     I: unknown
     F: ἐξεγερ#
+    FP: unknown
+ἔξειμι:
+    P: unknown
+    I: ἐξῃε
+    F: unknown
     FP: unknown
 ἐξέρχομαι:
     code: 3
@@ -1954,8 +1973,9 @@
     FP: unknown
 ἐπέχω:
     code: 1
+    components: ἐπί+ἐχω
     P: ἐπεχ
-    I: unknown
+    I: ἐπεῖχ
     F: unknown
     FP: unknown
 ἐπιβάλλω:
@@ -2219,7 +2239,7 @@
 ἐρωτάω:
     code: 2
     P: ἐρωτα
-    I: ἠρωτα
+    I: ἠρωτα/ἠρωτο  # @@@
     F: ἐρωτησ
     FP: unknown
 ἐσθίω:
@@ -2261,7 +2281,7 @@
 εὐκαιρέω:
     code: 2
     P: εὐκαιρε
-    I: ηὐκαιρε
+    I: εὐκαιρε/ηὐκαιρε
     F: unknown
     FP: unknown
 εὐλογέω:
@@ -2285,7 +2305,7 @@
 εὑρίσκω:
     code: 1
     P: εὑρισκ
-    I: unknown
+    I: εὑρισκ/ηὑρισκ
     F: εὑρησ
     FP: εὑρεθησ
 εὐσεβέω:
@@ -2320,8 +2340,8 @@
     FP: unknown
 ζάω:
     code: 2
-    P: ζα
-    I: ἐζα
+    P: ζα/ζη
+    I: ἐζα/ἐζῆ
     F: ζησ
     FP: unknown
 ζηλόω:
@@ -2494,8 +2514,8 @@
     FP: unknown
 ἵστημι:
     code: 4
-    P: ἱστα
-    I: ἱστα
+    P: ἱστα/ἱσταν
+    I: ἱστα/ἐστηκ
     F: στησ
     FP: σταθησ
 ἰσχύω:
@@ -2536,8 +2556,9 @@
     FP: unknown
 καθήκω:
     code: 1
+    components: κατά+ἥκω
     P: καθηκ
-    I: unknown
+    I: καθῆκ
     F: unknown
     FP: unknown
 καθίζω:
@@ -2639,10 +2660,11 @@
     FP: καταισχυνθησ
 κατακαίω:
     code: 1
+    components: κατά+καίω
     P: κατακαι
     I: κατεκαι
     F: κατακαυσ
-    FP: unknown
+    FP: κατακαησ/κατακαυθησ  # @@@
 κατακαλύπτομαι:
     code: 3
     P: κατακαλυπτ
@@ -2789,8 +2811,9 @@
     FP: unknown
 κατέχω:
     code: 1
+    components: κατά+ἔχω
     P: κατεχ
-    I: κατειχ
+    I: κατειχ/κατεῖχ
     F: unknown
     FP: unknown
 κατηγορέω:
@@ -2929,7 +2952,7 @@
     code: 1
     P: κομιζ
     I: unknown
-    F: κομισ
+    F: κομισ/κομι#
     FP: unknown
 κοπιάω:
     code: 2
@@ -2983,7 +3006,7 @@
     code: 1
     P: κριν
     I: ἐκριν
-    F: κριν#
+    F: κριν/κριν#
     FP: κριθησ
 κρούω:
     code: 1
@@ -3186,7 +3209,7 @@
 μέλλω:
     code: 1
     P: μελλ
-    I: ἐμελλ
+    I: ἐμελλ/ἠμελλ
     F: μελλησ
     FP: unknown
 μέμφομαι:
@@ -3646,6 +3669,12 @@
     I: unknown
     F: παραχειμασ
     FP: unknown
+πάρειμι:
+    code: 4
+    P: παρεσ
+    I: παρῆ
+    F: παρέσ
+    FP: unknown
 παρεισάγω:
     code: 1
     P: παρεισαγ
@@ -3666,8 +3695,9 @@
     FP: unknown
 παρέχω:
     code: 1
+    components: παρά+ἔχω
     P: παρεχ
-    I: παρειχ
+    I: παρειχ/παρεῖχ
     F: παρεξ
     FP: unknown
 παροικέω:
@@ -3762,8 +3792,9 @@
     FP: unknown
 περιάγω:
     code: 1
+    components: περί+ἀγω
     P: περιαγ
-    I: unknown
+    I: περιῆγ
     F: unknown
     FP: unknown
 περιαιρέω:
@@ -3986,8 +4017,9 @@
     FP: unknown
 προάγω:
     code: 1
+    components: πρό+ἄγω
     P: προαγ
-    I: unknown
+    I: προῆγ
     F: προαξ
     FP: unknown
 προέρχομαι:
@@ -4073,8 +4105,9 @@
     FP: unknown
 προσέχω:
     code: 1
+    components: πρός+ἔχω
     P: προσεχ
-    I: unknown
+    I: προσεῖχ
     F: unknown
     FP: unknown
 προσκαλέομαι:
@@ -4157,8 +4190,9 @@
     FP: unknown
 προϋπάρχω:
     code: 1
+    components: πρό+ὑπό+ἄρχω
     P: προϋπαρχ
-    I: unknown
+    I: προϋπῆρχ
     F: unknown
     FP: unknown
 προφέρω:
@@ -4433,8 +4467,8 @@
     FP: unknown
 συγχέω:
     code: 2
-    P: συγχε
-    I: unknown
+    P: συγχε/συγχυνν
+    I: συνεχε/συνεχυνν
     F: unknown
     FP: unknown
 συγχράομαι:
@@ -4587,6 +4621,12 @@
     I: unknown
     F: unknown
     FP: unknown
+σύνειμι:
+    code: 4
+    P: unknown
+    I: συνῆ
+    F: unknown
+    FP: unknown
 συνέπομαι:
     code: 3
     P: συνεπ
@@ -4607,8 +4647,9 @@
     FP: unknown
 συνεσθίω:
     code: 1
+    components: σύν+ἐσθίω
     P: συνεσθι
-    I: unknown
+    I: συνησθι
     F: unknown
     FP: unknown
 συνευδοκέω:
@@ -4853,8 +4894,9 @@
     FP: unknown
 ὑπάγω:
     code: 1
+    components: ὑπό+ἄγω
     P: ὑπαγ
-    I: unknown
+    I: ὑπῆγ
     F: unknown
     FP: unknown
 ὑπακούω:
@@ -4865,8 +4907,9 @@
     FP: unknown
 ὑπάρχω:
     code: 1
+    components: ὑπό+ἄρχω
     P: ὑπαρχ
-    I: unknown
+    I: ὑπῆρχ
     F: unknown
     FP: unknown
 ὑπεραυξάνω:
@@ -5006,6 +5049,12 @@
     P: φευγ
     I: unknown
     F: φευξ
+    FP: unknown
+φημί:
+    code: 4
+    P: φα
+    I: ἐφα
+    F: unknown
     FP: unknown
 φθείρω:
     code: 1
@@ -5288,18 +5337,18 @@
     code: 4
     P: ἀπολλυ
     I: ἀπωλλυ
-    F: ἀπολ#
+    F: ἀπολ#/ἀπολεσ
     FP: unknown
 ἀφίημι:
     code: 4
-    P: ἀφιε
-    I: unknown
+    P: ἀφε/ἀφι/ἀφιε  # @@@
+    I: ἠφι
     F: ἀφησ
     FP: ἀφεθησ
 διαδίδωμι:
     code: 4
     P: διαδιδο
-    I: διεδιδο
+    I: διεδιδο/διεδιδ
     F: unknown
     FP: unknown
 διαρρήγνυμι:
@@ -5389,7 +5438,7 @@
 παραδίδωμι:
     code: 4
     P: παραδιδο
-    I: παρεδιδο
+    I: παρεδιδο/παρεδιδ
     F: παραδωσ
     FP: παραδοθησ
 παρατίθημι:
@@ -5400,7 +5449,7 @@
     FP: unknown
 παρίστημι:
     code: 4
-    P: unknown
+    P: παρισταν
     I: unknown
     F: παραστησ
     FP: unknown
@@ -5430,7 +5479,7 @@
     FP: προστεθησ
 ῥήγνυμι:
     code: 4
-    P: ῥηγνυ
+    P: ῥηγνυ/ῥησσ
     I: unknown
     F: ῥηξ
     FP: unknown
@@ -5453,14 +5502,14 @@
     F: unknown
     FP: unknown
 συνίημι:
-    code: 1
-    P: unknown
+    code: 4
+    P: συνι/συνια
     I: unknown
     F: συνησ
     FP: unknown
 συνίστημι:
     code: 4
-    P: συνιστα
+    P: συνιστα/συνισταν
     I: unknown
     F: unknown
     FP: unknown
@@ -5503,7 +5552,7 @@
 δύναμαι:
     code: 5
     P: δυνα
-    I: ἐδυνα
+    I: ἐδυνα/ἠδυνα
     F: δυνησ
     FP: unknown
 ἐπανίσταμαι:
