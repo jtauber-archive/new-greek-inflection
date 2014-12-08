@@ -86,7 +86,7 @@ future_passive, rev_future_passive = PART("FP")
 aorist, rev_aorist = PART("A")
 aorist_passive, rev_aorist_passive = PART("AP")
 aorist_infinitive, rev_aorist_infinitive = PART("AN")
-aorist_passive_infinitive, rev_passive_aorist_infinitive = PART("APN")
+aorist_passive_infinitive, rev_aorist_passive_infinitive = PART("APN")
 
 
 class Verb:
