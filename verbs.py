@@ -1,3 +1,5 @@
+import re
+
 from accentuation import recessive
 from endings import PRIMARY_ACTIVE, PRIMARY_MIDDLE, SECONDARY_ACTIVE, SECONDARY_MIDDLE
 from endings import ACTIVE_SUBJUNCTIVE, MIDDLE_SUBJUNCTIVE
@@ -180,6 +182,10 @@ def calculate_form(lexeme, parse):
         result = [conditional_recessive(x) for x in result]
     else:
         result = conditional_recessive(result)
+
+    result = [re.sub(r"ά~ε", "ῆ", r) for r in result]
+    result = [re.sub(r"ε~έ", "εί", r) for r in result]
+    result = [re.sub(r"έ~ε", "εῖ", r) for r in result]
     return result
 
 
