@@ -1,35 +1,49 @@
+ἀγαθοεργέω:
+    P: ἀγαθοεργε
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀγαθοποιέω:
+    P: ἀγαθοποιε
+    I: unknown
+    F: unknown
+    FP: unknown
 ἀγαλλιάω:
-    code: 2
     P: ἀγαλλια
     I: unknown
     F: unknown
     FP: unknown
+ἀγανακτέω:
+    P: ἀγανακτε
+    I: unknown
+    F: unknown
+    FP: unknown
 ἀγαπάω:
-    code: 2
     P: ἀγαπα
     I: ἠγαπα
     F: ἀγαπησ
     FP: ἀγαπηθησ
+ἄγε:
+    P: ἀγ
+    I: unknown
+    F: unknown
+    FP: unknown
 ἀγγαρεύω:
-    code: 1
     P: ἀγγαρευ
     I: unknown
     F: ἀγγαρευσ
     FP: unknown
 ἁγιάζω:
-    code: 1
     P: ἁγιαζ
     I: unknown
     F: unknown
     FP: unknown
 ἁγνίζω:
-    code: 1
     P: ἁγνιζ
     I: unknown
     F: unknown
     FP: unknown
 ἀγνοέω:
-    code: 2
     P: ἀγνοε
     I: ἠγνοε
     F: unknown
@@ -41,25 +55,21 @@
     F: unknown
     FP: unknown
 ἀγρυπνέω:
-    code: 2
     P: ἀγρυπνε
     I: unknown
     F: unknown
     FP: unknown
 ἄγω:
-    code: 1
     P: ἀγ
     I: ἠγ
     F: ἀξ
     FP: ἀχθησ
 ἀγωνίζομαι:
-    code: 3
     P: ἀγωνιζ
     I: ἠγωνιζ
     F: unknown
     FP: unknown
 ἀδικέω:
-    code: 2
     P: ἀδικε
     I: unknown
     F: ἀδικησ
@@ -395,7 +405,6 @@
     F: unknown
     FP: unknown
 ἀξιόω:
-    code: 2
     P: ἀξιο
     I: ἠξιο
     F: unknown
@@ -940,55 +949,46 @@
     F: γνωσ
     FP: γνωσθησ
 γνωρίζω:
-    code: 1
     P: γνωριζ
     I: unknown
     F: γνωρισ
     FP: unknown
 γογγύζω:
-    code: 1
     P: γογγυζ
     I: ἐγογγυζ
     F: unknown
     FP: unknown
 γράφω:
-    code: 1
     P: γραφ
     I: unknown
     F: γραψ
     FP: unknown
 γυμνιτεύω:
-    code: 1
     P: γυμνιτευ
     I: unknown
     F: unknown
     FP: unknown
 δαιμονίζομαι:
-    code: 3
     P: δαιμονιζ
     I: unknown
     F: unknown
     FP: unknown
 δάκνω:
-    code: 1
     P: δακν
     I: unknown
     F: unknown
     FP: unknown
 δαμάζω:
-    code: 1
     P: δαμαζ
     I: unknown
     F: unknown
     FP: unknown
 δανείζω:
-    code: 1
-    P: δανειζ
+    P: δανειζ/δανιζ
     I: unknown
     F: unknown
     FP: unknown
 δαπανάω:
-    code: 2
     P: δαπανα
     I: unknown
     F: δαπανησ
@@ -1029,31 +1029,26 @@
     F: unknown
     FP: unknown
 δέχομαι:
-    code: 3
     P: δεχ
     I: unknown
     F: unknown
     FP: unknown
 δέω:
-    code: 2
     P: δε
     I: ἐδε
     F: δησ
     FP: unknown
 δηλόω:
-    code: 2
     P: δηλο
     I: ἐδηλο
     F: δηλωσ
     FP: unknown
 δημηγορέω:
-    code: 2
     P: δημηγορε
     I: ἐδημηγορε
     F: unknown
     FP: unknown
 διαβεβαιόομαι:
-    code: 3
     P: διαβεβαιο
     I: unknown
     F: unknown
@@ -1406,37 +1401,32 @@
     F: ἐγκαλεσ
     FP: unknown
 ἐγκαταλείπω:
-    code: 1
     P: ἐγκαταλειπ
     I: unknown
     F: ἐγκαταλειψ
     FP: unknown
 ἐγκεντρίζω:
-    code: 1
     P: ἐγκεντριζ
     I: unknown
     F: unknown
     FP: ἐγκεντρισθησ
 ἐγκόπτω:
-    code: 1
-    P: ἐνκοπτ
+    P: ἐγκοπτ  # /ἐνκοπτ
     I: ἐνεκοπτ
     F: unknown
     FP: unknown
 ἐγκρατεύομαι:
-    code: 3
     P: ἐγκρατευ
     I: unknown
     F: unknown
     FP: unknown
 ἐδαφίζω:
-    code: 1
     P: ἐδαφιζ
     I: unknown
     F: ἐδαφι#
     FP: unknown
 εἰμί:
-    P: unknown
+    P: ἐσ!/ἠ!
     I: ἠ!
     F: ἐσ/ἐσ!
     FP: unknown
@@ -1662,31 +1652,26 @@
     F: ἐλευθερωσ
     FP: ἐλευθερωθησ
 ἑλίσσω:
-    code: 1
     P: ἑλισσ
     I: unknown
     F: ἑλιξ
     FP: unknown
 ἕλκω:
-    code: 1
     P: ἑλκ
     I: εἱλκ
     F: ἑλκυσ
     FP: unknown
 ἐλλογέω:
-    code: 2
     P: ἐλλογε
     I: unknown
     F: unknown
     FP: unknown
 ἐλπίζω:
-    code: 1
     P: ἐλπιζ
     I: ἠλπιζ
     F: ἐλπι#
     FP: unknown
 ἐμβλέπω:
-    code: 1
     P: ἐμβλεπ
     I: ἐνεβλεπ
     F: unknown
@@ -1868,7 +1853,7 @@
     F: ἐξεγερ#
     FP: unknown
 ἔξειμι:
-    P: unknown
+    P: ἐξιε!
     I: ἐξῃε!
     F: unknown
     FP: unknown
@@ -1951,27 +1936,21 @@
     F: unknown
     FP: ἐπαναπαησ
 ἐπεισέρχομαι:
-    code: 3
     P: ἐπεισερχ
     I: unknown
     F: ἐπεισελευσ
     FP: unknown
 ἐπέρχομαι:
-    code: 3
     P: ἐπερχ
     I: unknown
     F: ἐπελευσ
     FP: unknown
 ἐπερωτάω:
-    code: 2
-    components: ἐπ+ερωτα
     P: ἐπερωτα
     I: ἐπηρωτα
     F: ἐπερωτησ
     FP: unknown
 ἐπέχω:
-    code: 1
-    components: ἐπί+ἐχω
     P: ἐπεχ
     I: ἐπεῖχ
     F: unknown
@@ -2229,25 +2208,21 @@
     F: unknown
     FP: unknown
 ἔρχομαι:
-    code: 3
     P: ἐρχ
     I: ἠρχ
     F: ἐλευσ
     FP: unknown
 ἐρωτάω:
-    code: 2
     P: ἐρωτα
     I: ἠρωτα/ἠρωτο  # @@@
     F: ἐρωτησ
     FP: unknown
 ἐσθίω:
-    code: 1
-    P: ἐσθι
+    P: ἐσθι/ἐσθ
     I: ἠσθι
     F: φαγ
     FP: unknown
 ἑτεροδιδασκαλέω:
-    code: 2
     P: ἑτεροδιδασκαλε
     I: unknown
     F: unknown
@@ -2319,25 +2294,21 @@
     F: unknown
     FP: unknown
 εὐχαριστέω:
-    code: 2
     P: εὐχαριστε
     I: unknown
     F: unknown
     FP: unknown
 εὔχομαι:
-    code: 3
     P: εὐχ
     I: ηὐχ
     F: unknown
     FP: unknown
 ἔχω:
-    code: 1
     P: ἐχ
     I: εἰχ
     F: ἑξ
     FP: unknown
 ζάω:
-    code: 2
     P: ζα/ζη
     I: ἐζα/ἐζη
     F: ζησ
@@ -2367,61 +2338,51 @@
     F: unknown
     FP: unknown
 ζῳογονέω:
-    code: 2
     P: ζῳογονε
     I: unknown
     F: ζῳογονησ
     FP: unknown
 ζῳοποιέω:
-    code: 2
     P: ζῳοποιε
     I: unknown
     F: ζῳοποιησ
     FP: ζῳοποιηθησ
 ἡγέομαι:
-    code: 3
     P: ἡγε
     I: unknown
     F: unknown
     FP: unknown
 ἥκω:
-    code: 1
     P: ἡκ
     I: ἡκ
     F: ἡξ
     FP: unknown
 θάλπω:
-    code: 1
     P: θαλπ
     I: unknown
     F: unknown
     FP: unknown
 θαμβέομαι:
-    code: 3
     P: θαμβε
     I: ἐθαμβε
     F: unknown
     FP: unknown
 θανατόω:
-    code: 2
     P: θανατο
     I: unknown
     F: θανατωσ
     FP: unknown
 θαρρέω:
-    code: 2
-    P: θαρρε
+    P: θαρρε/θαρσε
     I: unknown
     F: unknown
     FP: unknown
 θαυμάζω:
-    code: 1
     P: θαυμαζ
     I: ἐθαυμαζ
     F: unknown
     FP: θαυμασθησ
 θέλω:
-    code: 1
     P: θελ
     I: ἠθελ
     F: unknown
@@ -3449,31 +3410,26 @@
     F: οἰκοδομησ
     FP: οἰκοδομηθησ
 οἰκτίρω:
-    code: 1
     P: οἰκτιρ
     I: unknown
     F: οἰκτιρησ
     FP: unknown
 ὁμιλέω:
-    code: 2
     P: ὁμιλε
     I: ὡμιλε
     F: unknown
     FP: unknown
 ὀμνύω:
-    code: 1
-    P: ὀμνυ
+    P: ὀμνυ/ὀμνῡ!
     I: unknown
     F: unknown
     FP: unknown
 ὁμοιάζω:
-    code: 1
     P: ὁμοιαζ
     I: unknown
     F: unknown
     FP: unknown
 ὁμοιόω:
-    code: 2
     P: ὁμοιο
     I: unknown
     F: ὁμοιωσ
@@ -3594,25 +3550,21 @@
     F: unknown
     FP: unknown
 παραινέω:
-    code: 2
     P: παραινε
     I: παρῃνε
     F: unknown
     FP: unknown
 παραιτέομαι:
-    code: 3
     P: παραιτε
     I: παρῃτε
     F: unknown
     FP: unknown
 παρακαλέω:
-    code: 2
     P: παρακαλε
     I: παρεκαλε
     F: unknown
     FP: παρακληθησ
 παρακολουθέω:
-    code: 2
     P: παρακολουθε
     I: unknown
     F: παρακολουθησ
@@ -4317,31 +4269,26 @@
     F: σκηνωσ
     FP: unknown
 σκληρύνω:
-    code: 1
     P: σκληρυν
     I: ἐσκληρυν
     F: unknown
     FP: unknown
 σκορπίζω:
-    code: 1
     P: σκορπιζ
     I: unknown
     F: unknown
     FP: unknown
 σκοτίζομαι:
-    code: 3
     P: σκοτιζ
     I: unknown
     F: unknown
     FP: σκοτισθησ
 σκύλλω:
-    code: 1
     P: σκυλλ
     I: unknown
     F: unknown
     FP: unknown
 σπαράσσω:
-    code: 1
     P: σπαρασσ
     I: unknown
     F: unknown
@@ -4461,25 +4408,21 @@
     F: unknown
     FP: unknown
 συγχέω:
-    code: 2
     P: συγχε/συγχυνν
     I: συνεχε/συνεχυνν
     F: unknown
     FP: unknown
 συγχράομαι:
-    code: 3
     P: συγχρα
     I: unknown
     F: unknown
     FP: unknown
 συζάω:
-    code: 2
-    P: συζα
+    P: συζα/συζη
     I: unknown
     F: συζησ
     FP: unknown
 συζητέω:
-    code: 2
     P: συζητε
     I: συνεζητε
     F: unknown
@@ -5187,55 +5130,46 @@
     F: unknown
     FP: unknown
 χορηγέω:
-    code: 2
     P: χορηγε
     I: unknown
     F: χορηγησ
     FP: unknown
 χορτάζω:
-    code: 1
     P: χορταζ
     I: unknown
     F: unknown
     FP: χορτασθησ
 χράομαι:
-    code: 3
-    P: χρα
+    P: χρα/χρα!  # @@@
     I: ἐχρα
     F: unknown
     FP: unknown
 χρῄζω:
-    code: 1
     P: χρῃζ
     I: unknown
     F: unknown
     FP: unknown
 χρηματίζω:
-    code: 1
     P: χρηματιζ
     I: unknown
     F: χρηματισ
     FP: unknown
 χρηστεύομαι:
-    code: 3
     P: χρηστευ
     I: unknown
     F: unknown
     FP: unknown
 χρονίζω:
-    code: 1
     P: χρονιζ
     I: unknown
     F: χρονισ
     FP: unknown
 χωρέω:
-    code: 2
     P: χωρε
     I: unknown
-    F: unknown
+    F: χωρησ
     FP: unknown
 χωρίζω:
-    code: 1
     P: χωριζ
     I: unknown
     F: χωρισ
@@ -5358,7 +5292,7 @@
     F: ἐνστησ
     FP: unknown
 ἐξίστημι:
-    P: unknown
+    P: ἐξιστα!
     I: ἐξιστα!
     F: unknown
     FP: unknown
@@ -5459,7 +5393,7 @@
     F: unknown
     FP: unknown
 συνίημι:
-    P: συνι/συνια!
+    P: συνι/συνιε!
     I: unknown
     F: συνησ
     FP: unknown
@@ -5499,7 +5433,7 @@
     F: διαθησ
     FP: unknown
 δύναμαι:
-    P: δυνα!
+    P: δυν/δυνα!
     I: ἐδυνα!/ἠδυνα!
     F: δυνησ
     FP: unknown
@@ -5556,5 +5490,820 @@
 συνανάκειμαι:
     P: unknown
     I: συνανεκει!
+    F: unknown
+    FP: unknown
+ἀδημονέω:
+    P: ἀδημονε
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀθλέω:
+    P: ἀθλε
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀθυμέω:
+    P: ἀθυμε
+    I: unknown
+    F: unknown
+    FP: unknown
+αἰνέω:
+    P: αἰνε
+    I: unknown
+    F: unknown
+    FP: unknown
+ἁλιεύω:
+    P: ἁλιευ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀμελέω:
+    P: ἀμελε
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀνάγω:
+    P: ἀναγ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀναζωπυρέω:
+    P: ἀναζωπυρε
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀναθεματίζω:
+    P: ἀναθεματιζ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀνακαινίζω:
+    P: ἀνακαινιζ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀναλαμβάνω:
+    P: ἀναλαμβαν
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀναμένω:
+    P: ἀναμεν
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀνανεόω:
+    P: ἀνανεο
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀναφαίνω:
+    P: ἀναφαιν
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀναχωρέω:
+    P: ἀναχωρε
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀνδρίζομαι:
+    P: ἀνδριζ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀνετάζω:
+    P: ἀνεταζ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀνετάζω:
+    P: ἀνεταζ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀντιλαμβάνομαι:
+    P: ἀντιλαμβαν
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀντλέω:
+    P: ἀντλε
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀντοφθαλμέω:
+    P: ἀντοφθαλμε
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀπάγω:
+    P: ἀπαγ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀπαλλάσσω:
+    P: ἀπαλλασσ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀπατάω:
+    P: ἀπατα
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀπογράφω:
+    P: ἀπογραφ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀποπλανάω:
+    P: ἀποπλανα
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀποπλέω:
+    P: ἀποπλε
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀποσπάω:
+    P: ἀποσπα
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀποστοματίζω:
+    P: ἀποστοματιζ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀποτινάσσω:
+    P: ἀποτινασσ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀποτρέπομαι:
+    P: ἀποτρεπ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀποφέρω:
+    P: ἀποφερ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἀροτριάω:
+    P: ἀροτρια
+    I: unknown
+    F: unknown
+    FP: unknown
+αὐθεντέω:
+    P: αὐθεντε
+    I: unknown
+    F: unknown
+    FP: unknown
+βαρέω:
+    P: βαρε
+    I: unknown
+    F: unknown
+    FP: unknown
+βλαστάνω:
+    P: βλαστα
+    I: unknown
+    F: unknown
+    FP: unknown
+βοηθέω:
+    P: βοηθε
+    I: unknown
+    F: unknown
+    FP: unknown
+βόσκω:
+    P: βοσκ
+    I: unknown
+    F: unknown
+    FP: unknown
+βραβεύω:
+    P: βραβευ
+    I: unknown
+    F: unknown
+    FP: unknown
+γεμίζω:
+    P: γεμιζ
+    I: unknown
+    F: unknown
+    FP: unknown
+γρηγορέω:
+    P: γρηγορε
+    I: unknown
+    F: unknown
+    FP: unknown
+γυμνάζω:
+    P: γυμναζ
+    I: unknown
+    F: unknown
+    FP: unknown
+δειλιάω:
+    P: δειλια
+    I: unknown
+    F: unknown
+    FP: unknown
+διαγγέλλω:
+    P: διαγγελλ
+    I: unknown
+    F: unknown
+    FP: unknown
+διάγω:
+    P: διαγ
+    I: unknown
+    F: unknown
+    FP: unknown
+διαπεράω:
+    P: διαπερα
+    I: unknown
+    F: unknown
+    FP: unknown
+διαφημίζω:
+    P: διαφημιζ
+    I: unknown
+    F: unknown
+    FP: unknown
+διαχωρίζομαι:
+    P: διαχωριζ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐγκαυχάομαι:
+    P: ἐγκαυχα
+    I: unknown
+    F: unknown
+    FP: unknown
+εἰρηνεύω:
+    P: εἰρηνευ
+    I: unknown
+    F: unknown
+    FP: unknown
+εἰσάγω:
+    P: εἰσαγ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐκδιηγέομαι:
+    P: ἐκδιηγε
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐκθαμβέομαι:
+    P: ἐκθαμβε
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐκκλίνω:
+    P: ἐκκλιν
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐκφοβέω:
+    P: ἐκφοβε
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐκφύω:
+    P: ἐκφυ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐκχωρέω:
+    P: ἐκχωρε
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐλαττόω:
+    P: ἐλαττο
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐνοχλέω:
+    P: ἐνοχλε
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐνταφιάζω:
+    P: ἐνταφιαζ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἑορτάζω:
+    P: ἑορταζ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐπαγωνίζομαι:
+    P: ἐπαγωνιζ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐπαιτέω:
+    P: ἐπαιτε
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐπανέρχομαι:
+    P: ἐπανερχ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐπαρκέω:
+    P: ἐπαρκε
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐπιβαίνω:
+    P: ἐπιβαιν
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐπιβαρέω:
+    P: ἐπιβαρε
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐπιδύω:
+    P: ἐπιδυ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐπιλανθάνομαι:
+    P: ἐπιλανθαν
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐπιπίπτω:
+    P: ἐπιπιπτ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐπισπάομαι:
+    P: ἐπισπα
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐπιστομίζω:
+    P: ἐπιστομιζ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἐρεθίζω:
+    P: ἐρεθιζ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἑτοιμάζω:
+    P: ἑτοιμαζ
+    I: unknown
+    F: unknown
+    FP: unknown
+εὐψυχέω:
+    P: εὐψυχε
+    I: unknown
+    F: unknown
+    FP: unknown
+ζηλεύω:
+    P: ζηλευ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἡσυχάζω:
+    P: ἡσυχαζ
+    I: unknown
+    F: unknown
+    FP: unknown
+θαρσέω:
+    P: θαρσε
+    I: unknown
+    F: unknown
+    FP: unknown
+θροέομαι:
+    P: θροε
+    I: unknown
+    F: unknown
+    FP: unknown
+ἱερατεύω:
+    P: ἱερατευ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἱλάσκομαι:
+    P: ἱλασκ
+    I: unknown
+    F: unknown
+    FP: unknown
+ἰουδαΐζω:
+    P: ἰουδαϊζ
+    I: unknown
+    F: unknown
+    FP: unknown
+καταβραβεύω:
+    P: καταβραβευ
+    I: unknown
+    F: unknown
+    FP: unknown
+καταγινώσκω:
+    P: καταγινωσκ
+    I: unknown
+    F: unknown
+    FP: unknown
+καταθεματίζω:
+    P: καταθεματιζ
+    I: unknown
+    F: unknown
+    FP: unknown
+καταλέγω:
+    P: καταλεγ
+    I: unknown
+    F: unknown
+    FP: unknown
+καταπίπτω:
+    P: καταπιπτ
+    I: unknown
+    F: unknown
+    FP: unknown
+καταποντίζομαι:
+    P: καταποντιζ
+    I: unknown
+    F: unknown
+    FP: unknown
+κατασύρω:
+    P: κατασυρ
+    I: unknown
+    F: unknown
+    FP: unknown
+κλίνω:
+    P: κλιν
+    I: unknown
+    F: unknown
+    FP: unknown
+κολυμβάω:
+    P: κολυμβα
+    I: unknown
+    F: unknown
+    FP: unknown
+κομάω:
+    P: κομα
+    I: unknown
+    F: unknown
+    FP: unknown
+λακτίζω:
+    P: λακτιζ
+    I: unknown
+    F: unknown
+    FP: unknown
+λογομαχέω:
+    P: λογομαχε
+    I: unknown
+    F: unknown
+    FP: unknown
+λυτρόομαι:
+    P: λυτρο
+    I: unknown
+    F: unknown
+    FP: unknown
+μαστίζω:
+    P: μαστιζ
+    I: unknown
+    F: unknown
+    FP: unknown
+μεθίστημι:
+    P: μεθιστα!
+    I: unknown
+    F: unknown
+    FP: unknown
+μεθύσκομαι:
+    P: μεθυσκ
+    I: unknown
+    F: unknown
+    FP: unknown
+μέλει:
+    P: μελ
+    I: unknown
+    F: unknown
+    FP: unknown
+μελετάω:
+    P: μελετα
+    I: unknown
+    F: unknown
+    FP: unknown
+μεταδίδωμι:
+    P: μεταδιδο!
+    I: unknown
+    F: unknown
+    FP: unknown
+μετεωρίζομαι:
+    P: μετεωριζ
+    I: unknown
+    F: unknown
+    FP: unknown
+μετριοπαθέω:
+    P: μετριοπαθε
+    I: unknown
+    F: unknown
+    FP: unknown
+μηκύνομαι:
+    P: μηκυν
+    I: unknown
+    F: unknown
+    FP: unknown
+μιμέομαι:
+    P: μιμε
+    I: unknown
+    F: unknown
+    FP: unknown
+νηπιάζω:
+    P: νηπιαζ
+    I: unknown
+    F: unknown
+    FP: unknown
+νήφω:
+    P: νηφ
+    I: unknown
+    F: unknown
+    FP: unknown
+νουθετέω:
+    P: νουθετε
+    I: unknown
+    F: unknown
+    FP: unknown
+οἰκοδεσποτέω:
+    P: οἰκοδεσποτε
+    I: unknown
+    F: unknown
+    FP: unknown
+οἰκονομέω:
+    P: οἰκονομε
+    I: unknown
+    F: unknown
+    FP: unknown
+ὀλιγωρέω:
+    P: ὀλιγωρε
+    I: unknown
+    F: unknown
+    FP: unknown
+ὀργίζομαι:
+    P: ὀργιζ
+    I: unknown
+    F: unknown
+    FP: unknown
+παίζω:
+    P: παιζ
+    I: unknown
+    F: unknown
+    FP: unknown
+παραλογίζομαι:
+    P: παραλογιζ
+    I: unknown
+    F: unknown
+    FP: unknown
+παραμυθέομαι:
+    P: παραμυθε
+    I: unknown
+    F: unknown
+    FP: unknown
+παραφέρω:
+    P: παραφερ
+    I: unknown
+    F: unknown
+    FP: unknown
+παρενοχλέω:
+    P: παρενοχλε
+    I: unknown
+    F: unknown
+    FP: unknown
+πεζεύω:
+    P: πεζευ
+    I: unknown
+    F: unknown
+    FP: unknown
+πειθαρχέω:
+    P: πειθαρχε
+    I: unknown
+    F: unknown
+    FP: unknown
+περιΐστημι:
+    P: περιϊστα!
+    I: unknown
+    F: unknown
+    FP: unknown
+περικαλύπτω:
+    P: περικαλυπτ
+    I: unknown
+    F: unknown
+    FP: unknown
+περιμένω:
+    P: περιμεν
+    I: unknown
+    F: unknown
+    FP: unknown
+περιφέρω:
+    P: περιφερ
+    I: unknown
+    F: unknown
+    FP: unknown
+περιφρονέω:
+    P: περιφρονε
+    I: unknown
+    F: unknown
+    FP: unknown
+πέτομαι:
+    P: πετ
+    I: unknown
+    F: unknown
+    FP: unknown
+πίμπρημι:
+    P: πιμπρα!
+    I: unknown
+    F: unknown
+    FP: unknown
+πλεονεκτέω:
+    P: πλεονεκτε
+    I: unknown
+    F: unknown
+    FP: unknown
+πληροφορέω:
+    P: πληροφορε
+    I: unknown
+    F: unknown
+    FP: unknown
+πλουτέω:
+    P: πλουτε
+    I: unknown
+    F: unknown
+    FP: unknown
+πολιτεύομαι:
+    P: πολιτευ
+    I: unknown
+    F: unknown
+    FP: unknown
+πορνεύω:
+    P: πορνευ
+    I: unknown
+    F: unknown
+    FP: unknown
+προΐστημι:
+    P: προϊστα!
+    I: unknown
+    F: unknown
+    FP: unknown
+προμελετάω:
+    P: προμελετα
+    I: unknown
+    F: unknown
+    FP: unknown
+προμεριμνάω:
+    P: προμεριμνα
+    I: unknown
+    F: unknown
+    FP: unknown
+προσάγω:
+    P: προσαγ
+    I: unknown
+    F: unknown
+    FP: unknown
+προσλαμβάνομαι:
+    P: προσλαμβαν
+    I: unknown
+    F: unknown
+    FP: unknown
+ῥαβδίζω:
+    P: ῥαβδιζ
+    I: unknown
+    F: unknown
+    FP: unknown
+σαίνομαι:
+    P: σαιν
+    I: unknown
+    F: unknown
+    FP: unknown
+σημειόομαι:
+    P: σημειο
+    I: unknown
+    F: unknown
+    FP: unknown
+σιγάω:
+    P: σιγα
+    I: unknown
+    F: unknown
+    FP: unknown
+σκάπτω:
+    P: σκαπτ
+    I: unknown
+    F: unknown
+    FP: unknown
+σκοπέω:
+    P: σκοπε
+    I: unknown
+    F: unknown
+    FP: unknown
+στέλλομαι:
+    P: στελλ
+    I: unknown
+    F: unknown
+    FP: unknown
+συγκακουχέομαι:
+    P: συγκακουχε
+    I: unknown
+    F: unknown
+    FP: unknown
+συγκοινωνέω:
+    P: συγκοινωνε
+    I: unknown
+    F: unknown
+    FP: unknown
+συμπαραλαμβάνω:
+    P: συμπαραλαμβαν
+    I: unknown
+    F: unknown
+    FP: unknown
+συναναμίγνυμι:
+    P: συναναμιγνυ!
+    I: unknown
+    F: unknown
+    FP: unknown
+συναυξάνομαι:
+    P: συναυξαν
+    I: unknown
+    F: unknown
+    FP: unknown
+συσχηματίζομαι:
+    P: συσχηματιζ
+    I: unknown
+    F: unknown
+    FP: unknown
+σωφρονίζω:
+    P: σωφρονιζ
+    I: unknown
+    F: unknown
+    FP: unknown
+ταράσσω:
+    P: ταρασσ
+    I: unknown
+    F: unknown
+    FP: unknown
+τεκνογονέω:
+    P: τεκνογονε
+    I: unknown
+    F: unknown
+    FP: unknown
+ὑγιαίνω:
+    P: ὑγιαιν
+    I: unknown
+    F: unknown
+    FP: unknown
+ὑδροποτέω:
+    P: ὑδροποτε
+    I: unknown
+    F: unknown
+    FP: unknown
+ὑπείκω:
+    P: ὑπεικ
+    I: unknown
+    F: unknown
+    FP: unknown
+ὑπεραίρομαι:
+    P: ὑπεραιρ
+    I: unknown
+    F: unknown
+    FP: unknown
+ὑπερβάλλω:
+    P: ὑπερβαιν  # @@@
+    I: unknown
+    F: unknown
+    FP: unknown
+ὑπερφρονέω:
+    P: ὑπερφρονε
+    I: unknown
+    F: unknown
+    FP: unknown
+ὑπηρετέω:
+    P: ὑπηρετε
+    I: unknown
+    F: unknown
+    FP: unknown
+ὑψηλοφρονέω:
+    P: ὑψηλοφρονε
+    I: unknown
+    F: unknown
+    FP: unknown
+φθέγγομαι:
+    P: φθεγγ
+    I: unknown
+    F: unknown
+    FP: unknown
+φροντίζω:
+    P: φροντιζ
+    I: unknown
+    F: unknown
+    FP: unknown
+ψωμίζω:
+    P: ψωμιζ
+    I: unknown
     F: unknown
     FP: unknown
