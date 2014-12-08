@@ -67,8 +67,8 @@ middle_infinitive, rev_middle_infinitive = ENDINGS(MIDDLE_INFINITIVE)
 def PART(stem_key):
 
     def forward(verb):
-        stems = verb.lexeme[stem_key]
-        if stems != "unknown":
+        stems = verb.lexeme.get(stem_key)
+        if stems != "unknown" and stems is not None:
             return stems.split("/")
         else:
             return []
@@ -83,6 +83,10 @@ present, rev_present = PART("P")
 imperfect, rev_imperfect = PART("I")
 future, rev_future = PART("F")
 future_passive, rev_future_passive = PART("FP")
+aorist, rev_aorist = PART("A")
+aorist_passive, rev_aorist_passive = PART("AP")
+aorist_infinitive, rev_aorist_infinitive = PART("AN")
+aorist_passive_infinitive, rev_passive_aorist_infinitive = PART("APN")
 
 
 class Verb:
@@ -97,6 +101,10 @@ class Verb:
     def FAI(self, pn): return primary_active(future(self), pn)
     def FMI(self, pn): return primary_middle(future(self), pn)
     def FPI(self, pn): return primary_middle(future_passive(self), pn)
+
+    def AAI(self, pn): return secondary_active(aorist(self), pn)
+    def AMI(self, pn): return secondary_middle(aorist(self), pn)
+    def API(self, pn): return secondary_active(aorist_passive(self), pn)
 
     def PAS(self, pn): return active_subjunctive(present(self), pn)
     def PMS(self, pn): return middle_subjunctive(present(self), pn)
@@ -114,6 +122,9 @@ class Verb:
     def FAN(self): return active_infinitive(future(self))
     def FMN(self): return middle_infinitive(future(self))
     def FPN(self): return middle_infinitive(future_passive(self))
+    def AAN(self): return active_infinitive(aorist_infinitive(self))
+    def AMN(self): return middle_infinitive(aorist_infinitive(self))
+    def APN(self): return active_infinitive(aorist_passive_infinitive(self))
 
     def rev_PAI(self, form, pn): return rev_present(rev_primary_active(form, pn))
     def rev_PMI(self, form, pn): return rev_present(rev_primary_middle(form, pn))
@@ -122,6 +133,10 @@ class Verb:
     def rev_FAI(self, form, pn): return rev_future(rev_primary_active(form, pn))
     def rev_FMI(self, form, pn): return rev_future(rev_primary_middle(form, pn))
     def rev_FPI(self, form, pn): return rev_future_passive(rev_primary_middle(form, pn))
+
+    def rev_AAI(self, form, pn): return rev_aorist(rev_secondary_active(form, pn))
+    def rev_AMI(self, form, pn): return rev_aorist(rev_secondary_middle(form, pn))
+    def rev_API(self, form, pn): return rev_aorist_passive(rev_secondary_active(form, pn))
 
     def rev_PAS(self, form, pn): return rev_present(rev_active_subjunctive(form, pn))
     def rev_PMS(self, form, pn): return rev_present(rev_middle_subjunctive(form, pn))
@@ -139,6 +154,9 @@ class Verb:
     def rev_FAN(self, form): return rev_future(rev_active_infinitive(form))
     def rev_FMN(self, form): return rev_future(rev_middle_infinitive(form))
     def rev_FPN(self, form): return rev_future_passive(rev_middle_infinitive(form))
+    def rev_AAN(self, form): return rev_aorist_infinitive(rev_active_infinitive(form))
+    def rev_AMN(self, form): return rev_aorist_infinitive(rev_middle_infinitive(form))
+    def rev_APN(self, form): return rev_aorist_passive_infinitive(rev_active_infinitive(form))
 
 
 def conditional_recessive(word):
