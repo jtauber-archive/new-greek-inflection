@@ -227,7 +227,7 @@
     P: ἀναιρε
     I: ἀνειχ
     F: ἀνελε
-    A: ἀν~ειλ
+    A: ἀνειλ
     AN: ἀνελ
     AP: ἀνῃρεθη!
     APN: ἀναιρεθη!
@@ -372,7 +372,7 @@
 ἀπέρχομαι:
     P: ἀπερχ
     F: ἀπελευσ
-    A: ἀπα~ελθ
+    A: ἀπ~ηλθ
     AN: ἀπελθ
 ἀπέχω:
     P: ἀπεχ
@@ -568,24 +568,19 @@
     AN: ἀφελ
 ἀφανίζω:
     P: ἀφανιζ
-    I: unknown
-    F: unknown
-    FP: unknown
 ἀφορίζω:
     P: ἀφοριζ
     I: ἀφωριζ
     F: ἀφορισ/ἀφορι#
-    FP: unknown
+    A: ἀφωρισ
 ἀφρίζω:
     P: ἀφριζ
-    I: unknown
-    F: unknown
-    FP: unknown
 βάλλω:
     P: βαλλ
     I: ἐβαλλ
     F: βαλ#
     FP: βληθησ
+    A: ἐβαλ
 βαπτίζω:
     P: βαπτιζ
     I: ἐβαπτιζ
@@ -4372,6 +4367,8 @@
     F: ἀφησ
     FP: ἀφεθησ
     A: ἀφ~ηκ
+    AN: ἀφει
+    AP: ἀφεθη!
 διαδίδωμι:
     P: διαδιδο!
     I: διεδιδο/διεδιδ
@@ -4502,105 +4499,58 @@
     FP: unknown
 ἀνάκειμαι:
     I: ἀνεκει!
-    F: unknown
-    FP: unknown
 ἀντίκειμαι:
     P: ἀντικει!
-    I: unknown
-    F: unknown
-    FP: unknown
 ἀπόκειμαι:
     P: ἀποκει!
-    I: unknown
-    F: unknown
-    FP: unknown
 ἀφίσταμαι:
     P: ἀφιστα!
     I: ἀφιστα!
     F: ἀποστησ
-    FP: unknown
+    A: ἀπεστα!/ἀπεστησ
+    AN: ἀποστη!  # @@@
 διατίθεμαι:
     P: διατιθε!
-    I: unknown
     F: διαθησ
-    FP: unknown
 δύναμαι:
     P: δυν/δυνα!
     I: ἐδυνα!/ἠδυνα!
     F: δυνησ
-    FP: unknown
 ἐπανίσταμαι:
     F: ἐπαναστησ
-    FP: unknown
 ἐπίκειμαι:
     P: ἐπικει!
     I: ἐπεκει!
-    F: unknown
-    FP: unknown
 ἐπίσταμαι:
     P: ἐπιστα!
-    I: unknown
-    F: unknown
-    FP: unknown
 κάθημαι:
     P: καθη!
     I: ἐκαθη!
     F: καθησ
-    FP: unknown
 κατάκειμαι:
     P: κατακει!
     I: κατεκει!
-    F: unknown
-    FP: unknown
 κεῖμαι:
     P: κει!
     I: ἐκει!
-    F: unknown
-    FP: unknown
 οἶμαι:
     P: οἰ!
-    I: unknown
-    F: unknown
-    FP: unknown
 παράκειμαι:
     P: παρακει!
-    I: unknown
-    F: unknown
-    FP: unknown
 περίκειμαι:
     P: περικει!
-    I: unknown
-    F: unknown
-    FP: unknown
 πρόκειμαι:
     P: προκει!
-    I: unknown
-    F: unknown
-    FP: unknown
 συνανάκειμαι:
     I: συνανεκει!
-    F: unknown
-    FP: unknown
 ἀδημονέω:
     P: ἀδημονε
-    I: unknown
-    F: unknown
-    FP: unknown
 ἀθλέω:
     P: ἀθλε
-    I: unknown
-    F: unknown
-    FP: unknown
 ἀθυμέω:
     P: ἀθυμε
-    I: unknown
-    F: unknown
-    FP: unknown
 αἰνέω:
     P: αἰνε
-    I: unknown
-    F: unknown
-    FP: unknown
 ἁλιεύω:
     P: ἁλιευ
 ἀμελέω:
@@ -5292,7 +5242,7 @@
 ἀντικαθίστημι:
     A: ἀντικατεστη!
 ἀντιπαρέρχομαι:
-    A: ἀντιπαρα~ελθ
+    A: ἀντιπαρ~ηλθ
 ἀπάγχομαι:
     A: ἀπηγξ
 ἀπεῖπον:
@@ -5352,13 +5302,13 @@
 αὐλέω:
     A: ηὐλησ
 ἀφικνέομαι:
-    P: unknown
+    A: ἀφικ
 ἀφυπνόω:
-    P: unknown
+    A: ἀφυπνωσ
 ἀχρειόομαι:
-    P: unknown
+    AP: ἠχρεωθη!
 βαθύνω:
-    P: unknown
+    A: ἐβαθυν
 βασκαίνω:
     P: unknown
 βιόω:
