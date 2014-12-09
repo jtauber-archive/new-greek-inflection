@@ -227,7 +227,7 @@
     P: ἀναιρε
     I: ἀνειχ
     F: ἀνελε
-    A: ἀνε~ελ
+    A: ἀν~ειλ
     AN: ἀνελ
     AP: ἀνῃρεθη!
     APN: ἀναιρεθη!
@@ -446,171 +446,126 @@
 ἀπολογέομαι:
     P: ἀπολογε
     I: ἀπελογε
+    APN: ἀπολογηθη!
 ἀπολύω:
     P: ἀπολυ
     I: ἀπελυ
     F: ἀπολυσ
     FP: ἀπολυθησ
+    A: ἀπελυσ
+    AN: ἀπολυσ
+    AP: ἀπελυθη!
 ἀπομάσσομαι:
     P: ἀπομασσ
-    I: unknown
-    F: unknown
-    FP: unknown
 ἀπορέω:
     P: ἀπορε
     I: ἠπορε
-    F: unknown
-    FP: unknown
 ἀποστέλλω:
     P: ἀποστελλ
-    I: unknown
     F: ἀποστελ#
-    FP: unknown
+    A: ἀπεστειλ
+    AN: ἀποστειλ
+    AP: ἀπεσταλη!
 ἀποστερέω:
     P: ἀποστερε
-    I: unknown
-    F: unknown
-    FP: unknown
 ἀποστρέφω:
     P: ἀποστρεφ
-    I: unknown
     F: ἀποστρεψ
-    FP: unknown
+    AP: ἀπεστραφη!
 ἀποτάσσομαι:
     P: ἀποτασσ
-    I: unknown
-    F: unknown
-    FP: unknown
+    AN: ἀποταξ
 ἀποτελέω:
     P: ἀποτελε
-    I: unknown
-    F: unknown
-    FP: unknown
 ἀποτίνω:
     P: ἀποτιν
-    I: unknown
     F: ἀποτισ
-    FP: unknown
 ἀποτολμάω:
     P: ἀποτολμα
-    I: unknown
-    F: unknown
-    FP: unknown
 ἀποφθέγγομαι:
     P: ἀποφθεγγ
-    I: unknown
-    F: unknown
-    FP: unknown
+    A: ἀπεφθεγξ
 ἀποχωρέω:
     P: ἀποχωρε
-    I: unknown
-    F: unknown
-    FP: unknown
 ἅπτω:
     P: ἁπτ
-    I: unknown
-    F: unknown
-    FP: unknown
+    A: ἡψ
 ἀπωθέομαι:
     P: ἀπωθε
-    I: unknown
-    F: unknown
-    FP: unknown
+    A: ἀπωσ
 ἀργέω:
     P: ἀργε
-    I: unknown
-    F: unknown
-    FP: unknown
 ἀρέσκω:
     P: ἀρεσκ
     I: ἠρεσκ
-    F: unknown
-    FP: unknown
+    A: ἠρεσ
+    AN: ἀρεσ
 ἀρκέω:
     P: ἀρκε
-    I: unknown
-    F: unknown
     FP: ἀρκεσθησ
 ἀρνέομαι:
     P: ἀρνε
     I: ἠρνε
     F: ἀρνησ
-    FP: unknown
+    A: ἠρνησ
+    AN: ἀρνησ
 ἁρπάζω:
     P: ἁρπαζ
-    I: unknown
     F: ἁρπασ
     FP: ἁρπαγησ
+    A: ἡρπασ
+    AN: ἁρπασ
+    AP: ἡρπαγη!/ἡρπασθη!
 ἀρτύω:
     P: ἀρτυ
-    I: unknown
     F: ἀρτυσ
     FP: ἀρτυθησ
 ἄρχω:
     P: ἀρχ
     I: ἠρχ
     F: ἀρξ
-    FP: unknown
+    A: ἠρξ
+    AN: ἀρξ
 ἀσθενέω:
     P: ἀσθενε
     I: ἠσθενε
-    F: unknown
-    FP: unknown
+    A: ἠσθενησ
 ἀσκέω:
     P: ἀσκε
-    I: unknown
-    F: unknown
-    FP: unknown
 ἀσπάζομαι:
     P: ἀσπαζ
     I: ἠσπαζ
-    F: unknown
-    FP: unknown
+    A: ἠσπασ
 ἀστατέω:
     P: ἀστατε
-    I: unknown
-    F: unknown
-    FP: unknown
 ἀσχημονέω:
     P: ἀσχημονε
-    I: unknown
-    F: unknown
-    FP: unknown
 ἀτενίζω:
     P: ἀτενιζ
-    I: unknown
-    F: unknown
-    FP: unknown
+    AN: ἀτενισ
 ἀτιμάζω:
     P: ἀτιμαζ
-    I: unknown
-    F: unknown
-    FP: unknown
+    A: ἠτιμασ
+    APN: ἀτιμασθη!
 αὐλίζομαι:
     P: αὐλιζ
     I: ηὐλιζ
-    F: unknown
-    FP: unknown
+    AP: ηὐλισθη!
 αὐξάνω:
     P: αὐξαν
     I: ηὐξαν
     F: αὐξησ
-    FP: unknown
+    A: ηὐξησ
 αὔξω:
     P: αὐξ
-    I: unknown
-    F: unknown
-    FP: unknown
 αὐχέω:
     P: αὐχε
-    I: unknown
-    F: unknown
-    FP: unknown
 ἀφαιρέω:
     P: ἀφαιρε
-    I: unknown
     F: ἀφελε
     FP: ἀφαιρεθησ
+    A: ἀφειλ
+    AN: ἀφελ
 ἀφανίζω:
     P: ἀφανιζ
     I: unknown
@@ -4410,12 +4365,13 @@
     I: ἀπωλλυ!
     F: ἀπολ#/ἀπολεσ
     A: ἀπωλ/ἀπωλεσ
-    AN: ἀπολεσ
+    AN: ἀπολ/ἀπολεσ
 ἀφίημι:
     P: ἀφε/ἀφι/ἀφιε!
     I: ἠφι
     F: ἀφησ
     FP: ἀφεθησ
+    A: ἀφ~ηκ
 διαδίδωμι:
     P: διαδιδο!
     I: διεδιδο/διεδιδ
@@ -4702,10 +4658,14 @@
     AN: ἀπογραψ
 ἀποπλανάω:
     P: ἀποπλανα
+    AP: ἀπεπλανηθη!
 ἀποπλέω:
     P: ἀποπλε
+    A: ἀπεπλευσ
 ἀποσπάω:
     P: ἀποσπα
+    A: ἀπεσπασ/ἀπησπασ
+    AP: ἀπεσπασθη!
 ἀποστοματίζω:
     P: ἀποστοματιζ
 ἀποτινάσσω:
@@ -4714,6 +4674,9 @@
     P: ἀποτρεπ
 ἀποφέρω:
     P: ἀποφερ
+    A: ἀπηνεγκ
+    AN: ἀπενεγκ
+    APN: ἀπενεχθη!
 ἀροτριάω:
     P: ἀροτρια
 αὐθεντέω:
@@ -5353,37 +5316,41 @@
 ἀποκρύπτω:
     A: ἀπεκρυψ
 ἀπολούομαι:
-    P: unknown
+    A: ἀπελουσ
 ἀπονίπτω:
-    P: unknown
+    A: ἀπενιψ
 ἀποπίπτω:
-    P: unknown
+    A: ἀπεπεσ
 ἀποπνίγω:
-    P: unknown
+    A: ἀπεπνιξ
+    AP: ἀπεπνιγη!
 ἀποστεγάζω:
-    P: unknown
+    A: ἀπεστεγασ
 ἀποτίθημι:
-    P: unknown
+    A: ἀπεθε!
+    AN: ἀποθε!
 ἀποχωρίζομαι:
-    P: unknown
+    AP: ἀπεχωρισθη!
+    APN: ἀποχωρισθη!
 ἀριθμέω:
-    P: unknown
+    AN: ἀριθμησ
 ἀριστάω:
-    P: unknown
+    A: ἠριστησ
 ἁρμόζομαι:
-    P: unknown
+    A: ἡρμοσ
 ἀσεβέω:
-    P: unknown
+    A: ἠσεβησ
 ἀστοχέω:
-    P: unknown
+    A: ἠστοχησ
 ἀσφαλίζω:
-    P: unknown
+    A: ἠσφαλισ
+    APN: ἀσφαλισθη!
 ἀτακτέω:
-    P: unknown
+    A: ἠτακτησ
 αὐγάζω:
-    P: unknown
+    AN: αὐγασ
 αὐλέω:
-    P: unknown
+    A: ηὐλησ
 ἀφικνέομαι:
     P: unknown
 ἀφυπνόω:

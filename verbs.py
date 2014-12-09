@@ -183,9 +183,8 @@ def calculate_form(lexeme, parse):
     else:
         result = conditional_recessive(result)
 
-    result = [re.sub(r"ά~ε", "ῆ", r) for r in result]
-    result = [re.sub(r"ε~έ", "εί", r) for r in result]
-    result = [re.sub(r"έ~ε", "εῖ", r) for r in result]
+    result = [re.sub(r"~", "", r) for r in result]
+
     return result
 
 
