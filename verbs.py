@@ -196,4 +196,4 @@ def calculate_part(lexeme, form, parse):
         tvm, pn = parse.split(".")
         stem_key, results = getattr(lexeme, "rev_" + tvm)(form, pn)
 
-    return stem_key, [remove(result) for result in results]
+    return stem_key, set(remove(result) for result in results)
