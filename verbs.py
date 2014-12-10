@@ -27,7 +27,7 @@ def ENDINGS(paradigm):
         return forms
 
     def reverse(form, pn=None):
-        stems = []
+        stems = set()
 
         if pn:
             if pn in paradigm:
@@ -38,8 +38,8 @@ def ENDINGS(paradigm):
             endings = paradigm
 
         for ending, stem_ending in endings:
-            if form.endswith(remove_length(ending)):
-                stems.append(form[:-len(ending)] + (stem_ending if stem_ending else ""))
+            if remove(form).endswith(remove(remove_length(ending))):
+                stems.add(form[:-len(ending)] + (stem_ending if stem_ending else ""))
 
         if stems:
             return stems

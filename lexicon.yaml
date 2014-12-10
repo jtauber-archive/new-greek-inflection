@@ -581,391 +581,289 @@
     F: βαλ#
     FP: βληθησ
     A: ἐβαλ
+    AN: βαλ
+    AP: ἐβληθη!
+    APN: βληθη!
 βαπτίζω:
     P: βαπτιζ
     I: ἐβαπτιζ
     F: βαπτισ
     FP: βαπτισθησ
+    A: ἐβαπτισ
+    AP: ἐβαπτισθη!
+    APN: βαπτισθη!
 βάπτω:
     P: βαπτ
-    I: unknown
     F: βαψ
-    FP: unknown
 βασανίζω:
     P: βασανιζ
     I: ἐβασανιζ
-    F: unknown
     FP: βασανισθησ
+    A: ἐβασανισ
+    AN: βασανισ
 βασιλεύω:
     P: βασιλευ
-    I: unknown
     F: βασιλευσ
-    FP: unknown
+    A: ἐβασιλευσ
+    AN: βασιλευσ
 βαστάζω:
     P: βασταζ
     I: ἐβασταζ
     F: βαστασ
-    FP: unknown
+    A: ἐβαστασ
+    AN: βαστασ
 βεβαιόω:
     P: βεβαιο
-    I: unknown
     F: βεβαιωσ
-    FP: unknown
+    AN: βεβαιωσ
+    AP: ἐβεβαιωθη!
 βεβηλόω:
     P: βεβηλο
-    I: unknown
-    F: unknown
-    FP: unknown
+    AN: βεβηλωσ
 βιάζω:
     P: βιαζ
-    I: unknown
-    F: unknown
-    FP: unknown
 βλασφημέω:
     P: βλασφημε
     I: ἐβλασφημε
-    F: unknown
     FP: βλασφημηθησ
+    A: ἐβλασφημησ
+    AN: βλασφημησ
 βλέπω:
     P: βλεπ
     I: ἐβλεπ
     F: βλεψ
-    FP: unknown
+    A: ἐβλεψ
 βουλεύομαι:
     P: βουλευ
     I: ἐβουλευ
     F: βουλευσ
-    FP: unknown
+    A: ἐβουλευσ
 βούλομαι:
     P: βουλ
     I: ἐβουλ
-    F: unknown
-    FP: unknown
+    AP: ἐβουληθη!
 βραδύνω:
     P: βραδυν
-    I: unknown
-    F: unknown
-    FP: unknown
 βρέχω:
     P: βρεχ
-    I: unknown
-    F: unknown
-    FP: unknown
+    A: ἐβρεξ
+    AN: βρεξ
 βρύχω:
     P: βρυχ
     I: ἐβρυχ
-    F: unknown
-    FP: unknown
 βρύω:
     P: βρυ
-    I: unknown
-    F: unknown
-    FP: unknown
 βυθίζω:
     P: βυθιζ
-    I: unknown
-    F: unknown
-    FP: unknown
 γαμέω:
     P: γαμε
     I: ἐγαμε
-    F: unknown
-    FP: unknown
+    A: ἐγαμησ/ἐγημ
+    AN: γαμησ
+    APN: γαμηθη!
 γαμίζω:
     P: γαμιζ
     I: ἐγαμιζ
-    F: unknown
-    FP: unknown
 γαμίσκω:
     P: γαμισκ
-    I: unknown
-    F: unknown
-    FP: unknown
 γελάω:
     P: γελα
-    I: unknown
     F: γελασ
-    FP: unknown
 γέμω:
     P: γεμ
-    I: unknown
-    F: unknown
-    FP: unknown
 γεννάω:
     P: γεννα
-    I: unknown
     F: γεννησ
-    FP: unknown
+    A: ἐγεννησ
+    AP: ἐγεννηθη!
+    APN: γεννηθη!
 γεύομαι:
     P: γευ
-    I: unknown
     F: γευσ
-    FP: unknown
+    A: ἐγευσ
+    AN: γευσ
 γεωργέω:
     P: γεωργε
-    I: unknown
-    F: unknown
-    FP: unknown
 γίνομαι:
     P: γιν
     I: ἐγιν
     F: γενησ
-    FP: unknown
+    A: ἐγεν
+    AN: γεν
+    AP: ἐγενηθη!
+    APN: γενηθη!
 γινώσκω:
     P: γινωσκ
     I: ἐγινωσκ
     F: γνωσ
     FP: γνωσθησ
+    A: ἐγνω!
+    AN: γνω!
+    AP: ἐγνωσθη!
 γνωρίζω:
     P: γνωριζ
     I: unknown
     F: γνωρισ
-    FP: unknown
+    A: ἐγνωρισ
+    AN: γνωρισ
+    AP: ἐγνωρισθη!
 γογγύζω:
     P: γογγυζ
     I: ἐγογγυζ
-    F: unknown
-    FP: unknown
+    A: ἐγογγυσ
 γράφω:
     P: γραφ
-    I: unknown
     F: γραψ
-    FP: unknown
+    A: ἐγραψ
+    AN: γρᾰψ
+    AP: ἐγραφη!
 γυμνιτεύω:
     P: γυμνιτευ
-    I: unknown
-    F: unknown
-    FP: unknown
 δαιμονίζομαι:
     P: δαιμονιζ
-    I: unknown
-    F: unknown
-    FP: unknown
 δάκνω:
     P: δακν
-    I: unknown
-    F: unknown
-    FP: unknown
 δαμάζω:
     P: δαμαζ
-    I: unknown
-    F: unknown
-    FP: unknown
+    AN: δαμασ
 δανείζω:
     P: δανειζ/δανιζ
-    I: unknown
-    F: unknown
-    FP: unknown
+    AN: δανισ
 δαπανάω:
     P: δαπανα
-    I: unknown
     F: δαπανησ
-    FP: unknown
 δείκνυμι:
     P: δεικνῡ/δεικνῡ!
     I: ἐδεικνῡ!
     F: δειξ
-    FP: unknown
+    A: ἐδειξ
+    AN: δειξ
 δειπνέω:
     P: δειπνε
-    I: unknown
     F: δειπνησ
-    FP: unknown
+    AN: δειπνησ
 δελεάζω:
     P: δελεαζ
-    I: unknown
-    F: unknown
-    FP: unknown
 δέομαι:
     P: δε
-    I: unknown
-    F: unknown
-    FP: unknown
 δέρω:
     P: δερ
-    I: unknown
-    F: unknown
     FP: δαρησ
+    A: ἐδειρ
 δεσμεύω:
     P: δεσμευ
     I: ἐδεσμευ
-    F: unknown
-    FP: unknown
 δέχομαι:
     P: δεχ
-    I: unknown
-    F: unknown
-    FP: unknown
+    A: ἐδεξ
+    AN: δεξ
 δέω:
     P: δε
     I: ἐδε
     F: δησ
-    FP: unknown
+    A: ἐδησ
+    AN: δησ
+    AP: ἐδεηθη!
+    APN: δεθη!
 δηλόω:
     P: δηλο
     I: ἐδηλο
     F: δηλωσ
-    FP: unknown
 δημηγορέω:
     P: δημηγορε
     I: ἐδημηγορε
-    F: unknown
-    FP: unknown
 διαβεβαιόομαι:
     P: διαβεβαιο
-    I: unknown
-    F: unknown
-    FP: unknown
 διαβλέπω:
     P: διαβλεπ
-    I: unknown
     F: διαβλεψ
-    FP: unknown
 διαγινώσκω:
     P: διαγινωσκ
-    I: unknown
     F: διαγνωσ
-    FP: unknown
 διαγογγύζω:
     P: διαγογγυζ
     I: διεγογγυζ
-    F: unknown
-    FP: unknown
 διακαθαρίζω:
     P: διακαθαριζ
-    I: unknown
     F: διακαθαρι#
-    FP: unknown
 διακατελέγχομαι:
     P: διακατελεγχ
     I: διακατηλεγχ
-    F: unknown
-    FP: unknown
 διακονέω:
     P: διακονε
     I: διηκονε
     F: διακονησ
-    FP: unknown
 διακούω:
     P: διακου
-    I: unknown
     F: διακουσ
-    FP: unknown
 διακρίνω:
     P: διακριν
     I: διεκριν
-    F: unknown
-    FP: unknown
 διακωλύω:
     P: διακωλυ
     I: διεκωλυ
-    F: unknown
-    FP: unknown
 διαλαλέω:
     P: διαλαλε
     I: διελαλε
-    F: unknown
-    FP: unknown
 διαλέγομαι:
     P: διαλεγ
     I: διελεγ
-    F: unknown
-    FP: unknown
 διαλογίζομαι:
     P: διαλογιζ
     I: διελογιζ
-    F: unknown
-    FP: unknown
 διαμαρτύρομαι:
     P: διαμαρτυρ
-    I: unknown
-    F: unknown
-    FP: unknown
 διαμάχομαι:
     P: διαμαχ
     I: διεμαχ
-    F: unknown
-    FP: unknown
 διαμένω:
     P: διαμεν
     I: διεμεν
-    F: unknown
-    FP: unknown
 διαμερίζω:
     P: διαμεριζ
     I: διεμεριζ
-    F: unknown
     FP: διαμερισθησ
 διανοίγω:
     P: διανοιγ
     I: διηνοιγ
-    F: unknown
-    FP: unknown
 διαπορεύομαι:
     P: διαπορευ
     I: διεπορευ
-    F: unknown
-    FP: unknown
 διαπορέω:
     P: διαπορε
     I: διηπορε
-    F: unknown
-    FP: unknown
 διαπρίομαι:
     P: διαπρι
     I: διεπρι
-    F: unknown
-    FP: unknown
 διαρπάζω:
     P: διαρπαζ
-    I: unknown
     F: διαρπασ
-    FP: unknown
 διασκορπίζω:
     P: διασκορπιζ
-    I: unknown
-    F: unknown
     FP: διασκορπισθησ
 διαστέλλομαι:
     P: διαστελλ
     I: διεστελλ
-    F: unknown
-    FP: unknown
 διατάσσω:
     P: διατασσ
-    I: unknown
     F: διαταξ
-    FP: unknown
 διατελέω:
     P: διατελε
-    I: unknown
-    F: unknown
-    FP: unknown
 διατηρέω:
     P: διατηρε
     I: διετηρε
-    F: unknown
-    FP: unknown
 διατρίβω:
     P: διατριβ
     I: διετριβ
-    F: unknown
-    FP: unknown
 διαφέρω:
     P: διαφερ
     I: διεφερ
-    F: unknown
-    FP: unknown
 διαφθείρω:
     P: διαφθειρ
-    I: unknown
-    F: unknown
-    FP: unknown
 διδάσκω:
     P: διδασκ
     I: ἐδιδασκ
     F: διδαξ
-    FP: unknown
 δίδωμι:
     P: διδο!
     I: ἐδιδο/ἐδιδο!
@@ -976,53 +874,33 @@
 διεγείρω:
     P: διεγειρ
     I: διεγειρ
-    F: unknown
-    FP: unknown
 διερμηνεύω:
     P: διερμηνευ
-    I: unknown
-    F: unknown
-    FP: unknown
 διέρχομαι:
     P: διερχ
     I: διηρχ
     F: διελευσ
-    FP: unknown
 διηγέομαι:
     P: διηγε
-    I: unknown
     F: διηγησ
-    FP: unknown
 διϊσχυρίζομαι:
     P: διϊσχυριζ
     I: διϊσχυριζ
-    F: unknown
-    FP: unknown
 δικαιόω:
     P: δικαιο
-    I: unknown
     F: δικαιωσ
     FP: δικαιωθησ
 διοδεύω:
     P: διοδευ
     I: διωδευ
-    F: unknown
-    FP: unknown
 διορύσσω:
     P: διορυσσ
-    I: unknown
-    F: unknown
-    FP: unknown
 διχοτομέω:
     P: διχοτομε
-    I: unknown
     F: διχοτομησ
-    FP: unknown
 διψάω:
     P: διψα
-    I: unknown
     F: διψησ
-    FP: unknown
 διώκω:
     P: διωκ
     I: ἐδιωκ
@@ -1030,54 +908,33 @@
     FP: διωχθησ
 δογματίζομαι:
     P: δογματιζ
-    I: unknown
-    F: unknown
-    FP: unknown
 δοκέω:
     P: δοκε
     I: ἐδοκε
-    F: unknown
-    FP: unknown
 δοκιμάζω:
     P: δοκιμαζ
-    I: unknown
     F: δοκιμασ
-    FP: unknown
 δολιόω:
     P: δολιο
     I: ἐδολιο
-    F: unknown
-    FP: unknown
 δοξάζω:
     P: δοξαζ
     I: ἐδοξαζ
     F: δοξασ
-    FP: unknown
 δουλαγωγέω:
     P: δουλαγωγε
-    I: unknown
-    F: unknown
-    FP: unknown
 δουλεύω:
     P: δουλευ
-    I: unknown
     F: δουλευσ
-    FP: unknown
 δουλόω:
     P: δουλο
-    I: unknown
     F: δουλωσ
-    FP: unknown
 δυνατέω:
     P: δυνατε
-    I: unknown
-    F: unknown
-    FP: unknown
 ἐάω:
     P: ἐα
     I: εἰα
     F: ἐασ
-    FP: unknown
 ἐγγίζω:
     P: ἐγγιζ
     I: ἠγγιζ
@@ -4633,18 +4490,27 @@
     P: αὐθεντε
 βαρέω:
     P: βαρε
+    AP: ἐβαρηθη!
 βλαστάνω:
     P: βλαστα
+    A: ἐβλαστησ
 βοηθέω:
     P: βοηθε
+    A: ἐβοηθησ
+    AN: βοηθησ
 βόσκω:
     P: βοσκ
 βραβεύω:
     P: βραβευ
 γεμίζω:
     P: γεμιζ
+    A: ἐγεμισ
+    AN: γεμισ
+    AP: ἐγεμισθη!
 γρηγορέω:
     P: γρηγορε
+    A: ἐγρηγορησ
+    AN: γρηγορησ
 γυμνάζω:
     P: γυμναζ
 δειλιάω:
@@ -5310,15 +5176,16 @@
 βαθύνω:
     A: ἐβαθυν
 βασκαίνω:
-    P: unknown
+    A: ἐβασκαν
 βιόω:
-    P: unknown
+    AN: βιωσ
 βοάω:
-    P: unknown
+    A: ἐβοησ
 δακρύω:
-    P: unknown
+    A: ἐδακρυσ
 δειγματίζω:
-    P: unknown
+    A: ἐδειγματισ
+    AN: δειγματισ
 διαβαίνω:
     P: unknown
 διαβάλλω:
