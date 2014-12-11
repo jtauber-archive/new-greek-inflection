@@ -36,7 +36,7 @@ with open("lexicon.yaml") as f:
 
 for key, lexeme in sorted(lexemes):
     if lexeme[0].rstrip(":") in preverbs:
-        print(lexeme[0] + "  #" + "+".join(preverbs[lexeme[0].rstrip(":")]))
+        print(lexeme[0] + "  # " + "+".join(preverbs[lexeme[0].rstrip(":")]))
     else:
         print(lexeme[0])
     print("\n".join(lexeme[1:]))
