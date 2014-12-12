@@ -197,6 +197,8 @@ def calculate_form(lexeme, parse):
         if "++" in r:
             prefix, body = r.split("++")
 
+            prefix = re.sub(r"ἀντί\+ἀ", "ἀντα", prefix)
+            prefix = re.sub(r"ἀπό\+ἐ", "ἀπε", prefix)
             prefix = re.sub(r"ἐπί\+ἀ", "ἐπα", prefix)
             prefix = re.sub(r"παρά\+εἰ", "παρει", prefix)
             prefix = re.sub(r"παρά\+ἐ", "παρε", prefix)
