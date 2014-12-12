@@ -1,12 +1,12 @@
 import re
 
-from accentuation import recessive
+from accentuation import recessive, on_penult
 from endings import PRIMARY_ACTIVE, PRIMARY_MIDDLE, SECONDARY_ACTIVE, SECONDARY_MIDDLE
 from endings import ACTIVE_SUBJUNCTIVE, MIDDLE_SUBJUNCTIVE
 from endings import ACTIVE_OPTATIVE, MIDDLE_OPTATIVE
 from endings import PRIMARY_ACTIVE_IMPERATIVE, PRIMARY_MIDDLE_IMPERATIVE
 from endings import ACTIVE_INFINITIVE, MIDDLE_INFINITIVE
-from utils import remove, has_accent, remove_length
+from utils import remove, has_accent, remove_length, remove_smooth
 
 
 def ENDINGS(paradigm):
@@ -73,7 +73,13 @@ def PART(stem_key):
         if stems != "unknown" and stems is not None:
             return stems.split("/")
         else:
-            return []
+            if verb.inherit is not None:
+                if "prefix" in verb.lexeme:
+                    return ["{}++{}".format(verb.lexeme["prefix"], s) for s in forward(verb.inherit)]
+                else:
+                    return forward(verb.inherit)
+            else:
+                return []
 
     def reverse(stem):
         return stem_key, stem
@@ -161,14 +167,22 @@ class Verb:
     def rev_APN(self, form): return rev_aorist_passive_infinitive(rev_active_infinitive(form))
 
 
-def conditional_recessive(word):
+def conditional_recessive(word, parse):
     """
-    only add recessive accent if there isn't already an accent
+    only add recessive accent if there isn't already an accent and don't let
+    accent cross $ boundary
     """
+
     if has_accent(word):
         return remove_length(word)
     else:
-        return remove_length(recessive(word))
+        if parse in ["AAN", "APN", "PAN"]:
+            return remove_length(on_penult(word))
+        if "$" in word:
+            prefix, body = word.split("$")
+            return prefix + "$" + remove_length(recessive(body))
+        else:
+            return remove_length(recessive(word))
 
 
 def calculate_form(lexeme, parse):
@@ -178,10 +192,56 @@ def calculate_form(lexeme, parse):
         tvm, pn = parse.split(".")
         result = getattr(lexeme, tvm)(pn)
 
+    new_result = []
+    for r in result:
+        if "++" in r:
+            prefix, body = r.split("++")
+
+            prefix = re.sub(r"ἐπί\+ἀ", "ἐπα", prefix)
+            prefix = re.sub(r"παρά\+εἰ", "παρει", prefix)
+            prefix = re.sub(r"παρά\+ἐ", "παρε", prefix)
+            prefix = re.sub(r"πρό\+ὑ", "προϋ", prefix)
+            prefix = re.sub(r"\+", "", prefix)
+
+            prefix = remove(prefix)
+            body = remove_smooth(body)
+            new_r = prefix + "++" + body
+
+            new_r = re.sub(r"ἀπο\+\+ἑ", "ἀφε", new_r)
+            new_r = re.sub(r"ἀπο\+\+αἱ", "ἀφαι", new_r)
+            new_r = re.sub(r"ἀπο\+\+\$εἱ", "ἀφ$ει", new_r)
+            new_r = re.sub(r"κατα\+\+ἑ", "καθε", new_r)
+            new_r = re.sub(r"κατα\+\+αἱ", "καθαι", new_r)
+            new_r = re.sub(r"κατα\+\+\$εἱ", "καθ$ει", new_r)
+            new_r = re.sub(r"κατα\+\+\$ἡ", "καθ$η", new_r)
+
+            new_r = re.sub(r"\+\+ἁ", "++α", new_r)
+            new_r = re.sub(r"\+\+ἑ", "++ε", new_r)
+            new_r = re.sub(r"\+\+αἱ", "++αι", new_r)
+            new_r = re.sub(r"\+\+\$εἱ", "++$ει", new_r)
+            new_r = re.sub(r"\+\+ἡ", "++$η", new_r)
+
+            new_r = re.sub(r"προ\+\+(\$?[αεηῃ])", r"προ\1", new_r)
+            new_r = re.sub(r"περι\+\+(\$?[αεηῃ])", r"περι\1", new_r)
+            new_r = re.sub(r"[αιο]\+\+(\$?[αεηῃ])", r"\1", new_r)
+            new_r = re.sub(r"κ\+\+(\$?[αεηῃ])", r"ξ\1", new_r)
+            new_r = re.sub(r"ς\+\+", "σ", new_r)
+            new_r = re.sub(r"ν\+\+β", "μβ", new_r)
+            new_r = re.sub(r"α\+\+β", "αβ", new_r)
+
+            new_result.append(new_r)
+        else:
+            new_result.append(r)
+    result = new_result
+
+    result = [r.replace("++", "") for r in result]
+
     if isinstance(result, list):
-        result = [conditional_recessive(x) for x in result]
+        result = [conditional_recessive(x, parse) for x in result]
     else:
-        result = conditional_recessive(result)
+        result = conditional_recessive(result, parse)
+
+    result = [r.replace("$", "") for r in result]
 
     result = [re.sub(r"~ή", "ή", r) for r in result]
     result = [re.sub(r"~́η", "ῆ", r) for r in result]

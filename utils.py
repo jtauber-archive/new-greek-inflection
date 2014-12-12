@@ -40,3 +40,6 @@ SHORT = "\u0306"
 LONG = "\u0304"
 
 remove_length = remove_diacritic(SHORT, LONG)
+
+SMOOTH = "\u0313"
+remove_smooth = remove_diacritic(SMOOTH)
