@@ -250,6 +250,7 @@ def calculate_form(lexeme, parse):
             new_r = re.sub(r"\+\+ἡ", "++η", new_r)
             new_r = re.sub(r"\+\+ἱ", "++ι", new_r)
             new_r = re.sub(r"\+\+ὁ", "++ο", new_r)
+            new_r = re.sub(r"\+\+ὑ", "++υ", new_r)
             new_r = re.sub(r"\+\+ὡ", "++ω", new_r)
             new_r = re.sub(r"\+\+\$ἡ", "++$η", new_r)
             new_r = re.sub(r"\+\+αἱ", "++αι", new_r)
