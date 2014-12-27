@@ -12,9 +12,6 @@ for book_num in range(1, 28):
                 tvm = "PM" + tvm[2]
             elif tvm[:2] == "IP":
                 tvm = "IM" + tvm[2]
-            if tvm[0] in ["A"] and tvm[2] in ["I", "N"]:
+            if tvm[0] in ["A"] and tvm[2] in ["D", "S", "O"]:
                 pn = row["ccat-parse"][0] + row["ccat-parse"][5]
-                if tvm[2] == "N":
-                    print(row["lemma"], tvm, row["norm"])
-                else:
-                    print(row["lemma"], tvm + "." + pn, row["norm"])
+                print(row["lemma"], tvm + "." + pn, row["norm"])

@@ -39,7 +39,11 @@ has_accent = has_diacritic(ACUTE, GRAVE, CIRCUMFLEX)
 SHORT = "\u0306"
 LONG = "\u0304"
 
-remove_length = remove_diacritic(SHORT, LONG)
+
+def remove_length(x):
+    x = remove_diacritic(SHORT, LONG)(x)
+    x = x.replace("ά̓", "ἄ")  # @@@
+    return x
 
 SMOOTH = "\u0313"
 remove_smooth = remove_diacritic(SMOOTH)

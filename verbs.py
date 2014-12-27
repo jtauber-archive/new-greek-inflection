@@ -3,8 +3,10 @@ import re
 from accentuation import recessive, on_penult
 from endings import PRIMARY_ACTIVE, PRIMARY_MIDDLE, SECONDARY_ACTIVE, SECONDARY_MIDDLE
 from endings import ACTIVE_SUBJUNCTIVE, MIDDLE_SUBJUNCTIVE
-from endings import ACTIVE_OPTATIVE, MIDDLE_OPTATIVE
+from endings import PRIMARY_ACTIVE_OPTATIVE, PRIMARY_MIDDLE_OPTATIVE
+from endings import SECONDARY_ACTIVE_OPTATIVE, SECONDARY_MIDDLE_OPTATIVE
 from endings import PRIMARY_ACTIVE_IMPERATIVE, PRIMARY_MIDDLE_IMPERATIVE
+from endings import SECONDARY_ACTIVE_IMPERATIVE, SECONDARY_MIDDLE_IMPERATIVE
 from endings import ACTIVE_INFINITIVE, MIDDLE_INFINITIVE
 from utils import remove, has_accent, remove_length, remove_smooth
 
@@ -56,11 +58,15 @@ secondary_middle, rev_secondary_middle = ENDINGS(SECONDARY_MIDDLE)
 
 active_subjunctive, rev_active_subjunctive = ENDINGS(ACTIVE_SUBJUNCTIVE)
 middle_subjunctive, rev_middle_subjunctive = ENDINGS(MIDDLE_SUBJUNCTIVE)
-active_optative, rev_active_optative = ENDINGS(ACTIVE_OPTATIVE)
-middle_optative, rev_middle_optative = ENDINGS(MIDDLE_OPTATIVE)
+primary_active_optative, rev_primary_active_optative = ENDINGS(PRIMARY_ACTIVE_OPTATIVE)
+primary_middle_optative, rev_primary_middle_optative = ENDINGS(PRIMARY_MIDDLE_OPTATIVE)
+secondary_active_optative, rev_secondary_active_optative = ENDINGS(SECONDARY_ACTIVE_OPTATIVE)
+secondary_middle_optative, rev_secondary_middle_optative = ENDINGS(SECONDARY_MIDDLE_OPTATIVE)
 
 primary_active_imperative, rev_primary_active_imperative = ENDINGS(PRIMARY_ACTIVE_IMPERATIVE)
 primary_middle_imperative, rev_primary_middle_imperative = ENDINGS(PRIMARY_MIDDLE_IMPERATIVE)
+secondary_active_imperative, rev_secondary_active_imperative = ENDINGS(SECONDARY_ACTIVE_IMPERATIVE)
+secondary_middle_imperative, rev_secondary_middle_imperative = ENDINGS(SECONDARY_MIDDLE_IMPERATIVE)
 
 active_infinitive, rev_active_infinitive = ENDINGS(ACTIVE_INFINITIVE)
 middle_infinitive, rev_middle_infinitive = ENDINGS(MIDDLE_INFINITIVE)
@@ -116,14 +122,25 @@ class Verb:
 
     def PAS(self, pn): return active_subjunctive(present(self), pn)
     def PMS(self, pn): return middle_subjunctive(present(self), pn)
-    def PAO(self, pn): return active_optative(present(self), pn)
-    def PMO(self, pn): return middle_optative(present(self), pn)
-    def FAO(self, pn): return active_optative(future(self), pn)
-    def FMO(self, pn): return middle_optative(future(self), pn)
-    def FPO(self, pn): return middle_optative(future_passive(self), pn)
+    def PAO(self, pn): return primary_active_optative(present(self), pn)
+    def PMO(self, pn): return primary_middle_optative(present(self), pn)
+    def FAO(self, pn): return primary_active_optative(future(self), pn)
+    def FMO(self, pn): return primary_middle_optative(future(self), pn)
+    def FPO(self, pn): return primary_middle_optative(future_passive(self), pn)
+
+    def AAS(self, pn): return active_subjunctive(aorist_infinitive(self), pn)
+    def AMS(self, pn): return middle_subjunctive(aorist_infinitive(self), pn)
+    def APS(self, pn): return active_subjunctive(aorist_passive_infinitive(self), pn)
+    def AAO(self, pn): return secondary_active_optative(aorist_infinitive(self), pn)
+    def AMO(self, pn): return secondary_middle_optative(aorist_infinitive(self), pn)
+    def APO(self, pn): return secondary_active_optative(aorist_passive_infinitive(self), pn)
 
     def PAD(self, pn): return primary_active_imperative(present(self), pn)
     def PMD(self, pn): return primary_middle_imperative(present(self), pn)
+
+    def AAD(self, pn): return secondary_active_imperative(aorist_infinitive(self), pn)
+    def AMD(self, pn): return secondary_middle_imperative(aorist_infinitive(self), pn)
+    def APD(self, pn): return secondary_active_imperative(aorist_passive_infinitive(self), pn)
 
     def PAN(self): return active_infinitive(present(self))
     def PMN(self): return middle_infinitive(present(self))
@@ -148,14 +165,25 @@ class Verb:
 
     def rev_PAS(self, form, pn): return rev_present(rev_active_subjunctive(form, pn))
     def rev_PMS(self, form, pn): return rev_present(rev_middle_subjunctive(form, pn))
-    def rev_PAO(self, form, pn): return rev_present(rev_active_optative(form, pn))
-    def rev_PMO(self, form, pn): return rev_present(rev_middle_optative(form, pn))
-    def rev_FAO(self, form, pn): return rev_future(rev_active_optative(form, pn))
-    def rev_FMO(self, form, pn): return rev_future(rev_middle_optative(form, pn))
-    def rev_FPO(self, form, pn): return rev_future_passive(rev_middle_optative(form, pn))
+    def rev_PAO(self, form, pn): return rev_present(rev_primary_active_optative(form, pn))
+    def rev_PMO(self, form, pn): return rev_present(rev_primary_middle_optative(form, pn))
+    def rev_FAO(self, form, pn): return rev_future(rev_primary_active_optative(form, pn))
+    def rev_FMO(self, form, pn): return rev_future(rev_primary_middle_optative(form, pn))
+    def rev_FPO(self, form, pn): return rev_future_passive(rev_primary_middle_optative(form, pn))
+
+    def rev_AAS(self, form, pn): return rev_aorist_infinitive(rev_active_subjunctive(form, pn))
+    def rev_AMS(self, form, pn): return rev_aorist_infinitive(rev_middle_subjunctive(form, pn))
+    def rev_APS(self, form, pn): return rev_aorist_passive_infinitive(rev_active_subjunctive(form, pn))
+    def rev_AAO(self, form, pn): return rev_aorist_infinitive(rev_secondary_active_optative(form, pn))
+    def rev_AMO(self, form, pn): return rev_aorist_infinitive(rev_secondary_middle_optative(form, pn))
+    def rev_APO(self, form, pn): return rev_aorist_passive_infinitive(rev_secondary_active_optative(form, pn))
 
     def rev_PAD(self, form, pn): return rev_present(rev_primary_active_imperative(form, pn))
     def rev_PMD(self, form, pn): return rev_present(rev_primary_middle_imperative(form, pn))
+
+    def rev_AAD(self, form, pn): return rev_aorist_infinitive(rev_secondary_active_imperative(form, pn))
+    def rev_AMD(self, form, pn): return rev_aorist_infinitive(rev_secondary_middle_imperative(form, pn))
+    def rev_APD(self, form, pn): return rev_aorist_passive_infinitive(rev_secondary_active_imperative(form, pn))
 
     def rev_PAN(self, form): return rev_present(rev_active_infinitive(form))
     def rev_PMN(self, form): return rev_present(rev_middle_infinitive(form))
@@ -182,7 +210,10 @@ def conditional_recessive(word, parse):
             prefix, body = word.split("$")
             return prefix + "$" + remove_length(recessive(body))
         else:
-            return remove_length(recessive(word))
+            if parse[2] == "O":
+                return remove_length(recessive(word, False))
+            else:
+                return remove_length(recessive(word))
 
 
 def calculate_form(lexeme, parse):
