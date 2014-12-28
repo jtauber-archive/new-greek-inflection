@@ -43,6 +43,7 @@ LONG = "\u0304"
 def remove_length(x):
     x = remove_diacritic(SHORT, LONG)(x)
     x = x.replace("ά̓", "ἄ")  # @@@
+    x = x.replace("ί̓", "ἴ")  # @@@
     return x
 
 SMOOTH = "\u0313"

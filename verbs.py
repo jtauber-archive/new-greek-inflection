@@ -276,6 +276,7 @@ def calculate_form(lexeme, parse):
             new_r = re.sub(r"μετα\+\+ἑ", "μεθε", new_r)
             new_r = re.sub(r"μετα\+\+ἱ", "μεθι", new_r)
 
+            new_r = re.sub(r"\+\+ῥ", "++ρ", new_r)
             new_r = re.sub(r"\+\+ἁ", "++α", new_r)
             new_r = re.sub(r"\+\+ἑ", "++ε", new_r)
             new_r = re.sub(r"\+\+ἡ", "++η", new_r)
