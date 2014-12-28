@@ -330,7 +330,18 @@ def calculate_form(lexeme, parse):
     result = [re.sub(r"~́η", "ῆ", r) for r in result]
     result = [re.sub(r"~ώ", "ώ", r) for r in result]
     result = [re.sub(r"~́ω", "ῶ", r) for r in result]
+    result = [re.sub(r"~ῴ", "ῴ", r) for r in result]
+    result = [re.sub(r"~́ῳ", "ῷ", r) for r in result]
+    result = [re.sub(r"~αί", "αί", r) for r in result]
+    result = [re.sub(r"~́αι", "αῖ", r) for r in result]
+    result = [re.sub(r"~ά", "ά", r) for r in result]
+    result = [re.sub(r"~́α", "ᾶ", r) for r in result]
+    result = [re.sub(r"~εί", "εί", r) for r in result]
     result = [re.sub(r"~́ει", "εῖ", r) for r in result]
+    result = [re.sub(r"~οί", "οί", r) for r in result]
+    result = [re.sub(r"~́οι", "οῖ", r) for r in result]
+    result = [re.sub(r"~ού", "ού", r) for r in result]
+    result = [re.sub(r"~́ου", "οῦ", r) for r in result]
 
     return result
 
