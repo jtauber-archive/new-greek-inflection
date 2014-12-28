@@ -310,6 +310,15 @@ def calculate_form(lexeme, parse):
 
     result = [r.replace("++", "") for r in result]
 
+    result = [r.replace("hεῖ", "εἷ") for r in result]
+    result = [r.replace("hει", "εἱ") for r in result]
+    result = [r.replace("hε", "ἑ") for r in result]
+    result = [r.replace("hῆ", "ἧ") for r in result]
+    result = [r.replace("hῇ", "ᾗ") for r in result]
+    result = [r.replace("hου", "οὑ") for r in result]
+    result = [r.replace("hω", "ὡ") for r in result]
+    result = [r.replace("hῶ", "ὧ") for r in result]
+
     if isinstance(result, list):
         result = [conditional_recessive(x, parse) for x in result]
     else:
