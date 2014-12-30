@@ -115,7 +115,9 @@ aorist_passive, rev_aorist_passive = PART("AP")
 aorist_infinitive, rev_aorist_infinitive = PART("AN")
 aorist_passive_infinitive, rev_aorist_passive_infinitive = PART("APN")
 perfect, rev_perfect = PART("X")
+perfect_middle_stem, rev_perfect_middle_stem = PART("XM")
 pluperfect, rev_pluperfect = PART("Y")
+pluperfect_middle_stem, rev_pluperfect_middle_stem = PART("YM")
 
 
 class Verb:
@@ -136,10 +138,10 @@ class Verb:
     def API(self, pn): return secondary_active(aorist_passive(self), pn)
 
     def XAI(self, pn): return perfect_active(perfect(self), pn)
-    def XMI(self, pn): return perfect_middle(perfect(self), pn)
+    def XMI(self, pn): return perfect_middle(perfect_middle_stem(self), pn)
 
     def YAI(self, pn): return pluperfect_active(pluperfect(self), pn)
-    def YMI(self, pn): return pluperfect_middle(pluperfect(self), pn)
+    def YMI(self, pn): return pluperfect_middle(pluperfect_middle_stem(self), pn)
 
     def PAS(self, pn): return active_subjunctive(present(self), pn)
     def PMS(self, pn): return middle_subjunctive(present(self), pn)
@@ -166,7 +168,7 @@ class Verb:
     def AMD(self, pn): return secondary_middle_imperative(aorist_infinitive(self), pn)
     def APD(self, pn): return secondary_active_imperative(aorist_passive_infinitive(self), pn)
 
-    def XMD(self, pn): return perfect_middle_imperative(perfect(self), pn)
+    def XMD(self, pn): return perfect_middle_imperative(perfect_middle_stem(self), pn)
 
     def PAN(self): return active_infinitive(present(self))
     def PMN(self): return middle_infinitive(present(self))
@@ -177,7 +179,7 @@ class Verb:
     def AMN(self): return middle_infinitive(aorist_infinitive(self))
     def APN(self): return active_infinitive(aorist_passive_infinitive(self))
     def XAN(self): return active_infinitive(perfect(self))
-    def XMN(self): return middle_infinitive(perfect(self))
+    def XMN(self): return middle_infinitive(perfect_middle_stem(self))
 
     def rev_PAI(self, form, pn): return rev_present(rev_primary_active(form, pn))
     def rev_PMI(self, form, pn): return rev_present(rev_primary_middle(form, pn))
@@ -192,10 +194,10 @@ class Verb:
     def rev_API(self, form, pn): return rev_aorist_passive(rev_secondary_active(form, pn))
 
     def rev_XAI(self, form, pn): return rev_perfect(rev_perfect_active(form, pn))
-    def rev_XMI(self, form, pn): return rev_perfect(rev_perfect_middle(form, pn))
+    def rev_XMI(self, form, pn): return rev_perfect_middle_stem(rev_perfect_middle(form, pn))
 
     def rev_YAI(self, form, pn): return rev_pluperfect(rev_pluperfect_active(form, pn))
-    def rev_YMI(self, form, pn): return rev_pluperfect(rev_pluperfect_middle(form, pn))
+    def rev_YMI(self, form, pn): return rev_pluperfect_middle_stem(rev_pluperfect_middle(form, pn))
 
     def rev_PAS(self, form, pn): return rev_present(rev_active_subjunctive(form, pn))
     def rev_PMS(self, form, pn): return rev_present(rev_middle_subjunctive(form, pn))
@@ -222,7 +224,7 @@ class Verb:
     def rev_AMD(self, form, pn): return rev_aorist_infinitive(rev_secondary_middle_imperative(form, pn))
     def rev_APD(self, form, pn): return rev_aorist_passive_infinitive(rev_secondary_active_imperative(form, pn))
 
-    def rev_XMD(self, form, pn): return rev_perfect(rev_perfect_middle_imperative(form, pn))
+    def rev_XMD(self, form, pn): return rev_perfect_middle_stem(rev_perfect_middle_imperative(form, pn))
 
     def rev_PAN(self, form): return rev_present(rev_active_infinitive(form))
     def rev_PMN(self, form): return rev_present(rev_middle_infinitive(form))
@@ -233,7 +235,7 @@ class Verb:
     def rev_AMN(self, form): return rev_aorist_infinitive(rev_middle_infinitive(form))
     def rev_APN(self, form): return rev_aorist_passive_infinitive(rev_active_infinitive(form))
     def rev_XAN(self, form): return rev_perfect(rev_active_infinitive(form))
-    def rev_XMN(self, form): return rev_perfect(rev_middle_infinitive(form))
+    def rev_XMN(self, form): return rev_perfect_middle_stem(rev_middle_infinitive(form))
 
 
 def conditional_recessive(word, parse):
@@ -307,6 +309,7 @@ def calculate_form(lexeme, parse):
             new_r = re.sub(r"ἀπο\+\+ὡ", "ἀφω", new_r)
             new_r = re.sub(r"ἀπο\+\+αἱ", "ἀφαι", new_r)
             new_r = re.sub(r"ἀπο\+\+\$εἱ", "ἀφ$ει", new_r)
+            new_r = re.sub(r"ἐπι\+\+ἑ", "ἐφε", new_r)
             new_r = re.sub(r"ἐπι\+\+ἱ", "ἐφι", new_r)
             new_r = re.sub(r"κατα\+\+ἑ", "καθε", new_r)
             new_r = re.sub(r"κατα\+\+αἱ", "καθαι", new_r)
@@ -336,10 +339,11 @@ def calculate_form(lexeme, parse):
             new_r = re.sub(r"περι\+\+ι", r"περιϊ", new_r)
             new_r = re.sub(r"[αιο]\+\+(\$?[αεηῃιοωῳ]|οι)", r"\1", new_r)
             new_r = re.sub(r"κ\+\+(\$?[αεηῃιοω])", r"ξ\1", new_r)
+            new_r = re.sub(r"κ\+\+σ", r"ξ", new_r)
             new_r = re.sub(r"ς\+\+", "σ", new_r)
             new_r = re.sub(r"α\+\+β", "αβ", new_r)
             new_r = re.sub(r"ν\+\+([βπφμ])", r"μ\1", new_r)
-            new_r = re.sub(r"ν\+\+([κχ])", r"γ\1", new_r)
+            new_r = re.sub(r"ν\+\+([γκχ])", r"γ\1", new_r)
             new_r = re.sub(r"ν\+\+λ", "λλ", new_r)
             new_r = re.sub(r"συν\+\+σ", "συσ", new_r)
             new_r = re.sub(r"ν\+\+ζ", "ζ", new_r)
