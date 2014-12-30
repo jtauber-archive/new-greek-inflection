@@ -12,6 +12,13 @@ for book_num in range(1, 28):
                 tvm = "PM" + tvm[2]
             elif tvm[:2] == "IP":
                 tvm = "IM" + tvm[2]
-            if tvm[0] in ["A"] and tvm[2] in ["D", "S", "O"]:
-                pn = row["ccat-parse"][0] + row["ccat-parse"][5]
-                print(row["lemma"], tvm + "." + pn, row["norm"])
+            elif tvm[:2] == "XP":
+                tvm = "XM" + tvm[2]
+            elif tvm[:2] == "YP":
+                tvm = "YM" + tvm[2]
+            if tvm[0] in ["X", "Y"] and tvm[2] not in ["P"]:
+                if tvm[2] == "N":
+                    print(row["lemma"], tvm, row["norm"])
+                else:
+                    pn = row["ccat-parse"][0] + row["ccat-parse"][5]
+                    print(row["lemma"], tvm + "." + pn, row["norm"])

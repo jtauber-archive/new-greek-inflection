@@ -9,7 +9,7 @@ passed = 0
 fails = []
 
 # for test_name in ["test0.txt"]:
-for test_name in ["test.txt", "test2.txt", "test3.txt", "test4.txt", "test5.txt", "test6.txt", "test7.txt", "test8.txt", "test9.txt"]:
+for test_name in ["test.txt", "test2.txt", "test3.txt", "test4.txt", "test5.txt", "test6.txt", "test7.txt", "test8.txt", "test9.txt", "test10.txt"]:
     with open(test_name) as f:
         for line in f:
             record = line.strip().split("#")[0]
@@ -24,12 +24,17 @@ for test_name in ["test.txt", "test2.txt", "test3.txt", "test4.txt", "test5.txt"
 
             prediction = calculate_form(lexeme, parse)
 
+            predictions = []
+
             if isinstance(prediction, list):
-                predictions = prediction
-            elif prediction.endswith("(ν)"):
-                predictions = [prediction[:-3], prediction[:-3] + "ν", prediction]
+                prediction_list = prediction
             else:
-                predictions = [prediction]
+                prediction_list = [prediction]
+            for prediction in prediction_list:
+                if prediction.endswith("(ν)"):
+                    predictions.append(prediction[:-3])
+                    predictions.append(prediction[:-3] + "ν")
+                predictions.append(prediction)
 
             if form in predictions:
                 passed += 1
