@@ -1,6 +1,7 @@
 import re
 
 from accentuation import recessive, on_penult
+
 from endings import PRIMARY_ACTIVE, PRIMARY_MIDDLE, SECONDARY_ACTIVE, SECONDARY_MIDDLE
 from endings import ACTIVE_SUBJUNCTIVE, MIDDLE_SUBJUNCTIVE
 from endings import PRIMARY_ACTIVE_OPTATIVE, PRIMARY_MIDDLE_OPTATIVE
@@ -8,6 +9,10 @@ from endings import SECONDARY_ACTIVE_OPTATIVE, SECONDARY_MIDDLE_OPTATIVE
 from endings import PRIMARY_ACTIVE_IMPERATIVE, PRIMARY_MIDDLE_IMPERATIVE
 from endings import SECONDARY_ACTIVE_IMPERATIVE, SECONDARY_MIDDLE_IMPERATIVE
 from endings import ACTIVE_INFINITIVE, MIDDLE_INFINITIVE
+from endings import PERFECT_ACTIVE, PERFECT_MIDDLE
+from endings import PLUPERFECT_ACTIVE, PLUPERFECT_MIDDLE
+from endings import PERFECT_MIDDLE_IMPERATIVE
+
 from utils import remove, has_accent, remove_length, remove_smooth
 
 
@@ -71,6 +76,14 @@ secondary_middle_imperative, rev_secondary_middle_imperative = ENDINGS(SECONDARY
 active_infinitive, rev_active_infinitive = ENDINGS(ACTIVE_INFINITIVE)
 middle_infinitive, rev_middle_infinitive = ENDINGS(MIDDLE_INFINITIVE)
 
+perfect_active, rev_perfect_active = ENDINGS(PERFECT_ACTIVE)
+perfect_middle, rev_perfect_middle = ENDINGS(PERFECT_MIDDLE)
+
+pluperfect_active, rev_pluperfect_active = ENDINGS(PLUPERFECT_ACTIVE)
+pluperfect_middle, rev_pluperfect_middle = ENDINGS(PLUPERFECT_MIDDLE)
+
+perfect_middle_imperative, rev_perfect_middle_imperative = ENDINGS(PERFECT_MIDDLE_IMPERATIVE)
+
 
 def PART(stem_key):
 
@@ -101,6 +114,8 @@ aorist, rev_aorist = PART("A")
 aorist_passive, rev_aorist_passive = PART("AP")
 aorist_infinitive, rev_aorist_infinitive = PART("AN")
 aorist_passive_infinitive, rev_aorist_passive_infinitive = PART("APN")
+perfect, rev_perfect = PART("X")
+pluperfect, rev_pluperfect = PART("Y")
 
 
 class Verb:
@@ -120,6 +135,12 @@ class Verb:
     def AMI(self, pn): return secondary_middle(aorist(self), pn)
     def API(self, pn): return secondary_active(aorist_passive(self), pn)
 
+    def XAI(self, pn): return perfect_active(perfect(self), pn)
+    def XMI(self, pn): return perfect_middle(perfect(self), pn)
+
+    def YAI(self, pn): return pluperfect_active(pluperfect(self), pn)
+    def YMI(self, pn): return pluperfect_middle(pluperfect(self), pn)
+
     def PAS(self, pn): return active_subjunctive(present(self), pn)
     def PMS(self, pn): return middle_subjunctive(present(self), pn)
     def PAO(self, pn): return primary_active_optative(present(self), pn)
@@ -135,12 +156,17 @@ class Verb:
     def AMO(self, pn): return secondary_middle_optative(aorist_infinitive(self), pn)
     def APO(self, pn): return secondary_active_optative(aorist_passive_infinitive(self), pn)
 
+    def XAS(self, pn): return active_subjunctive(perfect(self), pn)
+    def XAO(self, pn): return primary_active_optative(perfect(self), pn)
+
     def PAD(self, pn): return primary_active_imperative(present(self), pn)
     def PMD(self, pn): return primary_middle_imperative(present(self), pn)
 
     def AAD(self, pn): return secondary_active_imperative(aorist_infinitive(self), pn)
     def AMD(self, pn): return secondary_middle_imperative(aorist_infinitive(self), pn)
     def APD(self, pn): return secondary_active_imperative(aorist_passive_infinitive(self), pn)
+
+    def XMD(self, pn): return perfect_middle_imperative(perfect(self), pn)
 
     def PAN(self): return active_infinitive(present(self))
     def PMN(self): return middle_infinitive(present(self))
@@ -150,6 +176,8 @@ class Verb:
     def AAN(self): return active_infinitive(aorist_infinitive(self))
     def AMN(self): return middle_infinitive(aorist_infinitive(self))
     def APN(self): return active_infinitive(aorist_passive_infinitive(self))
+    def XAN(self): return active_infinitive(perfect(self))
+    def XMN(self): return middle_infinitive(perfect(self))
 
     def rev_PAI(self, form, pn): return rev_present(rev_primary_active(form, pn))
     def rev_PMI(self, form, pn): return rev_present(rev_primary_middle(form, pn))
@@ -162,6 +190,12 @@ class Verb:
     def rev_AAI(self, form, pn): return rev_aorist(rev_secondary_active(form, pn))
     def rev_AMI(self, form, pn): return rev_aorist(rev_secondary_middle(form, pn))
     def rev_API(self, form, pn): return rev_aorist_passive(rev_secondary_active(form, pn))
+
+    def rev_XAI(self, form, pn): return rev_perfect(rev_perfect_active(form, pn))
+    def rev_XMI(self, form, pn): return rev_perfect(rev_perfect_middle(form, pn))
+
+    def rev_YAI(self, form, pn): return rev_pluperfect(rev_pluperfect_active(form, pn))
+    def rev_YMI(self, form, pn): return rev_pluperfect(rev_pluperfect_middle(form, pn))
 
     def rev_PAS(self, form, pn): return rev_present(rev_active_subjunctive(form, pn))
     def rev_PMS(self, form, pn): return rev_present(rev_middle_subjunctive(form, pn))
@@ -178,12 +212,17 @@ class Verb:
     def rev_AMO(self, form, pn): return rev_aorist_infinitive(rev_secondary_middle_optative(form, pn))
     def rev_APO(self, form, pn): return rev_aorist_passive_infinitive(rev_secondary_active_optative(form, pn))
 
+    def rev_XAS(self, form, pn): return rev_perfect(rev_active_subjunctive(form, pn))
+    def rev_XAO(self, form, pn): return rev_perfect(rev_primary_active_optative(form, pn))
+
     def rev_PAD(self, form, pn): return rev_present(rev_primary_active_imperative(form, pn))
     def rev_PMD(self, form, pn): return rev_present(rev_primary_middle_imperative(form, pn))
 
     def rev_AAD(self, form, pn): return rev_aorist_infinitive(rev_secondary_active_imperative(form, pn))
     def rev_AMD(self, form, pn): return rev_aorist_infinitive(rev_secondary_middle_imperative(form, pn))
     def rev_APD(self, form, pn): return rev_aorist_passive_infinitive(rev_secondary_active_imperative(form, pn))
+
+    def rev_XMD(self, form, pn): return rev_perfect(rev_perfect_middle_imperative(form, pn))
 
     def rev_PAN(self, form): return rev_present(rev_active_infinitive(form))
     def rev_PMN(self, form): return rev_present(rev_middle_infinitive(form))
@@ -193,6 +232,8 @@ class Verb:
     def rev_AAN(self, form): return rev_aorist_infinitive(rev_active_infinitive(form))
     def rev_AMN(self, form): return rev_aorist_infinitive(rev_middle_infinitive(form))
     def rev_APN(self, form): return rev_aorist_passive_infinitive(rev_active_infinitive(form))
+    def rev_XAN(self, form): return rev_perfect(rev_active_infinitive(form))
+    def rev_XMN(self, form): return rev_perfect(rev_middle_infinitive(form))
 
 
 def conditional_recessive(word, parse):
@@ -204,7 +245,7 @@ def conditional_recessive(word, parse):
     if has_accent(word):
         return remove_length(word)
     else:
-        if parse in ["AAN", "APN", "PAN"]:
+        if parse in ["AAN", "APN", "PAN", "XAN", "XMN"]:
             return remove_length(on_penult(word))
         if "$" in word:
             prefix, body = word.split("$")
