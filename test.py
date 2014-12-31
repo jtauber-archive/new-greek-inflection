@@ -10,7 +10,7 @@ fails = []
 
 # for test_name in ["test0.txt"]:
 for test_name in ["test.txt", "test2.txt", "test3.txt", "test4.txt", "test5.txt", "test6.txt", "test7.txt", "test8.txt", "test9.txt", "test10.txt"]:
-    with open(test_name) as f:
+    with open("tests/{}".format(test_name)) as f:
         for line in f:
             record = line.strip().split("#")[0]
             if not record:
