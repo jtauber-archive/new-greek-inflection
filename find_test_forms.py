@@ -2,7 +2,6 @@
 
 from pysblgnt import morphgnt_rows
 
-# from utils import remove
 
 for book_num in range(1, 28):
     for row in morphgnt_rows(book_num):
