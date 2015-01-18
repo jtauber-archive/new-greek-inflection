@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import os.path
 import yaml
 
 
@@ -32,6 +33,7 @@ def augment(stem):
 
 redup_table = str.maketrans("φθ", "πτ")
 
+
 def redup(stem):
     return _augment(stem) or stem[0].translate(redup_table) + "ε" + stem
 
@@ -40,18 +42,18 @@ def stems0a(lexeme):
     root1 = lexeme["root1"]
 
     stems = dict(
-        P = root1,
-        I = augment(root1),
-        F = root1 + "σ",
-        FP = root1 + "σ" + "θη" + "σ",
-        A = augment(root1 + "σ"),
-        AN = root1 + "σ",
-        AP = augment(root1 + "σ" + "θη!"),
-        APN = root1 + "σ" + "θη!",
-        X = redup(root1 + "κ"),
-        XM = redup(root1 + "σ"),
-        Y = redup(root1 + "κ"),  # @@@
-        YM = redup(root1),  # @@@
+        P=root1,
+        I=augment(root1),
+        F=root1 + "σ",
+        FP=root1 + "σ" + "θη" + "σ",
+        A=augment(root1 + "σ"),
+        AN=root1 + "σ",
+        AP=augment(root1 + "σ" + "θη!"),
+        APN=root1 + "σ" + "θη!",
+        X=redup(root1 + "κ"),
+        XM=redup(root1 + "σ"),
+        Y=redup(root1 + "κ"),  # @@@
+        YM=redup(root1),  # @@@
     )
 
     return stems
@@ -65,18 +67,18 @@ def stems0b(lexeme):
     root1b = root1[:-1]
 
     stems = dict(
-        P = root1,
-        I = augment(root1),
-        F = root1b + "σ",
-        FP = root1b + "σ" + "θη" + "σ",
-        A = augment(root1b + "σ"),
-        AN = root1b + "σ",
-        AP = augment(root1b + "σ" + "θη!"),
-        APN = root1b + "σ" + "θη!",
-        X = redup(root1 + "κ"),  # @@@
-        XM = redup(root1b + "σ"),
-        Y = redup(root1 + "κ"),  # @@@
-        YM = redup(root1),  # @@@
+        P=root1,
+        I=augment(root1),
+        F=root1b + "σ",
+        FP=root1b + "σ" + "θη" + "σ",
+        A=augment(root1b + "σ"),
+        AN=root1b + "σ",
+        AP=augment(root1b + "σ" + "θη!"),
+        APN=root1b + "σ" + "θη!",
+        X=redup(root1 + "κ"),  # @@@
+        XM=redup(root1b + "σ"),
+        Y=redup(root1 + "κ"),  # @@@
+        YM=redup(root1),  # @@@
     )
 
     return stems
@@ -90,18 +92,18 @@ def stems1ab(lexeme):
     root1b = root1[:-1] + "η"
 
     stems = dict(
-        P = root1,
-        I = augment(root1),
-        F = root1b + "σ",
-        FP = root1b + "θη" + "σ",
-        A = augment(root1b + "σ"),
-        AN = root1b + "σ",
-        AP = augment(root1b + "θη!"),
-        APN = root1b + "θη!",
-        X = redup(root1b + "κ"),
-        XM = redup(root1b),
-        Y = redup(root1b + "κ"),  # @@@
-        YM = redup(root1b),  # @@@
+        P=root1,
+        I=augment(root1),
+        F=root1b + "σ",
+        FP=root1b + "θη" + "σ",
+        A=augment(root1b + "σ"),
+        AN=root1b + "σ",
+        AP=augment(root1b + "θη!"),
+        APN=root1b + "θη!",
+        X=redup(root1b + "κ"),
+        XM=redup(root1b),
+        Y=redup(root1b + "κ"),  # @@@
+        YM=redup(root1b),  # @@@
     )
 
     return stems
@@ -113,18 +115,18 @@ def stems1c(lexeme):
     assert root1.endswith("ε"), (lemma, root1)
 
     stems = dict(
-        P = root1,
-        I = augment(root1),
-        F = root1 + "σ",
-        FP = root1 + "σ" + "θη" + "σ",
-        A = augment(root1 + "σ"),
-        AN = root1 + "σ",
-        AP = augment(root1 + "σ" + "θη!"),
-        APN = root1 + "σ" + "θη!",
-        X = redup(root1 + "κ"),
-        XM = redup(root1 + "σ"),
-        Y = redup(root1 + "κ"),  # @@@
-        YM = redup(root1),  # @@@
+        P=root1,
+        I=augment(root1),
+        F=root1 + "σ",
+        FP=root1 + "σ" + "θη" + "σ",
+        A=augment(root1 + "σ"),
+        AN=root1 + "σ",
+        AP=augment(root1 + "σ" + "θη!"),
+        APN=root1 + "σ" + "θη!",
+        X=redup(root1 + "κ"),
+        XM=redup(root1 + "σ"),
+        Y=redup(root1 + "κ"),  # @@@
+        YM=redup(root1),  # @@@
     )
 
     return stems
@@ -138,18 +140,18 @@ def stems2a(lexeme):
     root1b = root1[:-1] + "η"
 
     stems = dict(
-        P = root1,
-        I = augment(root1),
-        F = root1b + "σ",
-        FP = root1b + "θη" + "σ",
-        A = augment(root1b + "σ"),
-        AN = root1b + "σ",
-        AP = augment(root1b + "θη!"),
-        APN = root1b + "θη!",
-        X = redup(root1b + "κ"),
-        XM = redup(root1b),
-        Y = redup(root1b + "κ"),  # @@@
-        YM = redup(root1b),  # @@@
+        P=root1,
+        I=augment(root1),
+        F=root1b + "σ",
+        FP=root1b + "θη" + "σ",
+        A=augment(root1b + "σ"),
+        AN=root1b + "σ",
+        AP=augment(root1b + "θη!"),
+        APN=root1b + "θη!",
+        X=redup(root1b + "κ"),
+        XM=redup(root1b),
+        Y=redup(root1b + "κ"),  # @@@
+        YM=redup(root1b),  # @@@
     )
 
     return stems
@@ -161,18 +163,18 @@ def stems2b(lexeme):
     assert root1.endswith("α"), (lemma, root1)
 
     stems = dict(
-        P = root1,
-        I = augment(root1),
-        F = root1 + "σ",
-        FP = root1 + "σ" + "θη" + "σ",
-        A = augment(root1 + "σ"),
-        AN = root1 + "σ",
-        AP = augment(root1 + "σ" + "θη!"),
-        APN = root1 + "σ" + "θη!",
-        X = redup(root1 + "κ"),
-        XM = redup(root1 + "σ"),
-        Y = redup(root1 + "κ"),  # @@@
-        YM = redup(root1),  # @@@
+        P=root1,
+        I=augment(root1),
+        F=root1 + "σ",
+        FP=root1 + "σ" + "θη" + "σ",
+        A=augment(root1 + "σ"),
+        AN=root1 + "σ",
+        AP=augment(root1 + "σ" + "θη!"),
+        APN=root1 + "σ" + "θη!",
+        X=redup(root1 + "κ"),
+        XM=redup(root1 + "σ"),
+        Y=redup(root1 + "κ"),  # @@@
+        YM=redup(root1),  # @@@
     )
 
     return stems
@@ -184,18 +186,18 @@ def stems2c(lexeme):
     assert root1.endswith("α"), (lemma, root1)
 
     stems = dict(
-        P = root1,
-        I = augment(root1),
-        F = root1 + "σ",
-        FP = root1 + "θη" + "σ",
-        A = augment(root1 + "σ"),
-        AN = root1 + "σ",
-        AP = augment(root1 + "θη!"),
-        APN = root1 + "θη!",
-        X = redup(root1 + "κ"),
-        XM = redup(root1),
-        Y = redup(root1 + "κ"),  # @@@
-        YM = redup(root1),  # @@@
+        P=root1,
+        I=augment(root1),
+        F=root1 + "σ",
+        FP=root1 + "θη" + "σ",
+        A=augment(root1 + "σ"),
+        AN=root1 + "σ",
+        AP=augment(root1 + "θη!"),
+        APN=root1 + "θη!",
+        X=redup(root1 + "κ"),
+        XM=redup(root1),
+        Y=redup(root1 + "κ"),  # @@@
+        YM=redup(root1),  # @@@
     )
 
     return stems
@@ -214,7 +216,7 @@ file_list = [
 
 
 for filename in file_list:
-    with open(filename) as f:
+    with open(os.path.join("lexica", filename)) as f:
         for lemma, lexeme in yaml.load(f).items():
             if "prefix" in lexeme:
                 continue

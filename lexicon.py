@@ -21,7 +21,7 @@ LEXICON_FILES = [
 ]
 
 for lexicon_filename in LEXICON_FILES:
-    with open("{}".format(lexicon_filename)) as f:
+    with open("lexica/{}".format(lexicon_filename)) as f:
         for lemma, lexeme in yaml.load(f).items():
             LEXICON[lemma] = Verb(lexeme)
 
