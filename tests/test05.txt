@@ -1,3 +1,6 @@
+## These are present, future or imperfect indicative verbs from the MorphGNT
+## that have an active lemma in -μι (athematic)
+
 ἀμφιέννυμι PAI.3S ἀμφιέννυσι(ν)
 ἀνθίστημι IMI.3S ἀνθίστατο
 ἀνθίστημι PMI.3P ἀνθίστανται

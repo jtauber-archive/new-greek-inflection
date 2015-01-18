@@ -1,3 +1,6 @@
+## These are present, future or imperfect indicative verbs from the MorphGNT
+## that have an active lemma in -ω (contract)
+
 ἀγαλλιάω PMI.2P ἀγαλλιᾶσθε
 ἀγαπάω FAI.1S ἀγαπήσω
 ἀγαπάω FAI.2S ἀγαπήσεις

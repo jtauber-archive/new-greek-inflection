@@ -1,3 +1,5 @@
+## These are aorist infinitive or indicative verbs from the MorphGNT.
+
 ἀγαθοποιέω AAN ἀγαθοποιῆσαι
 ἀγαλλιάω AAI.3S ἠγαλλίασε(ν)
 ἀγαλλιάω AMI.3S ἠγαλλιάσατο

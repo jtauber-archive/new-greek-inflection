@@ -1,3 +1,6 @@
+## These are present, future or imperfect indicative verbs from the MorphGNT
+## that have a middle lemma in -ομαι
+
 ἀγωνίζομαι IMI.3P ἠγωνίζοντο
 αἱρέομαι FMI.1S αἱρήσομαι
 αἰσχύνομαι FPI.1S αἰσχυνθήσομαι

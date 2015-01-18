@@ -1,3 +1,6 @@
+## These are present, future or imperfect indicative verbs from the MorphGNT
+## that have an active lemma in -ω (non-contract)
+
 ἀγγαρεύω FAI.3S ἀγγαρεύσει
 ἀγγαρεύω PAI.3P ἀγγαρεύουσι(ν)
 ἁγιάζω PAI.1S ἁγιάζω

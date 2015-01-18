@@ -5,11 +5,24 @@ from lexicon import LEXICON
 from verbs import calculate_form, calculate_part
 
 
+TEST_FILES = [
+    "test01.txt",
+    "test02.txt",
+    "test03.txt",
+    "test04.txt",
+    "test05.txt",
+    "test06.txt",
+    "test07.txt",
+    "test08.txt",
+    "test09.txt",
+    "test10.txt",
+]
+
 passed = 0
 fails = []
 
-# for test_name in ["test0.txt"]:
-for test_name in ["test.txt", "test2.txt", "test3.txt", "test4.txt", "test5.txt", "test6.txt", "test7.txt", "test8.txt", "test9.txt", "test10.txt"]:
+
+for test_name in TEST_FILES:
     with open("tests/{}".format(test_name)) as f:
         for line in f:
             record = line.strip().split("#")[0]

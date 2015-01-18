@@ -1,3 +1,5 @@
+## These are perfect or pluperfect verbs from the MorphGNT.
+
 ἀγαπάω XAI.1P ἠγαπήκαμεν
 ἁγιάζω XMI.3S ἡγίασται
 ἀγωνίζομαι XMI.1S ἠγώνισμαι

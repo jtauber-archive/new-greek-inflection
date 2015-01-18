@@ -1,3 +1,6 @@
+## These are present, future or imperfect indicative verbs from the MorphGNT
+## that have a middle lemma in -μαι (athematic)
+
 ἀνάκειμαι IMI.3S ἀνέκειτο
 ἀντίκειμαι PMI.3S ἀντίκειται
 ἀπόκειμαι PMI.3S ἀπόκειται

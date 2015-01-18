@@ -1,3 +1,6 @@
+## These tests come from Helma Dik's Nifty Greek Handouts at
+## <https://classics.uchicago.edu/faculty/dik/niftygreek>
+
 λύω PAI.1S λύω
 λύω PAI.2S λύεις
 λύω PAI.3S λύει
@@ -644,7 +647,7 @@
 # δίδωμι PMP.NSM διδόμενος
 # δίδωμι PMP.NSF διδομένη
 # δίδωμι PMP.NSN διδόμενον
-#
+
 τίθημι PAI.1S τίθημι
 τίθημι PAI.2S τίθης
 τίθημι PAI.3S τίθησι(ν)
@@ -727,7 +730,7 @@
 # τίθημι PMP.NSM τιθέμενος
 # τίθημι PMP.NSF τιθεμένη
 # τίθημι PMP.NSN τιθέμενον
-#
+
 ἵημι PAI.1S ἵημι
 ἵημι PAI.2S ἵης
 ἵημι PAI.3S ἵησι(ν)

@@ -1,3 +1,5 @@
+## These are aorist imperative, subjunctive or optative verbs from the MorphGNT.
+
 ἀγαπάω AAD.2P ἀγαπήσατε
 ἀγαπάω AAS.2P ἀγαπήσητε
 ἁγιάζω AAD.2P ἁγιάσατε

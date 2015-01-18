@@ -1,3 +1,6 @@
+## These are present or future infinitive, imperative, subjunctive or optative
+## verbs from the MorphGNT.
+
 ἀγαθοεργέω PAN ἀγαθοεργεῖν
 ἀγαθοποιέω PAD.2P ἀγαθοποιεῖτε
 ἀγαθοποιέω PAS.2P ἀγαθοποιῆτε
