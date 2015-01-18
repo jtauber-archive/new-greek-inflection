@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os.path
+import re
 import yaml
 
 
@@ -38,194 +39,111 @@ def redup(stem):
     return _augment(stem) or stem[0].translate(redup_table) + "ε" + stem
 
 
-def stems0a(lexeme):
-    root1 = lexeme["root1"]
+class Stems:
 
-    stems = dict(
-        P=root1,
-        I=augment(root1),
-        F=root1 + "σ",
-        FP=root1 + "σ" + "θη" + "σ",
-        A=augment(root1 + "σ"),
-        AN=root1 + "σ",
-        AP=augment(root1 + "σ" + "θη!"),
-        APN=root1 + "σ" + "θη!",
-        X=redup(root1 + "κ"),
-        XM=redup(root1 + "σ"),
-        Y=redup(root1 + "κ"),  # @@@
-        YM=redup(root1),  # @@@
-    )
+    root1regex = ".+$"
 
-    return stems
+    @property
+    def root1b(self): return self.root1
+    @property
+    def root1c(self): return self.root1b
 
+    @property
+    def P(self): return self.root1
+    @property
+    def I(self): return augment(self.root1)
+    @property
+    def F(self): return self.root1b + "σ"
+    @property
+    def FP(self): return self.root1c + "θη" + "σ"
+    @property
+    def A(self): return augment(self.root1b + "σ")
+    @property
+    def AN(self): return self.root1b + "σ"
+    @property
+    def AP(self): return augment(self.root1c + "θη!")
+    @property
+    def APN(self): return self.root1c + "θη!"
+    @property
+    def X(self): return redup(self.root1b + "κ")
+    @property
+    def XM(self): return redup(self.root1c)
+    @property
+    def Y(self): return redup(self.root1b + "κ")
+    @property
+    def YM(self): return redup(self.root1b)  # @@@ or root1c?
 
-def stems0b(lexeme):
-    root1 = lexeme["root1"]
+    def stems(self, lexeme):
+        self.root1 = lexeme["root1"]
+        assert re.match(self.root1regex, self.root1)
 
-    assert root1.endswith("ζ"), (lemma, root1)
-
-    root1b = root1[:-1]
-
-    stems = dict(
-        P=root1,
-        I=augment(root1),
-        F=root1b + "σ",
-        FP=root1b + "σ" + "θη" + "σ",
-        A=augment(root1b + "σ"),
-        AN=root1b + "σ",
-        AP=augment(root1b + "σ" + "θη!"),
-        APN=root1b + "σ" + "θη!",
-        X=redup(root1 + "κ"),  # @@@
-        XM=redup(root1b + "σ"),
-        Y=redup(root1 + "κ"),  # @@@
-        YM=redup(root1),  # @@@
-    )
-
-    return stems
+        return {
+            key: getattr(self, key)
+            for key in ["P", "I", "F", "FP", "A", "AN", "AP", "APN", "X", "XM", "Y", "YM"]
+        }
 
 
-def stems1ab(lexeme):
-    root1 = lexeme["root1"]
+class Stems0a(Stems):
 
-    assert root1.endswith("ε"), (lemma, root1)
-
-    root1b = root1[:-1] + "η"
-
-    stems = dict(
-        P=root1,
-        I=augment(root1),
-        F=root1b + "σ",
-        FP=root1b + "θη" + "σ",
-        A=augment(root1b + "σ"),
-        AN=root1b + "σ",
-        AP=augment(root1b + "θη!"),
-        APN=root1b + "θη!",
-        X=redup(root1b + "κ"),
-        XM=redup(root1b),
-        Y=redup(root1b + "κ"),  # @@@
-        YM=redup(root1b),  # @@@
-    )
-
-    return stems
+    @property
+    def root1c(self): return self.root1b + "σ"
 
 
-def stems1c(lexeme):
-    root1 = lexeme["root1"]
 
-    assert root1.endswith("ε"), (lemma, root1)
+class Stems0b(Stems):
 
-    stems = dict(
-        P=root1,
-        I=augment(root1),
-        F=root1 + "σ",
-        FP=root1 + "σ" + "θη" + "σ",
-        A=augment(root1 + "σ"),
-        AN=root1 + "σ",
-        AP=augment(root1 + "σ" + "θη!"),
-        APN=root1 + "σ" + "θη!",
-        X=redup(root1 + "κ"),
-        XM=redup(root1 + "σ"),
-        Y=redup(root1 + "κ"),  # @@@
-        YM=redup(root1),  # @@@
-    )
+    root1regex = ".+ζ$"
 
-    return stems
+    @property
+    def root1b(self): return self.root1[:-1]
+
+    @property
+    def root1c(self): return self.root1b + "σ"
 
 
-def stems2a(lexeme):
-    root1 = lexeme["root1"]
+class Stems1ab(Stems):
 
-    assert root1.endswith("α"), (lemma, root1)
+    root1regex = ".+ε$"
 
-    root1b = root1[:-1] + "η"
-
-    stems = dict(
-        P=root1,
-        I=augment(root1),
-        F=root1b + "σ",
-        FP=root1b + "θη" + "σ",
-        A=augment(root1b + "σ"),
-        AN=root1b + "σ",
-        AP=augment(root1b + "θη!"),
-        APN=root1b + "θη!",
-        X=redup(root1b + "κ"),
-        XM=redup(root1b),
-        Y=redup(root1b + "κ"),  # @@@
-        YM=redup(root1b),  # @@@
-    )
-
-    return stems
+    @property
+    def root1b(self): return self.root1[:-1] + "η"
 
 
-def stems2b(lexeme):
-    root1 = lexeme["root1"]
+class Stems1c(Stems):
 
-    assert root1.endswith("α"), (lemma, root1)
+    root1regex = ".+ε$"
 
-    stems = dict(
-        P=root1,
-        I=augment(root1),
-        F=root1 + "σ",
-        FP=root1 + "σ" + "θη" + "σ",
-        A=augment(root1 + "σ"),
-        AN=root1 + "σ",
-        AP=augment(root1 + "σ" + "θη!"),
-        APN=root1 + "σ" + "θη!",
-        X=redup(root1 + "κ"),
-        XM=redup(root1 + "σ"),
-        Y=redup(root1 + "κ"),  # @@@
-        YM=redup(root1),  # @@@
-    )
-
-    return stems
+    @property
+    def root1c(self): return self.root1b + "σ"
 
 
-def stems2c(lexeme):
-    root1 = lexeme["root1"]
+class Stems2a(Stems):
 
-    assert root1.endswith("α"), (lemma, root1)
+    root1regex = ".+α$"
 
-    stems = dict(
-        P=root1,
-        I=augment(root1),
-        F=root1 + "σ",
-        FP=root1 + "θη" + "σ",
-        A=augment(root1 + "σ"),
-        AN=root1 + "σ",
-        AP=augment(root1 + "θη!"),
-        APN=root1 + "θη!",
-        X=redup(root1 + "κ"),
-        XM=redup(root1),
-        Y=redup(root1 + "κ"),  # @@@
-        YM=redup(root1),  # @@@
-    )
-
-    return stems
+    @property
+    def root1b(self): return self.root1[:-1] + "η"
 
 
-def stems3a(lexeme):
-    root1 = lexeme["root1"]
+class Stems2b(Stems):
 
-    assert root1.endswith("ο"), (lemma, root1)
+    root1regex = ".+α$"
 
-    root1b = root1[:-1] + "ω"
+    @property
+    def root1c(self): return self.root1 + "σ"
 
-    stems = dict(
-        P=root1,
-        I=augment(root1),
-        F=root1b + "σ",
-        FP=root1b + "θη" + "σ",
-        A=augment(root1b + "σ"),
-        AN=root1b + "σ",
-        AP=augment(root1b + "θη!"),
-        APN=root1b + "θη!",
-        X=redup(root1b + "κ"),
-        XM=redup(root1b),
-        Y=redup(root1b + "κ"),  # @@@
-        YM=redup(root1b),  # @@@
-    )
 
-    return stems
+class Stems2c(Stems):
+
+    root1regex = ".+α$"
+
+
+class Stems3a(Stems):
+
+    root1regex = ".+ο$"
+
+    @property
+    def root1b(self): return self.root1[:-1] + "ω"
 
 
 file_list = [
@@ -250,21 +168,21 @@ for filename in file_list:
             assert "root1" in lexeme, lemma
 
             if filename in ["lexicon0a.yaml"]:
-                stems = stems0a(lexeme)
+                stems = Stems0a().stems(lexeme)
             elif filename in ["lexicon0b.yaml"]:
-                stems = stems0b(lexeme)
+                stems = Stems0b().stems(lexeme)
             elif filename in ["lexicon1a.yaml", "lexicon1b.yaml"]:
-                stems = stems1ab(lexeme)
+                stems = Stems1ab().stems(lexeme)
             elif filename in ["lexicon1c.yaml"]:
-                stems = stems1c(lexeme)
+                stems = Stems1c().stems(lexeme)
             elif filename in ["lexicon2a.yaml"]:
-                stems = stems2a(lexeme)
+                stems = Stems2a().stems(lexeme)
             elif filename in ["lexicon2b.yaml"]:
-                stems = stems2b(lexeme)
+                stems = Stems2b().stems(lexeme)
             elif filename in ["lexicon2c.yaml"]:
-                stems = stems2c(lexeme)
+                stems = Stems2c().stems(lexeme)
             elif filename in ["lexicon3a.yaml"]:
-                stems = stems3a(lexeme)
+                stems = Stems3a().stems(lexeme)
             else:
                 raise Exception()
 
