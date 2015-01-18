@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 
+import os.path
 
 from lexicon import LEXICON
 from verbs import calculate_form, calculate_part
 
+
+TEST_DIR = "tests"
 
 TEST_FILES = [
     "test01.txt",
@@ -18,12 +21,13 @@ TEST_FILES = [
     "test10.txt",
 ]
 
+
 passed = 0
 fails = []
 
 
 for test_name in TEST_FILES:
-    with open("tests/{}".format(test_name)) as f:
+    with open(os.path.join(TEST_DIR, test_name)) as f:
         for line in f:
             record = line.strip().split("#")[0]
             if not record:

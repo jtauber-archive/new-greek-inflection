@@ -1,5 +1,14 @@
+"""
+Code for loading in the lexicon.
+"""
+
+import os.path
 import yaml
+
 from verbs import Verb
+
+
+LEXICA_DIR = "lexica"
 
 
 LEXICON = {}
@@ -21,7 +30,7 @@ LEXICON_FILES = [
 ]
 
 for lexicon_filename in LEXICON_FILES:
-    with open("lexica/{}".format(lexicon_filename)) as f:
+    with open(os.path.join(LEXICA_DIR, lexicon_filename)) as f:
         for lemma, lexeme in yaml.load(f).items():
             LEXICON[lemma] = Verb(lexeme)
 
