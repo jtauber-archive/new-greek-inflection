@@ -21,7 +21,7 @@ def _augment(stem):
         return "ὡ" + stem[1:]
     elif stem.startswith("οἰ"):
         return "ᾠ" + stem[2:]
-    elif stem.startswith(("εἰ", "εὐ", "ἠ", "ἡ", "ὑ", "ὠ")):
+    elif stem.startswith(("εἰ", "εὐ", "ἠ", "ἡ", "ἰ", "ἱ", "ὑ", "ὠ")):
         return stem
     else:
         return None
@@ -203,6 +203,31 @@ def stems2c(lexeme):
     return stems
 
 
+def stems3a(lexeme):
+    root1 = lexeme["root1"]
+
+    assert root1.endswith("ο"), (lemma, root1)
+
+    root1b = root1[:-1] + "ω"
+
+    stems = dict(
+        P=root1,
+        I=augment(root1),
+        F=root1b + "σ",
+        FP=root1b + "θη" + "σ",
+        A=augment(root1b + "σ"),
+        AN=root1b + "σ",
+        AP=augment(root1b + "θη!"),
+        APN=root1b + "θη!",
+        X=redup(root1b + "κ"),
+        XM=redup(root1b),
+        Y=redup(root1b + "κ"),  # @@@
+        YM=redup(root1b),  # @@@
+    )
+
+    return stems
+
+
 file_list = [
     "lexicon0a.yaml",
     "lexicon0b.yaml",
@@ -212,6 +237,7 @@ file_list = [
     "lexicon2a.yaml",
     "lexicon2b.yaml",
     "lexicon2c.yaml",
+    "lexicon3a.yaml",
 ]
 
 
@@ -237,6 +263,10 @@ for filename in file_list:
                 stems = stems2b(lexeme)
             elif filename in ["lexicon2c.yaml"]:
                 stems = stems2c(lexeme)
+            elif filename in ["lexicon3a.yaml"]:
+                stems = stems3a(lexeme)
+            else:
+                raise Exception()
 
             for key in stems:
                 if key in lexeme:
