@@ -85,12 +85,15 @@ class Stems:
 
 class Stems0a(Stems):
 
+    "//σ"
+
     @property
     def root1c(self): return self.root1b + "σ"
 
 
-
 class Stems0b(Stems):
+
+    "ζ//σ"
 
     root1regex = ".+ζ$"
 
@@ -103,6 +106,8 @@ class Stems0b(Stems):
 
 class Stems1ab(Stems):
 
+    "ε/η/η"
+
     root1regex = ".+ε$"
 
     @property
@@ -110,6 +115,8 @@ class Stems1ab(Stems):
 
 
 class Stems1c(Stems):
+
+    "ε/ε/εσ"
 
     root1regex = ".+ε$"
 
@@ -119,6 +126,8 @@ class Stems1c(Stems):
 
 class Stems2a(Stems):
 
+    "α/η/η"
+
     root1regex = ".+α$"
 
     @property
@@ -126,6 +135,8 @@ class Stems2a(Stems):
 
 
 class Stems2b(Stems):
+
+    "α/η/ησ"
 
     root1regex = ".+α$"
 
@@ -135,10 +146,14 @@ class Stems2b(Stems):
 
 class Stems2c(Stems):
 
+    "α/α/α"
+
     root1regex = ".+α$"
 
 
 class Stems3a(Stems):
+
+    "ο/ω/ω"
 
     root1regex = ".+ο$"
 
