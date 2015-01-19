@@ -75,12 +75,12 @@ class Stems:
 
     def stems(self, lexeme):
         self.root1 = lexeme["root1"]
-        assert re.match(self.root1regex, self.root1)
 
-        return {
-            key: getattr(self, key)
-            for key in ["P", "I", "F", "FP", "A", "AN", "AP", "APN", "X", "XM", "Y", "YM"]
-        }
+        if re.match(self.root1regex, self.root1):
+            return {
+                key: getattr(self, key)
+                for key in ["P", "I", "F", "FP", "A", "AN", "AP", "APN", "X", "XM", "Y", "YM"]
+            }
 
 
 class Stems0a(Stems):
@@ -204,3 +204,27 @@ for filename in file_list:
             for key in stems:
                 if key in lexeme:
                     assert lexeme[key] == stems[key], (lemma, key, stems[key], lexeme[key])
+
+
+filename = "lexicon3x.yaml"
+
+with open(os.path.join("lexica", filename)) as f:
+    for lemma, lexeme in yaml.load(f).items():
+        if "prefix" in lexeme:
+            continue
+
+        assert "root1" in lexeme, lemma
+
+        print("{}:".format(lemma))
+        for stem_class in [Stems0a, Stems0b, Stems1ab, Stems1c, Stems2a, Stems2b, Stems2c, Stems3a]:
+            fail = False
+            stems = stem_class().stems(lexeme)
+
+            if stems:
+                for key in stems:
+                    if key in lexeme:
+                        if lexeme[key] != stems[key]:
+                            fail = True
+                            break
+                if not fail:
+                    print("    {}".format(stem_class.__name__))
