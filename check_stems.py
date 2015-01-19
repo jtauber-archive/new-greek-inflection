@@ -174,6 +174,18 @@ file_list = [
 ]
 
 
+stem_classes = {
+    "0a": Stems0a,
+    "0b": Stems0b,
+    "1a": Stems1ab,
+    "1c": Stems1c,
+    "2a": Stems2a,
+    "2b": Stems2b,
+    "2c": Stems2c,
+    "3a": Stems3a,
+}
+
+
 for filename in file_list:
     with open(os.path.join("lexica", filename)) as f:
         for lemma, lexeme in yaml.load(f).items():
@@ -181,50 +193,34 @@ for filename in file_list:
                 continue
 
             assert "root1" in lexeme, lemma
+            assert "class" in lexeme, lemma
 
-            if filename in ["lexicon0a.yaml"]:
-                stems = Stems0a().stems(lexeme)
-            elif filename in ["lexicon0b.yaml"]:
-                stems = Stems0b().stems(lexeme)
-            elif filename in ["lexicon1a.yaml", "lexicon1b.yaml"]:
-                stems = Stems1ab().stems(lexeme)
-            elif filename in ["lexicon1c.yaml"]:
-                stems = Stems1c().stems(lexeme)
-            elif filename in ["lexicon2a.yaml"]:
-                stems = Stems2a().stems(lexeme)
-            elif filename in ["lexicon2b.yaml"]:
-                stems = Stems2b().stems(lexeme)
-            elif filename in ["lexicon2c.yaml"]:
-                stems = Stems2c().stems(lexeme)
-            elif filename in ["lexicon3a.yaml"]:
-                stems = Stems3a().stems(lexeme)
-            else:
-                raise Exception()
+            stems = stem_classes[lexeme["class"]]().stems(lexeme)
 
             for key in stems:
                 if key in lexeme:
                     assert lexeme[key] == stems[key], (lemma, key, stems[key], lexeme[key])
 
 
-filename = "lexicon3x.yaml"
-
-with open(os.path.join("lexica", filename)) as f:
-    for lemma, lexeme in yaml.load(f).items():
-        if "prefix" in lexeme:
-            continue
-
-        assert "root1" in lexeme, lemma
-
-        print("{}:".format(lemma))
-        for stem_class in [Stems0a, Stems0b, Stems1ab, Stems1c, Stems2a, Stems2b, Stems2c, Stems3a]:
-            fail = False
-            stems = stem_class().stems(lexeme)
-
-            if stems:
-                for key in stems:
-                    if key in lexeme:
-                        if lexeme[key] != stems[key]:
-                            fail = True
-                            break
-                if not fail:
-                    print("    {}".format(stem_class.__name__))
+# filename = "lexiconxx.yaml"
+#
+# with open(os.path.join("lexica", filename)) as f:
+#     for lemma, lexeme in yaml.load(f).items():
+#         if "prefix" in lexeme:
+#             continue
+#
+#         assert "root1" in lexeme, lemma
+#
+#         print("{}:".format(lemma))
+#         for stem_class in [Stems0a, Stems0b, Stems1ab, Stems1c, Stems2a, Stems2b, Stems2c, Stems3a]:
+#             fail = False
+#             stems = stem_class().stems(lexeme)
+#
+#             if stems:
+#                 for key in stems:
+#                     if key in lexeme:
+#                         if lexeme[key] != stems[key]:
+#                             fail = True
+#                             break
+#                 if not fail:
+#                     print("    {}".format(stem_class.__name__))
