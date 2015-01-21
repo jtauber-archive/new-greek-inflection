@@ -284,6 +284,7 @@ def calculate_form(lexeme, parse):
             prefix = re.sub(r"παρά\+εἰ", "παρει", prefix)
             prefix = re.sub(r"πρό\+ἐ", "προε", prefix)
             prefix = re.sub(r"πρό\+ὑ", "προϋ", prefix)
+            prefix = re.sub(r"πρό\+εὐ", "προευ", prefix)
             prefix = re.sub(r"πρός\+ἀ", "προσα", prefix)
             prefix = re.sub(r"σύν\+ἀ", "συνα", prefix)
             prefix = re.sub(r"σύν\+ἐ", "συνε", prefix)

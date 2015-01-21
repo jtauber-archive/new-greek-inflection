@@ -21,6 +21,8 @@ def _augment(stem):
         return "ηὐ" + stem[2:]
     elif stem.startswith("ἐ"):
         return "ἠ" + stem[1:]
+    elif stem.startswith("ἑ"):
+        return "ἡ" + stem[1:]
     elif stem.startswith("ὀ"):
         return "ὠ" + stem[1:]
     elif stem.startswith("ὁ"):
@@ -99,14 +101,35 @@ class Stems:
             }
 
 
-class Stems00(Stems):
-
-    "//"
-
-
 class Stems0a(Stems):
 
     "//σ"
+
+    root1regex = ".+[^υλρκχπφαεο]$"
+
+    @property
+    def root1c(self): return self.root1b + "σ"
+
+
+class Stems0eu(Stems):
+
+    "ευ/ευ/ευ"
+
+    root1regex = ".+ευ$"
+
+
+class Stems0u(Stems):
+
+    "υ/υ/υ"
+
+    root1regex = ".+υ$"
+
+
+class Stems0u2(Stems):
+
+    "υ/υ/υσ"
+
+    root1regex = ".+υ$"
 
     @property
     def root1c(self): return self.root1b + "σ"
@@ -133,6 +156,16 @@ class Stems0c(Stems):
 
     @property
     def root1c(self): return self.root1b + "η"
+
+
+class Stems0r(Stems):
+
+    "ρ/ρη/ρη"
+
+    root1regex = ".+ρ$"
+
+    @property
+    def root1b(self): return self.root1 + "η"
 
 
 class Stems0d(Stems):
@@ -162,7 +195,7 @@ class Stems0f(Stems):
 
     "κ/κ/χ"
 
-    root1regex = ".+κ$"
+    root1regex = ".+[^σ]κ$"
 
     @property
     def root1c(self): return self.root1[:-1] + "χ"
@@ -176,6 +209,20 @@ class Stems0g(Stems):
 
     @property
     def root1d(self): return self.root1[:-1] + "κ"
+
+
+class Stems0p(Stems):
+
+    "π/π/π"
+
+    root1regex = ".+π$"
+
+
+class Stems0ph(Stems):
+
+    "φ/φ/φ"
+
+    root1regex = ".+φ$"
 
 
 class Stems1ab(Stems):
@@ -250,14 +297,19 @@ file_list = [
 
 
 stem_classes = {
-    "00": Stems00,
     "0a": Stems0a,
     "0b": Stems0b,
     "0c": Stems0c,
+    "0r": Stems0r,
     "0d": Stems0d,
     "0e": Stems0e,
     "0f": Stems0f,
     "0g": Stems0g,
+    "0eu": Stems0eu,
+    "0p": Stems0p,
+    "0ph": Stems0ph,
+    "0u": Stems0u,
+    "0u2": Stems0u2,
     "1a": Stems1ab,
     "1c": Stems1c,
     "2a": Stems2a,
@@ -280,6 +332,9 @@ for filename in file_list:
             # assert "class" in lexeme, lemma
 
             stems = stem_classes[lexeme["class"]]().stems(lexeme)
+
+            if stems is None:
+                raise Exception("{} doesn't match class".format(lemma))
 
             for key in stems:
                 if key in lexeme:
