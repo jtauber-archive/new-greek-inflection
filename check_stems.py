@@ -51,233 +51,331 @@ def redup(stem):
 def orthography(stem):
     if stem.endswith(("πσ", "φσ")):
         return stem[:-2] + "ψ"
-    elif stem.endswith(("κσ", "χσ")):
+    elif stem.endswith(("γσ", "κσ", "χσ")):
         return stem[:-2] + "ξ"
     else:
         return stem
 
 
-class Stems:
+class StemsBase:
 
     root1regex = ".+$"
-
-    @property
-    def root1b(self): return self.root1
-    @property
-    def root1c(self): return self.root1b
-    @property
-    def root1d(self): return self.root1c
-
-    @property
-    def P(self): return self.root1
-    @property
-    def I(self): return augment(self.root1)
-    @property
-    def F(self): return orthography(self.root1b + "σ")
-    @property
-    def FP(self): return self.root1c + "θη" + "σ"
-    @property
-    def A(self): return augment(self.AN)
-    @property
-    def AN(self): return orthography(self.root1b + "σ")
-    @property
-    def AP(self): return augment(self.APN)
-    @property
-    def APN(self): return self.root1c + "θη!"
-    @property
-    def X(self): return redup(self.root1b + "κ")
-    @property
-    def XM(self): return redup(self.root1d)
-    @property
-    def Y(self): return redup(self.root1b + "κ")
-    @property
-    def YM(self): return redup(self.root1b)  # @@@ or root1d?
 
     def stems(self, lexeme):
         self.root1 = lexeme["root1"]
 
         if re.match(self.root1regex, self.root1):
+
+            if "root2" in lexeme:
+                self.root2_override = lexeme["root2"]
+            if "root3" in lexeme:
+                self.root3_override = lexeme["root3"]
+            if "root3post" in lexeme:
+                self.root3post_override = lexeme["root3post"]
+            if "root4" in lexeme:
+                self.root4_override = lexeme["root4"]
+            if "root4post" in lexeme:
+                self.root4post_override = lexeme["root4post"]
+            if "root5" in lexeme:
+                self.root5_override = lexeme["root5"]
+            if "root6" in lexeme:
+                self.root6_override = lexeme["root6"]
+
             return {
                 key: getattr(self, key)
                 for key in ["P", "I", "F", "FP", "A", "AN", "AP", "APN", "X", "XM", "Y", "YM"]
             }
 
 
-class Stems0a(Stems):
+class Stems(StemsBase):
 
-    "//σ"
+    root1regex = ".+$"
+
+    @property
+    def root2(self):
+        if hasattr(self, "root2_override"):
+            return self.root2_override
+        else:
+            return self.root1
+
+    @property
+    def root3(self):
+        if hasattr(self, "root3_override"):
+            return self.root3_override
+        else:
+            return self.root2
+
+    @property
+    def root4(self):
+        if hasattr(self, "root4_override"):
+            return self.root4_override
+        else:
+            return self.root2
+
+    @property
+    def root5(self):
+        if hasattr(self, "root5_override"):
+            return self.root5_override
+        else:
+            return self.root4
+
+    @property
+    def root6(self):
+        if hasattr(self, "root6_override"):
+            return self.root6_override
+        else:
+            return self.root2 + "θ"
+
+    # first principal part
+
+    @property
+    def root1post(self):
+        if hasattr(self, "root1post_override"):
+            return self.root1post_override
+        else:
+            return self.root1
+
+    @property
+    def P(self): return self.root1post
+
+    @property
+    def I(self): return augment(self.root1post)
+
+    # second principal part
+
+    @property
+    def root2post(self):
+        if hasattr(self, "root2post_override"):
+            return self.root2post_override
+        else:
+            return orthography(self.root2 + "σ")
+
+    @property
+    def F(self): return self.root2post
+
+    # third principal part
+
+    @property
+    def root3post(self):
+        if hasattr(self, "root3post_override"):
+            return self.root3post_override
+        else:
+            return orthography(self.root3 + "σ")
+
+    @property
+    def AN(self): return self.root3post
+
+    @property
+    def A(self): return augment(self.root3post)
+
+    # fourth principal part
+
+    @property
+    def root4post(self):
+        if hasattr(self, "root4post_override"):
+            return self.root4post_override
+        else:
+            return self.root4 + "κ"
+
+    @property
+    def X(self): return redup(self.root4post)
+
+    @property
+    def Y(self): return redup(self.root4post)
+
+    # fifth principal part
+
+    @property
+    def root5post(self):
+        if hasattr(self, "root5post_override"):
+            return self.root5post_override
+        else:
+            return self.root5
+
+    @property
+    def XM(self): return redup(self.root5post)
+
+    @property
+    def YM(self): return redup(self.root5post)
+
+    # sixth principal part
+
+    @property
+    def root6postA(self):
+        if hasattr(self, "root6postA_override"):
+            return self.root6postA_override
+        else:
+            return self.root6 + "η!"
+
+    @property
+    def root6postF(self):
+        if hasattr(self, "root6postF_override"):
+            return self.root6postF_override
+        else:
+            return self.root6 + "ησ"
+
+    @property
+    def APN(self): return self.root6postA
+
+    @property
+    def AP(self): return augment(self.root6postA)
+
+    @property
+    def FP(self): return self.root6postF
+
+
+class Stems0a(Stems):
 
     root1regex = ".+[^υλρκχπφαεο]$"
 
     @property
-    def root1c(self): return self.root1b + "σ"
+    def root5(self): return self.root4 + "σ"
+
+    @property
+    def root6(self): return self.root2 + "σθ"
 
 
 class Stems0eu(Stems):
-
-    "ευ/ευ/ευ"
 
     root1regex = ".+ευ$"
 
 
 class Stems0u(Stems):
 
-    "υ/υ/υ"
-
     root1regex = ".*[^ε]υ$"
 
 
 class Stems0u2(Stems):
 
-    "υ/υ/υσ"
-
     root1regex = ".+[^ε]υ$"
 
     @property
-    def root1c(self): return self.root1b + "σ"
+    def root6(self): return self.root2 + "σθ"
 
 
 class Stems0b(Stems):
 
-    "ζ//σ"
-
     root1regex = ".+ζ$"
 
     @property
-    def root1b(self): return self.root1[:-1]
+    def root2(self): return self.root1[:-1]
 
     @property
-    def root1c(self): return self.root1b + "σ"
+    def root5(self): return self.root4 + "σ"
+
+    @property
+    def root6(self): return self.root2 + "σθ"
+
 
 
 class Stems0wiz(Stems):
 
-    "ῳζ/ω/ω/ωσ"
-
     root1regex = ".+ῳζ$"
 
     @property
-    def root1b(self): return self.root1[:-2] + "ω"
+    def root2(self): return self.root1[:-2] + "ω"
 
     @property
-    def root1d(self): return self.root1c + "σ"
+    def root5(self): return self.root2 + "σ"
 
 
 class Stems0c(Stems):
 
-    "λ/λ/λη"
-
     root1regex = ".+λ$"
 
     @property
-    def root1c(self): return self.root1b + "η"
+    def root2(self): return self.root1 + "η"
 
 
 class Stems0r(Stems):
 
-    "ρ/ρη/ρη"
-
     root1regex = ".+ρ$"
 
     @property
-    def root1b(self): return self.root1 + "η"
+    def root2(self): return self.root1 + "η"
 
 
 class Stems0d(Stems):
 
-    "σκ//"
-
     root1regex = ".+σκ$"
 
     @property
-    def root1b(self): return self.root1[:-2]
+    def root2(self): return self.root1[:-2]
 
 
 class Stems0e(Stems):
 
-    "πτ/π/φ"
-
     root1regex = ".+πτ$"
 
     @property
-    def root1b(self): return self.root1[:-1]
+    def root2(self): return self.root1[:-1]
 
     @property
-    def root1c(self): return self.root1[:-2] + "φ"
+    def root6(self): return self.root2[:-1] + "φθ"
 
 
 class Stems0f(Stems):
 
-    "κ/κ/χ"
-
     root1regex = ".+[^σ]κ$"
 
     @property
-    def root1c(self): return self.root1[:-1] + "χ"
+    def root6(self): return self.root1[:-1] + "χθ"
 
 
 class Stems0g(Stems):
 
-    "χ/χ/χ/κ"
-
     root1regex = ".+χ$"
 
     @property
-    def root1d(self): return self.root1[:-1] + "κ"
+    def root5(self): return self.root1[:-1] + "κ"
 
 
 class Stems0p(Stems):
 
-    "π/π/π"
-
     root1regex = ".+π$"
+
+    @property
+    def root6(self): return self.root1[:-1] + "φθ"
 
 
 class Stems0ph(Stems):
-
-    "φ/φ/φ"
 
     root1regex = ".+φ$"
 
 
 class Stems1ab(Stems):
 
-    "ε/η/η"
-
     root1regex = ".+ε$"
 
     @property
-    def root1b(self): return self.root1[:-1] + "η"
+    def root2(self): return self.root1[:-1] + "η"
 
 
 class Stems1c(Stems):
 
-    "ε/ε/εσ"
-
     root1regex = ".+ε$"
 
     @property
-    def root1c(self): return self.root1b + "σ"
+    def root5(self): return self.root2 + "σ"
+
+    @property
+    def root6(self): return self.root2 + "σθ"
 
 
 class Stems2a(Stems):
 
-    "α/η/η"
-
     root1regex = ".+α$"
 
     @property
-    def root1b(self): return self.root1[:-1] + "η"
+    def root2(self): return self.root1[:-1] + "η"
 
 
 class Stems2b(Stems):
 
-    "α/η/ησ"
-
     root1regex = ".+α$"
 
     @property
-    def root1c(self): return self.root1 + "σ"
+    def root6(self): return self.root1 + "σθ"
 
 
 class Stems2c(Stems):
@@ -289,12 +387,10 @@ class Stems2c(Stems):
 
 class Stems3a(Stems):
 
-    "ο/ω/ω"
-
     root1regex = ".+ο$"
 
     @property
-    def root1b(self): return self.root1[:-1] + "ω"
+    def root2(self): return self.root1[:-1] + "ω"
 
 
 file_list = [
@@ -308,10 +404,12 @@ file_list = [
     "lexicon2b.yaml",
     "lexicon2c.yaml",
     "lexicon3a.yaml",
+    "lexicon4w.yaml",
 ]
 
 
 stem_classes = {
+    "basic": Stems,
     "0a": Stems0a,
     "0b": Stems0b,
     "0wiz": Stems0wiz,
@@ -354,10 +452,10 @@ for filename in file_list:
 
             for key in stems:
                 if key in lexeme:
-                    assert lexeme[key] == stems[key], (lemma, key, stems[key], lexeme[key])
+                    assert lexeme[key] == stems[key], (lemma, key, stems[key], lexeme[key], lexeme["class"])
 
 
-filename = "lexicon0w.yaml"
+filename = "lexicon4w.yaml"
 
 with open(os.path.join("lexica", filename)) as f:
     for lemma, lexeme in sorted(yaml.load(f).items(), key=lambda x: c.sort_key(x[0])):

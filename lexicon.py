@@ -29,6 +29,7 @@ LEXICON_FILES = [
     "lexicon2x.yaml",
     "lexicon3a.yaml",
     "lexicon3x.yaml",
+    "lexicon4w.yaml",
 ]
 
 for lexicon_filename in LEXICON_FILES:
