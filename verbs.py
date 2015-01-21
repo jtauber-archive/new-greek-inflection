@@ -337,6 +337,7 @@ def calculate_form(lexeme, parse):
             new_r = re.sub(r"προ\+\+ι", r"προϊ", new_r)
             new_r = re.sub(r"περι\+\+(\$?[αεηῃ])", r"περι\1", new_r)
             new_r = re.sub(r"περι\+\+ι", r"περιϊ", new_r)
+            new_r = re.sub(r"δια\+\+ι", r"διϊ", new_r)
             new_r = re.sub(r"[αιο]\+\+(\$?[αεηῃιοωῳ]|οι)", r"\1", new_r)
             new_r = re.sub(r"κ\+\+(\$?[αεηῃιοω])", r"ξ\1", new_r)
             new_r = re.sub(r"κ\+\+σ", r"ξ", new_r)

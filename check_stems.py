@@ -4,6 +4,9 @@ import os.path
 import re
 import yaml
 
+from pyuca import Collator
+c = Collator()
+
 
 def _augment(stem):
     if stem.startswith("ἀ"):
@@ -12,6 +15,8 @@ def _augment(stem):
         return "ἡ" + stem[1:]
     elif stem.startswith("αἰ"):
         return "ᾐ" + stem[2:]
+    elif stem.startswith("αἱ"):
+        return "ᾑ" + stem[2:]
     elif stem.startswith("αὐ"):
         return "ηὐ" + stem[2:]
     elif stem.startswith("ἐ"):
@@ -39,6 +44,15 @@ def redup(stem):
     return _augment(stem) or stem[0].translate(redup_table) + "ε" + stem
 
 
+def orthography(stem):
+    if stem.endswith(("πσ", "φσ")):
+        return stem[:-2] + "ψ"
+    elif stem.endswith(("κσ", "χσ")):
+        return stem[:-2] + "ξ"
+    else:
+        return stem
+
+
 class Stems:
 
     root1regex = ".+$"
@@ -47,31 +61,33 @@ class Stems:
     def root1b(self): return self.root1
     @property
     def root1c(self): return self.root1b
+    @property
+    def root1d(self): return self.root1c
 
     @property
     def P(self): return self.root1
     @property
     def I(self): return augment(self.root1)
     @property
-    def F(self): return self.root1b + "σ"
+    def F(self): return orthography(self.root1b + "σ")
     @property
     def FP(self): return self.root1c + "θη" + "σ"
     @property
-    def A(self): return augment(self.root1b + "σ")
+    def A(self): return augment(self.AN)
     @property
-    def AN(self): return self.root1b + "σ"
+    def AN(self): return orthography(self.root1b + "σ")
     @property
-    def AP(self): return augment(self.root1c + "θη!")
+    def AP(self): return augment(self.APN)
     @property
     def APN(self): return self.root1c + "θη!"
     @property
     def X(self): return redup(self.root1b + "κ")
     @property
-    def XM(self): return redup(self.root1c)
+    def XM(self): return redup(self.root1d)
     @property
     def Y(self): return redup(self.root1b + "κ")
     @property
-    def YM(self): return redup(self.root1b)  # @@@ or root1c?
+    def YM(self): return redup(self.root1b)  # @@@ or root1d?
 
     def stems(self, lexeme):
         self.root1 = lexeme["root1"]
@@ -81,6 +97,11 @@ class Stems:
                 key: getattr(self, key)
                 for key in ["P", "I", "F", "FP", "A", "AN", "AP", "APN", "X", "XM", "Y", "YM"]
             }
+
+
+class Stems00(Stems):
+
+    "//"
 
 
 class Stems0a(Stems):
@@ -102,6 +123,59 @@ class Stems0b(Stems):
 
     @property
     def root1c(self): return self.root1b + "σ"
+
+
+class Stems0c(Stems):
+
+    "λ/λ/λη"
+
+    root1regex = ".+λ$"
+
+    @property
+    def root1c(self): return self.root1b + "η"
+
+
+class Stems0d(Stems):
+
+    "σκ//"
+
+    root1regex = ".+σκ$"
+
+    @property
+    def root1b(self): return self.root1[:-2]
+
+
+class Stems0e(Stems):
+
+    "πτ/π/φ"
+
+    root1regex = ".+πτ$"
+
+    @property
+    def root1b(self): return self.root1[:-1]
+
+    @property
+    def root1c(self): return self.root1[:-2] + "φ"
+
+
+class Stems0f(Stems):
+
+    "κ/κ/χ"
+
+    root1regex = ".+κ$"
+
+    @property
+    def root1c(self): return self.root1[:-1] + "χ"
+
+
+class Stems0g(Stems):
+
+    "χ/χ/χ/κ"
+
+    root1regex = ".+χ$"
+
+    @property
+    def root1d(self): return self.root1[:-1] + "κ"
 
 
 class Stems1ab(Stems):
@@ -164,6 +238,7 @@ class Stems3a(Stems):
 file_list = [
     "lexicon0a.yaml",
     "lexicon0b.yaml",
+    "lexicon0w.yaml",
     "lexicon1a.yaml",
     "lexicon1b.yaml",
     "lexicon1c.yaml",
@@ -175,8 +250,14 @@ file_list = [
 
 
 stem_classes = {
+    "00": Stems00,
     "0a": Stems0a,
     "0b": Stems0b,
+    "0c": Stems0c,
+    "0d": Stems0d,
+    "0e": Stems0e,
+    "0f": Stems0f,
+    "0g": Stems0g,
     "1a": Stems1ab,
     "1c": Stems1c,
     "2a": Stems2a,
@@ -193,7 +274,10 @@ for filename in file_list:
                 continue
 
             assert "root1" in lexeme, lemma
-            assert "class" in lexeme, lemma
+
+            if "class" not in lexeme:
+                continue
+            # assert "class" in lexeme, lemma
 
             stems = stem_classes[lexeme["class"]]().stems(lexeme)
 
@@ -202,25 +286,30 @@ for filename in file_list:
                     assert lexeme[key] == stems[key], (lemma, key, stems[key], lexeme[key])
 
 
-# filename = "lexiconxx.yaml"
-#
-# with open(os.path.join("lexica", filename)) as f:
-#     for lemma, lexeme in yaml.load(f).items():
-#         if "prefix" in lexeme:
-#             continue
-#
-#         assert "root1" in lexeme, lemma
-#
-#         print("{}:".format(lemma))
-#         for stem_class in [Stems0a, Stems0b, Stems1ab, Stems1c, Stems2a, Stems2b, Stems2c, Stems3a]:
-#             fail = False
-#             stems = stem_class().stems(lexeme)
-#
-#             if stems:
-#                 for key in stems:
-#                     if key in lexeme:
-#                         if lexeme[key] != stems[key]:
-#                             fail = True
-#                             break
-#                 if not fail:
-#                     print("    {}".format(stem_class.__name__))
+filename = "lexicon0w.yaml"
+
+with open(os.path.join("lexica", filename)) as f:
+    for lemma, lexeme in sorted(yaml.load(f).items(), key=lambda x: c.sort_key(x[0])):
+        if "prefix" in lexeme:
+            continue
+
+        assert "root1" in lexeme, lemma
+        first = True
+
+        for stem_class in stem_classes.values():
+            fail = False
+            stems = stem_class().stems(lexeme)
+
+            if stems:
+                for key in stems:
+                    if key in lexeme:
+                        if lexeme[key] != stems[key]:
+                            fail = True
+                            break
+                if not fail:
+                    if "class" in lexeme:
+                        continue
+                    if first:
+                        print("{}:".format(lemma))
+                    first = False
+                    print("    {}".format(stem_class.__name__))
