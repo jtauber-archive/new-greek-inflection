@@ -29,6 +29,8 @@ def _augment(stem):
         return "ὡ" + stem[1:]
     elif stem.startswith("οἰ"):
         return "ᾠ" + stem[2:]
+    elif stem.startswith("ῥ"):
+        return "ἐρ" + stem[1:]
     elif stem.startswith(("εἰ", "εὐ", "ἠ", "ἡ", "ἰ", "ἱ", "ὑ", "ὠ")):
         return stem
     else:
@@ -122,14 +124,14 @@ class Stems0u(Stems):
 
     "υ/υ/υ"
 
-    root1regex = ".+υ$"
+    root1regex = ".*[^ε]υ$"
 
 
 class Stems0u2(Stems):
 
     "υ/υ/υσ"
 
-    root1regex = ".+υ$"
+    root1regex = ".+[^ε]υ$"
 
     @property
     def root1c(self): return self.root1b + "σ"
@@ -146,6 +148,19 @@ class Stems0b(Stems):
 
     @property
     def root1c(self): return self.root1b + "σ"
+
+
+class Stems0wiz(Stems):
+
+    "ῳζ/ω/ω/ωσ"
+
+    root1regex = ".+ῳζ$"
+
+    @property
+    def root1b(self): return self.root1[:-2] + "ω"
+
+    @property
+    def root1d(self): return self.root1c + "σ"
 
 
 class Stems0c(Stems):
@@ -299,6 +314,7 @@ file_list = [
 stem_classes = {
     "0a": Stems0a,
     "0b": Stems0b,
+    "0wiz": Stems0wiz,
     "0c": Stems0c,
     "0r": Stems0r,
     "0d": Stems0d,
