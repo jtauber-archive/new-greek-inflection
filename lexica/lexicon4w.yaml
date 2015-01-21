@@ -1,0 +1,157 @@
+ἀλλάσσω:
+    class: basic
+    root1: ἀλλᾰσσ
+    root2: ἀλλᾰγ
+    root6: ἀλλᾰγ
+    P: ἀλλᾰσσ
+    I: ἠλλᾰσσ
+    F: ἀλλᾰξ
+    FP: ἀλλᾰγησ
+    A: ἠλλᾰξ
+    AN: ἀλλᾰξ
+    AP: ἠλλᾰγη!
+    APN: ἀλλᾰγη!
+    XM: ἠλλᾰγ
+
+ἀπαλλάσσω:
+    inherit: ἀλλάσσω
+    prefix: ἀπό
+
+ἀποκαταλλάσσω:
+    inherit: ἀλλάσσω
+    prefix: ἀπό+κατά
+
+διαλλάσσομαι:
+    inherit: ἀλλάσσω
+    prefix: διά
+
+καταλλάσσω:
+    inherit: ἀλλάσσω
+    prefix: κατά
+
+μεταλλάσσω:
+    inherit: ἀλλάσσω
+    prefix: μετά
+
+συναλλάσσω:
+    inherit: ἀλλάσσω
+    prefix: σύν
+
+γράφω:
+    # pluperfect is augmented
+    root1: γρᾰφ
+    root2: γρᾰπ
+    root4post: γρᾰφ
+    root6: γρᾰφ
+    P: γρᾰφ
+    F: γρᾰψ
+    A: ἐγρᾰψ
+    AN: γρᾰψ
+    AP: ἐγρᾰφη!
+    X: γεγρᾰφ
+    XM: γεγρᾰπ
+    YM: ἐγεγρᾰπ
+
+ἀπογράφω:
+    inherit: γράφω
+    prefix: ἀπό
+
+ἐγγράφω:
+    inherit: γράφω
+    prefix: ἐν
+
+ἐπιγράφω:
+    inherit: γράφω
+    prefix: ἐπί
+
+προγράφω:
+    inherit: γράφω
+    prefix: πρό
+
+κάμνω:
+    class: basic
+    root1: καμν
+    root3post: καμ
+    AN: καμ
+
+κόπτω:
+    class: basic
+    root1: κοπτ
+    root2: κοπ
+    root6: κοπ
+    P: κοπτ
+    I: ἐκοπτ
+    F: κοψ
+    FP: κοπησ
+    A: ἐκοψ
+    AN: κοψ
+    AP: ἐκοπη!
+ἀποκόπτω:
+    inherit: κόπτω
+    prefix: ἀπό
+ἐγκόπτω:
+    inherit: κόπτω
+    prefix: ἐν
+ἐκκόπτω:
+    inherit: κόπτω
+    prefix: ἐκ
+προκόπτω:
+    inherit: κόπτω
+    prefix: πρό
+προσκόπτω:
+    inherit: κόπτω
+    prefix: πρός
+
+λείπω: # (see λείπω2 though)
+    class: 0p
+    root1: λειπ
+    root3post: λιπ
+    P: λειπ
+    F: λειψ
+    A: ἐλιπ
+    AN: λιπ
+    AP: ἐλειφθη!
+    APN: λειφθη!
+ἀπολείπω:
+    inherit: λείπω
+    prefix: ἀπό
+διαλείπω:
+    inherit: λείπω
+    prefix: διά
+ἐγκαταλείπω:
+    inherit: λείπω
+    prefix: ἐν+κατά
+ἐκλείπω:
+    inherit: λείπω
+    prefix: ἐκ
+ἐπιλείπω:
+    inherit: λείπω
+    prefix: ἐπί
+ὑπολείπω:
+    inherit: λείπω
+    prefix: ὑπό
+
+νύσσω:
+    class: basic
+    root1: νυσσ
+    root2: νυγ
+    root6: νυγ
+    A: ἐνυξ
+    AP: ἐνυγη!
+κατανύσσομαι:
+    inherit: νύσσω
+    prefix: κατά
+
+πλήσσω: # see also πλήσσω2
+    class: basic
+    root1: πλησσ
+    root2: πληγ
+    root6: πληγ
+    P: πλησσ
+    I: ἐπλησσ
+    AN: πληξ
+    AP: ἐπληγη!
+
+ἐπιπλήσσω:
+    inherit: πλήσσω
+    prefix: ἐπί
