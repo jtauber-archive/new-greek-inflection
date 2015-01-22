@@ -49,7 +49,7 @@ def redup(stem):
 
 
 def orthography(stem):
-    if stem.endswith(("πσ", "φσ")):
+    if stem.endswith(("βσ", "πσ", "φσ")):
         return stem[:-2] + "ψ"
     elif stem.endswith(("γσ", "κσ", "χσ")):
         return stem[:-2] + "ξ"

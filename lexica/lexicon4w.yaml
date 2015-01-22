@@ -86,18 +86,23 @@
     A: ἐκοψ
     AN: κοψ
     AP: ἐκοπη!
+
 ἀποκόπτω:
     inherit: κόπτω
     prefix: ἀπό
+
 ἐγκόπτω:
     inherit: κόπτω
     prefix: ἐν
+
 ἐκκόπτω:
     inherit: κόπτω
     prefix: ἐκ
+
 προκόπτω:
     inherit: κόπτω
     prefix: πρό
+
 προσκόπτω:
     inherit: κόπτω
     prefix: πρός
@@ -112,21 +117,27 @@
     AN: λιπ
     AP: ἐλειφθη!
     APN: λειφθη!
+
 ἀπολείπω:
     inherit: λείπω
     prefix: ἀπό
+
 διαλείπω:
     inherit: λείπω
     prefix: διά
+
 ἐγκαταλείπω:
     inherit: λείπω
     prefix: ἐν+κατά
+
 ἐκλείπω:
     inherit: λείπω
     prefix: ἐκ
+
 ἐπιλείπω:
     inherit: λείπω
     prefix: ἐπί
+
 ὑπολείπω:
     inherit: λείπω
     prefix: ὑπό
@@ -138,6 +149,7 @@
     root6: νυγ
     A: ἐνυξ
     AP: ἐνυγη!
+
 κατανύσσομαι:
     inherit: νύσσω
     prefix: κατά
@@ -155,3 +167,207 @@
 ἐπιπλήσσω:
     inherit: πλήσσω
     prefix: ἐπί
+
+πνίγω:
+    class: basic
+    root1: πνιγ
+    root6: πνιγ
+    P: πνιγ
+    I: ἐπνιγ
+    A: ἐπνιξ
+    AP: ἐπνιγη!
+
+ἀποπνίγω:
+    inherit: πνίγω
+    prefix: ἀπό
+
+συμπνίγω:
+    inherit: πνίγω
+    prefix: σύν
+
+πράσσω:
+    class: basic
+    root1: πρασσ
+    root2: πραγ
+    root4post: πραχ
+    P: πρασσ
+    F: πραξ
+    A: ἐπραξ
+    AN: πραξ
+    X: πεπραχ
+
+σήπω:
+    class: basic
+    root1: σηπ
+    root4post: σηπ
+    X: σεσηπ
+
+στρέφω:
+    class: basic
+    root1: στρεφ
+    root5: στραπ
+    root6: στραφ
+    P: στρεφ
+    I: ἐστρεφ
+    F: στρεψ
+    FP: στραφησ
+    A: ἐστρεψ
+    AN: στρεψ #/στρεφ
+    AP: ἐστραφη!
+    APN: στραφη!
+    XM: σεστραπ
+
+ἀναστρέφω:
+    inherit: στρέφω
+    prefix: ἀνά
+
+ἀποστρέφω:
+    inherit: στρέφω
+    prefix: ἀπό
+
+διαστρέφω:
+    inherit: στρέφω
+    prefix: διά
+
+ἐκστρέφομαι:
+    inherit: στρέφω
+    prefix: ἐκ
+
+ἐπιστρέφω:
+    inherit: στρέφω
+    prefix: ἐπί
+    AN: ἐπιστρεφ/ἐπιστρεψ  # @@@
+
+καταστρέφω:
+    inherit: στρέφω
+    prefix: κατά
+
+μεταστρέφω:
+    inherit: στρέφω
+    prefix: μετά
+
+ὑποστρέφω:
+    inherit: στρέφω
+    prefix: ὑπό
+
+τάσσω:
+    class: basic
+    root1: τᾰσσ
+    root2: τᾰγ
+    root4post: τᾰχ
+    root5: τᾰκ
+    root6: τᾰγ
+    P: τᾰσσ
+    F: τᾰξ
+    FP: τᾰγησ
+    A: ἐτᾰξ
+    AN: τᾰξ
+    AP: ἐτᾰγη!
+    APN: τᾰγη!
+    X: τετᾰχ
+    XM: τετᾰκ
+
+ἀνατάσσομαι:
+    inherit: τάσσω
+    prefix: ἀνά
+
+ἀντιτάσσομαι:
+    inherit: τάσσω
+    prefix: ἀντί
+
+ἀποτάσσομαι:
+    inherit: τάσσω
+    prefix: ἀπό
+
+διατάσσω:
+    inherit: τάσσω
+    prefix: διά
+
+ἐπιτάσσω:
+    inherit: τάσσω
+    prefix: ἐπί
+
+προστάσσω:
+    inherit: τάσσω
+    prefix: πρός
+
+συντάσσω:
+    inherit: τάσσω
+    prefix: σύν
+
+ὑποτάσσω:
+    inherit: τάσσω
+    prefix: ὑπό
+
+τρέπω:
+    class: basic
+    root1: τρεπ
+    root6: τραπ
+    P: τρεπ
+    I: ἐτρεπ
+    FP: τραπησ
+    A: ἐτρεψ
+    AN: τρεψ
+    AP: ἐτραπη!
+    APN: τραπη!
+
+ἀποτρέπομαι:
+    inherit: τρέπω
+    prefix: ἀπό
+
+ἐκτρέπομαι:
+    inherit: τρέπω
+    prefix: ἐκ
+
+ἀνατρέπω:
+    inherit: τρέπω
+    prefix: ἀνά
+
+ἐντρέπω:
+    inherit: τρέπω
+    prefix: ἐν
+
+ἐπιτρέπω:
+    inherit: τρέπω
+    prefix: ἐπί
+
+μετατρέπω:
+    inherit: τρέπω
+    prefix: μετά
+
+περιτρέπω:
+    inherit: τρέπω
+    prefix: περί
+
+τρίβω:
+    class: basic
+    root1: τριβ
+    root6: τριβ
+    P: τριβ
+    I: ἐτριβ
+    F: τριψ
+    FP: τριβησ
+    A: ἐτριψ
+
+διατρίβω:
+    inherit: τρίβω
+    prefix: διά
+
+συντρίβω:
+    inherit: τρίβω
+    prefix: σύν
+
+φράσσω:
+    class: basic
+    root1: φρασσ
+    root2: φραγ
+    root6: φραγ
+    P: φρασσ
+    FP: φραγησ
+    A: ἐφραξ
+    APN: φραγη!
+
+ἐκφύω:  # ἐκ+φύω
+    class: basic
+    root1: ἐκφυ
+    P: ἐκφυ
