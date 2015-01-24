@@ -124,7 +124,7 @@ class Stems(StemsBase):
         if hasattr(self, "root6_override"):
             return self.root6_override
         else:
-            return self.root2 + "θ"
+            return self.root3 + "θ"
 
     # first principal part
 
@@ -392,10 +392,10 @@ class Stems5r(Stems):
     root1regex = ".+ρ$"
 
     @property
-    def root2(self): return self.root1 + "η"
+    def root2post(self): return self.root1 + "ησ"
 
     @property
-    def root3post(self): return self.root1
+    def root3post(self): return self.root3
 
 
 class Stems5m(Stems):
@@ -406,7 +406,7 @@ class Stems5m(Stems):
     def root2(self): return self.root1 + "η"
 
     @property
-    def root3post(self): return self.root1
+    def root3post(self): return self.root3
 
 
 class Stems5n(Stems):
@@ -414,7 +414,7 @@ class Stems5n(Stems):
     root1regex = ".+[^ιυ]ν$"
 
     @property
-    def root3post(self): return self.root1
+    def root3post(self): return self.root3
 
 
 class Stems5ain(Stems):
@@ -422,10 +422,10 @@ class Stems5ain(Stems):
     root1regex = ".+αιν$"
 
     @property
-    def root3post(self): return self.root1
+    def root3(self): return self.root1.replace("αιν", "αν")
 
     @property
-    def root6(self): return self.root1.replace("αιν", "ανθ")
+    def root3post(self): return self.root3
 
 
 class Stems5in(Stems):
