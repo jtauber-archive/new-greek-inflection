@@ -383,6 +383,9 @@ class Stems5l(Stems):
     @property
     def root2(self): return self.root1 + "η"
 
+    @property
+    def root3post(self): return self.root3
+
 
 class Stems5r(Stems):
 
@@ -390,6 +393,9 @@ class Stems5r(Stems):
 
     @property
     def root2(self): return self.root1 + "η"
+
+    @property
+    def root3post(self): return self.root1
 
 
 class Stems5m(Stems):
@@ -399,10 +405,32 @@ class Stems5m(Stems):
     @property
     def root2(self): return self.root1 + "η"
 
+    @property
+    def root3post(self): return self.root1
+
 
 class Stems5n(Stems):
 
-    root1regex = ".+[^υ]ν$"
+    root1regex = ".+[^ιυ]ν$"
+
+    @property
+    def root3post(self): return self.root1
+
+
+class Stems5ain(Stems):
+
+    root1regex = ".+αιν$"
+
+    @property
+    def root3post(self): return self.root1
+
+    @property
+    def root6(self): return self.root1.replace("αιν", "ανθ")
+
+
+class Stems5in(Stems):
+
+    root1regex = ".+[^α]ιν$"
 
     @property
     def root3post(self): return self.root1
@@ -456,6 +484,8 @@ stem_classes = {
     "5r": Stems5r,
     "5m": Stems5m,
     "5n": Stems5n,
+    "5ain": Stems5ain,
+    "5in": Stems5in,
     "5un": Stems5un,
 }
 
