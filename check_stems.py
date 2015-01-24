@@ -433,6 +433,9 @@ class Stems5in(Stems):
     root1regex = ".+[^α]ιν$"
 
     @property
+    def root2post(self): return self.root1 + "#"
+
+    @property
     def root3post(self): return self.root1
 
 
