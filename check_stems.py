@@ -483,6 +483,32 @@ class Stems6a(Stems):
 
     root1regex = ".+!$"
 
+    @property
+    def root2post(self): return self.root2.replace("!", "") + "σ"  # @@@
+
+    @property
+    def root3post(self): return self.root3
+
+    @property
+    def root6(self): return self.root2.replace("!", "") + "σθ"
+
+
+class Stems6nu(Stems):
+
+    root1regex = ".+[^ν]νυ!$"
+
+    @property
+    def root2(self): return self.root1.replace("νυ!", "")
+
+
+class Stems6nnu(Stems):
+
+    root1regex = ".+ννυ!$"
+
+    @property
+    def root2(self): return self.root1.replace("ννυ!", "")
+
+
 
 file_list = [
     "lexicon0a.yaml",
@@ -531,6 +557,8 @@ stem_classes = {
     "5in": Stems5in,
     "5un": Stems5un,
     "6a": Stems6a,
+    "6nu": Stems6nu,
+    "6nnu": Stems6nnu,
 }
 
 
