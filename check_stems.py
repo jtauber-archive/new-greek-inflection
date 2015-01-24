@@ -496,7 +496,7 @@ stem_classes = {
 for filename in file_list:
     with open(os.path.join("lexica", filename)) as f:
         for lemma, lexeme in yaml.load(f).items():
-            if "prefix" in lexeme:
+            if "inherit" in lexeme:
                 continue
 
             assert "root1" in lexeme, lemma
@@ -519,7 +519,7 @@ filename = "lexicon5w.yaml"
 
 with open(os.path.join("lexica", filename)) as f:
     for lemma, lexeme in sorted(yaml.load(f).items(), key=lambda x: c.sort_key(x[0])):
-        if "prefix" in lexeme:
+        if "inherit" in lexeme:
             continue
 
         assert "root1" in lexeme, lemma
