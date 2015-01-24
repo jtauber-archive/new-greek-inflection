@@ -376,12 +376,20 @@ class Stems3a(Stems):
     def root2(self): return self.root1[:-1] + "ω"
 
 
-class Stems5l(Stems):
+class Stems0l(Stems):
 
     root1regex = ".+λ$"
 
     @property
     def root2(self): return self.root1 + "η"
+
+
+class Stems5l(Stems):
+
+    root1regex = ".+λ$"
+
+    @property
+    def root2post(self): return self.root2 + "#"
 
     @property
     def root3post(self): return self.root3
@@ -392,7 +400,19 @@ class Stems5r(Stems):
     root1regex = ".+ρ$"
 
     @property
-    def root2post(self): return self.root1 + "ησ"
+    def root2post(self): return self.root2 + "#"
+
+    @property
+    def root3post(self): return self.root3
+
+
+class Stems5r2(Stems):
+
+    root1regex = ".+ρ$"
+
+    @property
+    def root2(self): return self.root1 + "η"
+
 
     @property
     def root3post(self): return self.root3
@@ -414,6 +434,12 @@ class Stems5n(Stems):
     root1regex = ".+[^ιυ]ν$"
 
     @property
+    def root2post(self): return self.root2 + "#"
+
+    @property
+    def root4(self): return self.root2 + "η"
+
+    @property
     def root3post(self): return self.root3
 
 
@@ -422,7 +448,10 @@ class Stems5ain(Stems):
     root1regex = ".+αιν$"
 
     @property
-    def root3(self): return self.root1.replace("αιν", "αν")
+    def root2(self): return self.root1.replace("αιν", "αν")
+
+    @property
+    def root2post(self): return self.root2 + "#"
 
     @property
     def root3post(self): return self.root3
@@ -430,13 +459,13 @@ class Stems5ain(Stems):
 
 class Stems5in(Stems):
 
-    root1regex = ".+[^α]ιν$"
+    root1regex = ".+[^α]ν$"
 
     @property
-    def root2post(self): return self.root1 + "#"
+    def root2post(self): return self.root2 + "#"
 
     @property
-    def root3post(self): return self.root1
+    def root3post(self): return self.root3
 
 
 class Stems5un(Stems):
@@ -444,7 +473,10 @@ class Stems5un(Stems):
     root1regex = ".+υν$"
 
     @property
-    def root3post(self): return self.root1
+    def root2post(self): return self.root2 + "#"
+
+    @property
+    def root3post(self): return self.root3
 
 
 file_list = [
@@ -483,8 +515,10 @@ stem_classes = {
     "2b": Stems2b,
     "2c": Stems2c,
     "3a": Stems3a,
+    "0l": Stems0l,
     "5l": Stems5l,
     "5r": Stems5r,
+    "5r2": Stems5r2,
     "5m": Stems5m,
     "5n": Stems5n,
     "5ain": Stems5ain,
