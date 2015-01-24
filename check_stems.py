@@ -226,7 +226,7 @@ class Stems(StemsBase):
 
 class Stems0a(Stems):
 
-    root1regex = ".+[^υλρκχπφαεο]$"
+    root1regex = ".+[^αεουκλμνπρχφ]$"
 
     @property
     def root5(self): return self.root4 + "σ"
@@ -267,7 +267,6 @@ class Stems0b(Stems):
     def root6(self): return self.root2 + "σθ"
 
 
-
 class Stems0wiz(Stems):
 
     root1regex = ".+ῳζ$"
@@ -277,22 +276,6 @@ class Stems0wiz(Stems):
 
     @property
     def root5(self): return self.root2 + "σ"
-
-
-class Stems0c(Stems):
-
-    root1regex = ".+λ$"
-
-    @property
-    def root2(self): return self.root1 + "η"
-
-
-class Stems0r(Stems):
-
-    root1regex = ".+ρ$"
-
-    @property
-    def root2(self): return self.root1 + "η"
 
 
 class Stems0d(Stems):
@@ -393,6 +376,46 @@ class Stems3a(Stems):
     def root2(self): return self.root1[:-1] + "ω"
 
 
+class Stems5l(Stems):
+
+    root1regex = ".+λ$"
+
+    @property
+    def root2(self): return self.root1 + "η"
+
+
+class Stems5r(Stems):
+
+    root1regex = ".+ρ$"
+
+    @property
+    def root2(self): return self.root1 + "η"
+
+
+class Stems5m(Stems):
+
+    root1regex = ".+μ$"
+
+    @property
+    def root2(self): return self.root1 + "η"
+
+
+class Stems5n(Stems):
+
+    root1regex = ".+[^υ]ν$"
+
+    @property
+    def root3post(self): return self.root1
+
+
+class Stems5un(Stems):
+
+    root1regex = ".+υν$"
+
+    @property
+    def root3post(self): return self.root1
+
+
 file_list = [
     "lexicon0a.yaml",
     "lexicon0b.yaml",
@@ -405,6 +428,7 @@ file_list = [
     "lexicon2c.yaml",
     "lexicon3a.yaml",
     "lexicon4w.yaml",
+    "lexicon5w.yaml",
 ]
 
 
@@ -413,8 +437,6 @@ stem_classes = {
     "0a": Stems0a,
     "0b": Stems0b,
     "0wiz": Stems0wiz,
-    "0c": Stems0c,
-    "0r": Stems0r,
     "0d": Stems0d,
     "0e": Stems0e,
     "0f": Stems0f,
@@ -430,6 +452,11 @@ stem_classes = {
     "2b": Stems2b,
     "2c": Stems2c,
     "3a": Stems3a,
+    "5l": Stems5l,
+    "5r": Stems5r,
+    "5m": Stems5m,
+    "5n": Stems5n,
+    "5un": Stems5un,
 }
 
 
@@ -455,7 +482,7 @@ for filename in file_list:
                     assert lexeme[key] == stems[key], (lemma, key, stems[key], lexeme[key], lexeme["class"])
 
 
-filename = "lexicon4w.yaml"
+filename = "lexicon5w.yaml"
 
 with open(os.path.join("lexica", filename)) as f:
     for lemma, lexeme in sorted(yaml.load(f).items(), key=lambda x: c.sort_key(x[0])):

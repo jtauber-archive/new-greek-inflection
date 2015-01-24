@@ -143,7 +143,7 @@
     prefix: σύν
 
 βούλομαι:
-    class: 0c
+    class: "5l"
     root1: βουλ
     P: βουλ
     I: ἐβουλ
@@ -160,7 +160,7 @@
     prefix: κατά
 
 βραδύνω:
-    class: 0a
+    class: 5un # @@@ why is it in 0w file?
     root1: βραδυν
     P: βραδυν
 
@@ -214,7 +214,7 @@
     APN: γεμῐσθη!
 
 γέμω:
-    class: 0a
+    class: 5m
     root1: γεμ
     P: γεμ
 
@@ -272,7 +272,7 @@
     P: δαιμονιζ
 
 δάκνω:
-    class: 0a
+    class: 5n
     root1: δακν
     P: δακν
 
@@ -1456,7 +1456,7 @@
     P: ὀζ
 
 οἰκτίρω:
-    class: 0r
+    class: 5r
     root1: οἰκτιρ
     P: οἰκτιρ
     F: οἰκτιρησ
