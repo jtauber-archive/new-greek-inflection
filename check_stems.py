@@ -226,7 +226,7 @@ class Stems(StemsBase):
 
 class Stems0a(Stems):
 
-    root1regex = ".+[^αεουκλμνπρχφ]$"
+    root1regex = ".+[^αεουκλμνπρχφ!]$"
 
     @property
     def root5(self): return self.root4 + "σ"
@@ -479,6 +479,11 @@ class Stems5un(Stems):
     def root3post(self): return self.root3
 
 
+class Stems6a(Stems):
+
+    root1regex = ".+!$"
+
+
 file_list = [
     "lexicon0a.yaml",
     "lexicon0b.yaml",
@@ -492,6 +497,7 @@ file_list = [
     "lexicon3a.yaml",
     "lexicon4w.yaml",
     "lexicon5w.yaml",
+    "lexicon6w.yaml",
 ]
 
 
@@ -524,6 +530,7 @@ stem_classes = {
     "5ain": Stems5ain,
     "5in": Stems5in,
     "5un": Stems5un,
+    "6a": Stems6a,
 }
 
 
@@ -549,7 +556,7 @@ for filename in file_list:
                     assert lexeme[key] == stems[key], (lemma, key, stems[key], lexeme[key], lexeme["class"])
 
 
-filename = "lexicon5w.yaml"
+filename = "lexicon6w.yaml"
 
 with open(os.path.join("lexica", filename)) as f:
     for lemma, lexeme in sorted(yaml.load(f).items(), key=lambda x: c.sort_key(x[0])):
