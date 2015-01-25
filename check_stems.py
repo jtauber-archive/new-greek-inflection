@@ -30,7 +30,7 @@ def _augment(stem):
     elif stem.startswith("οἰ"):
         return "ᾠ" + stem[2:]
     elif stem.startswith("ῥ"):
-        return "ἐρ" + stem[1:]
+        return "ἐρ" + stem[1:]  # @@@ or ἐρρ
     elif stem.startswith(("εἰ", "εὐ", "ἠ", "ἡ", "ἰ", "ἱ", "ὑ", "ὠ")):
         return stem
     else:
@@ -508,6 +508,17 @@ class Stems6nnu(Stems):
     def root2(self): return self.root1.replace("ννυ!", "")
 
 
+class Stems0i_sk(Stems):
+
+    root1regex = ".ι.+σκ$"
+
+    @property
+    def root3(self): return self.root1[2:-2]
+
+    @property
+    def root3post(self): return self.root3 + "!"
+
+
 file_list = [
     "lexicon.yaml",
     "lexicon0a.yaml",
@@ -541,6 +552,7 @@ stem_classes = {
     "0ph": Stems0ph,
     "0u": Stems0u,
     "0u2": Stems0u2,
+    "0i.sk": Stems0i_sk,
     "1a": Stems1ab,
     "1c": Stems1c,
     "2a": Stems2a,
