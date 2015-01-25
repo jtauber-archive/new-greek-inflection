@@ -413,7 +413,6 @@ class Stems5r2(Stems):
     @property
     def root2(self): return self.root1 + "η"
 
-
     @property
     def root3post(self): return self.root3
 
@@ -509,8 +508,8 @@ class Stems6nnu(Stems):
     def root2(self): return self.root1.replace("ννυ!", "")
 
 
-
 file_list = [
+    "lexicon.yaml",
     "lexicon0a.yaml",
     "lexicon0b.yaml",
     "lexicon0w.yaml",
@@ -524,6 +523,7 @@ file_list = [
     "lexicon4w.yaml",
     "lexicon5w.yaml",
     "lexicon6w.yaml",
+    "lexicon7w.yaml",
 ]
 
 
@@ -584,7 +584,7 @@ for filename in file_list:
                     assert lexeme[key] == stems[key], (lemma, key, stems[key], lexeme[key], lexeme["class"])
 
 
-filename = "lexicon6w.yaml"
+filename = "lexicon.yaml"
 
 with open(os.path.join("lexica", filename)) as f:
     for lemma, lexeme in sorted(yaml.load(f).items(), key=lambda x: c.sort_key(x[0])):
