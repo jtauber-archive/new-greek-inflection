@@ -38,10 +38,12 @@
     prefix: σύν
 
 γράφω:
-    # pluperfect is augmented
+    class: basic
     root1: γρᾰφ
     root2: γρᾰπ
-    root4post: γρᾰφ
+    root4: γρᾰφ
+    root4add: ""
+    root5: γρᾰπ
     root6: γρᾰφ
     P: γρᾰφ
     F: γρᾰψ
@@ -71,7 +73,8 @@
 κάμνω:
     class: basic
     root1: καμν
-    root3post: καμ
+    root3: καμ
+    root3add: ""
     AN: καμ
 
 κόπτω:
@@ -110,7 +113,8 @@
 λείπω: # (see λείπω2 though)
     class: 0p
     root1: λειπ
-    root3post: λιπ
+    root3: λιπ
+    root3add: ""
     P: λειπ
     F: λειψ
     A: ἐλιπ
@@ -189,7 +193,8 @@
     class: basic
     root1: πρασσ
     root2: πραγ
-    root4post: πραχ
+    root4: πραχ
+    root4add: ""
     P: πρασσ
     F: πραξ
     A: ἐπραξ
@@ -199,7 +204,8 @@
 σήπω:
     class: basic
     root1: σηπ
-    root4post: σηπ
+    root4: σηπ
+    root4add: ""
     X: σεσηπ
 
 στρέφω:
@@ -254,7 +260,8 @@
     class: basic
     root1: τᾰσσ
     root2: τᾰγ
-    root4post: τᾰχ
+    root4: τᾰχ
+    root4add: ""
     root5: τᾰκ
     root6: τᾰγ
     P: τᾰσσ

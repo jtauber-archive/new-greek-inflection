@@ -352,7 +352,17 @@
     prefix: ὑπό
 
 γίνομαι:
+    class: basic
     root1: γιν
+    root2: γεν
+    root2add: ησ
+    root3: γεν
+    root3add: ""
+    root4: γον
+    root4add: ""
+    root5: γεν
+    root6: γενηθ
+    Y_augment: either
     P: γιν
     I: ἐγιν
     F: γενησ
@@ -369,7 +379,9 @@
     prefix: παρά
 
 γινώσκω:
+    # X augments
     root1: γινωσκ
+    root2: γνω
     P: γινωσκ
     I: ἐγινωσκ
     F: γνωσ
@@ -403,13 +415,17 @@
     prefix: πρό
 
 διδάσκω:
-    root1: διδασκ
-    P: διδασκ
-    I: ἐδιδασκ
-    F: διδαξ
-    A: ἐδιδαξ
+    class: basic
+    root1: διδᾰσκ
+    root2: διδᾰκ
+    root3: διδᾰκ
+    root6: διδᾰχθ
+    P: διδᾰσκ
+    I: ἐδιδᾰσκ
+    F: διδᾰξ
+    A: ἐδιδᾰξ
     AN: διδᾰξ
-    AP: ἐδιδαχθη!
+    AP: ἐδιδᾰχθη!
 
 δύνω:
     root1: δυν
