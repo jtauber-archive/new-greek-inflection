@@ -333,6 +333,7 @@
     class: 5n
     root1: μεν
     root3: μειν
+    Y_augment: false
     P: μεν
     I: ἐμεν
     F: μεν#

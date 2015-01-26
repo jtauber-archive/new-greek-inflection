@@ -130,7 +130,10 @@
     prefix: πρό
 
 ἀκούω:
+    # handle attic reduplication
     root1: ἀκου
+    root4: ἀκο
+    root6: ἀκουσθ
     P: ἀκου
     I: ἠκου
     F: ἀκουσ
@@ -166,7 +169,9 @@
     prefix: ὑπό
 
 ἀναλίσκω:  # ἀνά+ἁλίσκω
+    class: basic
     root1: ἀναλισκ
+    root3: ἀναλω # @@@
     AN: ἀναλωσ
     APN: ἀναλωθη!
 
@@ -197,7 +202,9 @@
     prefix: σύν
 
 αὐξάνω:
+    class: basic
     root1: αὐξαν
+    root2: αὐξη  # probably don't include η
     P: αὐξαν
     I: ηὐξαν
     F: αὐξησ
@@ -268,12 +275,19 @@
     prefix: σύν
 
 βάλλω:
+    class: "5l"
     root1: βαλλ
+    root2: βαλ
+    root3: βᾰλ
+    root4: βλη
+    root6: βληθ
+    Y_augment: false
+    YM_augment: true
     P: βαλλ
     I: ἐβαλλ
     F: βαλ#
     FP: βληθησ
-    A: ἐβαλ
+    A: ἐβᾰλ
     AN: βᾰλ
     AP: ἐβληθη!
     APN: βληθη!

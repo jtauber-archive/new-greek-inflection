@@ -659,6 +659,7 @@
 ποιέω:
     class: 1a
     root1: ποιε
+    Y_augment: false
     P: ποιε
     I: ἐποιε
     F: ποιησ

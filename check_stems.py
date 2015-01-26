@@ -57,6 +57,18 @@ def orthography(stem):
         return stem
 
 
+OVERRIDABLE_PROPERTIES = [
+    "root2",
+    "root3",
+    "root3post",
+    "root4",
+    "root4post",
+    "root5",
+    "root6",
+    "Y_augment",
+    "YM_augment",
+]
+
 class StemsBase:
 
     root1regex = ".+$"
@@ -66,20 +78,9 @@ class StemsBase:
 
         if re.match(self.root1regex, self.root1):
 
-            if "root2" in lexeme:
-                self.root2_override = lexeme["root2"]
-            if "root3" in lexeme:
-                self.root3_override = lexeme["root3"]
-            if "root3post" in lexeme:
-                self.root3post_override = lexeme["root3post"]
-            if "root4" in lexeme:
-                self.root4_override = lexeme["root4"]
-            if "root4post" in lexeme:
-                self.root4post_override = lexeme["root4post"]
-            if "root5" in lexeme:
-                self.root5_override = lexeme["root5"]
-            if "root6" in lexeme:
-                self.root6_override = lexeme["root6"]
+            for p in OVERRIDABLE_PROPERTIES:
+                if p in lexeme:
+                    setattr(self, "{}_override".format(p), lexeme[p])
 
             return {
                 key: getattr(self, key)
@@ -125,6 +126,20 @@ class Stems(StemsBase):
             return self.root6_override
         else:
             return self.root3 + "θ"
+
+    @property
+    def Y_augment(self):
+        if hasattr(self, "Y_augment_override"):
+            return self.Y_augment_override
+        else:
+            return True
+
+    @property
+    def YM_augment(self):
+        if hasattr(self, "YM_augment_override"):
+            return self.YM_augment_override
+        else:
+            return self.Y_augment
 
     # first principal part
 
@@ -181,7 +196,11 @@ class Stems(StemsBase):
     def X(self): return redup(self.root4post)
 
     @property
-    def Y(self): return redup(self.root4post)
+    def Y(self):
+        if self.Y_augment:
+            return augment(redup(self.root4post))
+        else:
+            return redup(self.root4post)
 
     # fifth principal part
 
@@ -196,7 +215,11 @@ class Stems(StemsBase):
     def XM(self): return redup(self.root5post)
 
     @property
-    def YM(self): return redup(self.root5post)
+    def YM(self):
+        if self.YM_augment:
+            return augment(redup(self.root5post))
+        else:
+            return redup(self.root5post)
 
     # sixth principal part
 
