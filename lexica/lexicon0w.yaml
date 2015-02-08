@@ -1,6 +1,9 @@
 αἰσθάνομαι:
+    class: basic
     root1: αἰσθαν
-    AN: αἰσθ  # @@@
+    root3: αἰσθ
+    root3add: ""
+    AN: αἰσθ
 
 ἐξαλείφω:  # ἐκ+ἀλείφω
     class: 0ph
@@ -508,7 +511,9 @@
     prefix: διά+κατά
 
 ἑλίσσω:
+    class: basic
     root1: ἑλισσ
+    root2: ἑλικ
     P: ἑλισσ
     F: ἑλιξ
 
